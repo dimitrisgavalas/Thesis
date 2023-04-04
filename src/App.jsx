@@ -1,38 +1,32 @@
-import React,{ Component } from "react";
-import { BrowserRouter as Router, Route, Routes} from 'react-router-dom';
-import Toolbar from './components/shared/Toolbar/toolbar';
+import React, { Component } from "react";
+import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
+import Toolbar from "./components/shared/Toolbar/toolbar";
 
-function App(){
+function App() {
+  return (
+    <div className="App">
+      <ul className="App-header">
+        <li>
+          <Link to="/">Home</Link>
+        </li>
+        <li>
+          <Link to="/contact">Courses</Link>
+        </li>
+        <li>
+          <Link to="/about">About Us</Link>
+        </li>
+      </ul>
 
-    return(
-
-        <div className="App">
-
-            <ul className="App-header">
-              <li>
-                <Link to="/">Home</Link>
-              </li>
-              <li>
-                <Link to="/contact">Courses</Link>
-              </li>
-              <li>
-                <Link to="/about">About Us</Link>
-              </li>              
-            </ul>
-        
-        <Toolbar/>
-        <Router>
-            <Routes>
-                <Route exact path='/' element={< Home />} ></Route>
-                <Route exact path='/courses' element={< Courses />}></Route>
-                <Route exact path='/about' element={< About />}></Route>
-            </Routes>
-        </Router>
-            
-        </div>
-
-    );
-
+      <Toolbar />
+      <Router>
+        <Routes>
+          <Route exact path="/" element={<Home />}></Route>
+          <Route exact path="/courses" element={<Courses />}></Route>
+          <Route exact path="/about" element={<About />}></Route>
+        </Routes>
+      </Router>
+    </div>
+  );
 }
 
 export default App;
@@ -58,7 +52,7 @@ export default App;
 // export default App;
 
 // Your component starts as a class extending Component instead
-//  of as a function: class Cat 
+//  of as a function: class Cat
 // extends Component {} Class components have a render() function.
 
 // import React, { Component } from 'react';
@@ -96,8 +90,6 @@ export default App;
 // }
 
 // export default App;
-
-
 
 // import './App.scss';
 // import { BrowserRouter as Router, Route, Routes} from 'react-router-dom';

@@ -1,26 +1,22 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
+import React from "react";
+import ReactDOM from "react-dom";
+import "./index.css";
 
 // import files & components
 
 ReactDOM.render(
   // What to show
-    // <div>
-    //   <h1>Thesis First Step</h1>
-    //   <h2>Thesis Second Step</h2>
-    // </div>  
+  // <div>
+  //   <h1>Thesis First Step</h1>
+  //   <h2>Thesis Second Step</h2>
+  // </div>
   <React.StrictMode>
     <App />
-  </React.StrictMode>
-  
+  </React.StrictMode>,
+
   // Where to show it
-  ,document.getElementById('root')
-  );
-
-
-
-
-
+  document.getElementById("root")
+);
 
 // import React from 'react';
 // import ReactDOM from 'react-dom';
