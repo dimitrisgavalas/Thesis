@@ -1,50 +1,28 @@
 import React from "react";
-import ReactDOM from "react-dom";
+import { createRoot } from "react-dom/client";
 import "./index.css";
+import App from "./App.js";
+
+const root = createRoot(document.getElementById("root"));
+root.render(
+  // lets you find common bugs in your components early during development.
+  <React.StrictMode>
+    <App />
+  </React.StrictMode>
+);
 
 // import files & components
 
-ReactDOM.render(
-  // What to show
-  // <div>
-  //   <h1>Thesis First Step</h1>
-  //   <h2>Thesis Second Step</h2>
-  // </div>
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>,
-
-  // Where to show it
-  document.getElementById("root")
-);
-
-// import React from 'react';
-// import ReactDOM from 'react-dom';
-// import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
-// import Header from './components/Header';
-// import SearchBar from './components/SearchBar';
-// import PopularCourses from './components/PopularCourses';
-// import Universities from './components/Universities';
-// import Footer from './components/Footer';
-// import MainPage from './pages/MainPage';
-// import ECoursesPage from './pages/ECoursesPage';
-// import AboutUsPage from './pages/AboutUsPage';
-// import './index.css';
-
 // ReactDOM.render(
+//   // What to show
+//   // <div>
+//   //   <h1>Thesis First Step</h1>
+//   //   <h2>Thesis Second Step</h2>
+//   // </div>
 //   <React.StrictMode>
-//     <Router>
-//       <Header />
-//       <SearchBar />
-//       <Switch>
-//         <Route exact path="/" component={MainPage} />
-//         <Route exact path="/e-courses" component={ECoursesPage} />
-//         <Route exact path="/about-us" component={AboutUsPage} />
-//       </Switch>
-//       <PopularCourses />
-//       <Universities />
-//       <Footer />
-//     </Router>
+//     <App />
 //   </React.StrictMode>,
-//   document.getElementById('root')
+
+//   // Where to show it
+//   document.getElementById("root")
 // );

@@ -1,18 +1,16 @@
-import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
-import Home from "./pages/Home";
-import Ecourses from "./pages/Ecourses";
-import About from "./pages/About";
-import "./App.css";
+import "./App.scss";
+import React from "react";
+import ToolbarMenu from "./components/shared/Toolbar/Toolbar";
+
+// import Home from "./pages/Home";
+// import Ecourses from "./pages/Ecourses";
+// import About from "./pages/About";
 
 function App() {
   return (
-    <Router>
-      <Switch>
-        <Route path="/" exact component={Home} />
-        <Route path="/e-courses" component={Ecourses} />
-        <Route path="/about" component={About} />
-      </Switch>
-    </Router>
+    <div>
+      <ToolbarMenu />
+    </div>
   );
 }
 
