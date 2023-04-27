@@ -1,6 +1,5 @@
 import React from "react";
-import ToolbarMenu from "./components/shared/Toolbar/Toolbar";
-import GalleriaFullScreenDemos from "./components/PartnerUniversities/partnerUniversities";
+import Home from "./pages/Home/Home";
 
 // import Home from "./pages/Home";
 // import Ecourses from "./pages/Ecourses";
@@ -9,8 +8,7 @@ import GalleriaFullScreenDemos from "./components/PartnerUniversities/partnerUni
 function App() {
   return (
     <div className="container-fluid">
-      <ToolbarMenu />
-      <GalleriaFullScreenDemos />
+      <Home />
     </div>
   );
 }

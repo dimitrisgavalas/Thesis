@@ -5,9 +5,22 @@ import { Toolbar } from "primereact/toolbar";
 function ToolbarMenu() {
   const leftContents = (
     <React.Fragment>
-      <Button label="Home" className="mr-2" />
-      <Button label="Courses" className="mr-2" />
-      <Button label="About" className="mr-2" />
+      <nav className="card flex justify-content-center">
+        <a href="/">
+          {" "}
+          <Button label="Home" className="mr-2" />
+        </a>
+        <a href="/Ecourses">
+          <Button label="Courses" className="mr-2" />
+        </a>
+        <a href="https://bobbyhadz.com">
+          <Button label="About" className="mr-2" />
+        </a>
+        <a href="https://bobbyhadz.com">
+          {" "}
+          <Button label="Contact" className="mr-2" />
+        </a>
+      </nav>
     </React.Fragment>
   );
 

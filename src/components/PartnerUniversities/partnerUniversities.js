@@ -1,9 +1,9 @@
 import React from "react";
-import { Image } from "primereact/image";
+// import { Image } from "primereact/image";
 
-const GalleriaFullScreenDemo = () => {
+function PartnerUniversitiesRec() {
   return (
-    <div className="surface-0 text-center">
+    <div className="surface-0 text-center pt-5">
       <div className="mb-3 font-bold text-2xl">
         <span className="text-900">Our Partners </span>
         {/* <span className="text-blue-600">Many Solutions</span> */}
@@ -17,7 +17,7 @@ const GalleriaFullScreenDemo = () => {
             className="p-3 shadow-2 mb-3 inline-block"
             style={{ borderRadius: "10px" }}
           >
-            <i className="pi pi-desktop text-4xl text-blue-500"></i>
+            <i className="pi pi-building text-4xl text-blue-500"></i>
           </span>
           <div className="text-900 mb-3 font-medium">Unipi</div>
           <span className="text-700 text-sm line-height-3">
@@ -29,7 +29,7 @@ const GalleriaFullScreenDemo = () => {
             className="p-3 shadow-2 mb-3 inline-block"
             style={{ borderRadius: "10px" }}
           >
-            <i className="pi pi-lock text-4xl text-blue-500"></i>
+            <i className="pi pi-building text-4xl text-blue-500"></i>
           </span>
           <div className="text-900 mb-3 font-medium">ΕΜΠ</div>
           <span className="text-700 text-sm line-height-3">
@@ -41,7 +41,7 @@ const GalleriaFullScreenDemo = () => {
             className="p-3 shadow-2 mb-3 inline-block"
             style={{ borderRadius: "10px" }}
           >
-            <i className="pi pi-check-circle text-4xl text-blue-500"></i>
+            <i className="pi pi-building text-4xl text-blue-500"></i>
           </span>
           <div className="text-900 mb-3 font-medium">ΠΑΔΑ</div>
           <span className="text-700 text-sm line-height-3">
@@ -54,7 +54,7 @@ const GalleriaFullScreenDemo = () => {
             className="p-3 shadow-2 mb-3 inline-block"
             style={{ borderRadius: "10px" }}
           >
-            <i className="pi pi-globe text-4xl text-blue-500"></i>
+            <i className="pi pi-building text-4xl text-blue-500"></i>
           </span>
           <div className="text-900 mb-3 font-medium">ΑΣΟΕΕ</div>
           <span className="text-700 text-sm line-height-3">
@@ -76,7 +76,7 @@ const GalleriaFullScreenDemo = () => {
 
             <i
               src="https://upload.wikimedia.org/wikipedia/el/3/30/UNIPI_%28logo%29.png"
-              className="pi pi-github text-4xl text-blue-500"
+              className="pi pi-building text-4xl text-blue-500"
             ></i>
           </span>
           <div className="text-900 mb-3 font-medium">ΧΑΡΟΚΟΠΕΙΟ</div>
@@ -90,7 +90,7 @@ const GalleriaFullScreenDemo = () => {
             className="p-3 shadow-2 mb-3 inline-block"
             style={{ borderRadius: "10px" }}
           >
-            <i className="pi pi-shield text-4xl text-blue-500"></i>
+            <i className="pi pi-building text-4xl text-blue-500"></i>
           </span>
           <div className="text-900 mb-3 font-medium">ΚΑΠΟΔΙΣΤΡΙΑΚΟ</div>
           <span className="text-700 text-sm line-height-3">
@@ -101,6 +101,6 @@ const GalleriaFullScreenDemo = () => {
       </div>
     </div>
   );
-};
+}
 
-export default GalleriaFullScreenDemo;
+export default PartnerUniversitiesRec;

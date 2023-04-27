@@ -1,0 +1,14 @@
+.container {
+  height: 400px;
+  /* background-color: rgb(190, 178, 207); */
+  background-image: url("/images/bck.gif");
+
+}
+
+.chip-container {
+  height: 40px;
+  /* background-color: chartreuse; */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
