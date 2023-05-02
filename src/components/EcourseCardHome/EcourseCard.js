@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { EcoursesData } from "../EcoursesData/EcoursesData";
+import { EcoursesData } from "../../mock-d/EcoursesData";
 import { Button } from "primereact/button";
 import { DataView, DataViewLayoutOptions } from "primereact/dataview";
 import { Rating } from "primereact/rating";

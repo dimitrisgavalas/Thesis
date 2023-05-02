@@ -16,7 +16,7 @@ function SearchBar() {
 
   return (
     <div className="container flex flex-column justify-content-center align-items-center">
-      <div className="card flex justify-content-center pt-5 ">
+      <div className="card flex justify-content-center pt-3 ">
         <AutoComplete
           value={value}
           suggestions={items}
@@ -24,7 +24,7 @@ function SearchBar() {
           onChange={(e) => setValue(e.value)}
         />
       </div>
-      <div className="chip-container text-500 text-xl pt-5">
+      <div className="chip-container text-500 text-xl pt-5 flex gap-2">
         {categories.map((item) => (
           <Chip key={item} label={item} />
         ))}
