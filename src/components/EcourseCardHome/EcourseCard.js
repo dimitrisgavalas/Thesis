@@ -13,15 +13,19 @@ function EcourseCardHome() {
     EcoursesData.getProducts().then((data) => setProducts(data.slice(0, 12)));
   }, []);
 
-  const getSeverity = (ecourse) => {
-    switch (ecourse.inventoryStatus) {
-      case "INSTOCK":
+  // Chips me "Online", "On Campus", "Hybrid"
+  const getLocation = (ecourse) => {
+    switch (ecourse.ecourseLocation) {
+      // prasino "On campus" chip panw dejia sto ecourse
+      case "On Campus":
         return "success";
 
-      case "LOWSTOCK":
+      // kitrino "Online" chip panw dejia sto ecourse
+      case "Online":
         return "warning";
 
-      case "OUTOFSTOCK":
+      // Kokkino "Hybrid" chip panw dejia sto ecourse
+      case "Hybrid":
         return "danger";
 
       default:
@@ -50,7 +54,7 @@ function EcourseCardHome() {
                 </span>
                 {/* <Tag
                   value={ecourse.inventoryStatus}
-                  severity={getSeverity(ecourse)}
+                  severity={getLocation(ecourse)}
                 ></Tag> */}
               </div>
             </div>
@@ -79,11 +83,12 @@ function EcourseCardHome() {
               {/* in span we add ecourse category. ex Programming, Education, Physics etc */}
               <span className="font-semibold">{ecourse.category}</span>
             </div>
-
-            {/* <Tag
-              value={ecourse.inventoryStatus}
-              severity={getSeverity(ecourse)}
-            ></Tag> */}
+            {/* Chips me "Online", "On Campus", "Hybrid" */}
+            <Tag
+              value={ecourse.ecourseLocation}
+              // den allazoume to severity giati to xrwma twn chips ejartatai apo auth thn lejh
+              severity={getLocation(ecourse)}
+            ></Tag>
           </div>
 
           <div className="flex flex-column align-items-center gap-3 py-5">
@@ -96,11 +101,11 @@ function EcourseCardHome() {
             <Rating value={ecourse.rating} readOnly cancel={false}></Rating>
           </div>
           <div className="flex align-items-center justify-content-between">
-            <span className="text-2xl font-semibold">${ecourse.price}</span>
+            <span className="text-2xl font-semibold">€{ecourse.price}</span>
             <Button
               icon="pi pi-heart"
               className="p-button-rounded"
-              disabled={ecourse.inventoryStatus === "OUTOFSTOCK"}
+              disabled={ecourse.ecourseLocation === "OUTOFSTOCK"}
             ></Button>
           </div>
         </div>
@@ -118,6 +123,7 @@ function EcourseCardHome() {
     else if (layout === "grid") return gridItem(ecourse);
   };
 
+  // button gia na allazei apo grid se lista
   const header = () => {
     return (
       <div className="flex justify-content-end">
@@ -132,9 +138,11 @@ function EcourseCardHome() {
   return (
     <div className="card">
       <DataView
+        // kouti me ta 9 ecourses sthn arxikh
         value={ecourses}
         itemTemplate={itemTemplate}
         layout={layout}
+        //button gia na allazei apo grid se lista
         header={header()}
       />
     </div>
