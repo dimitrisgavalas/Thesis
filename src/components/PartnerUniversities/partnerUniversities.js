@@ -6,7 +6,7 @@ function PartnerUniversitiesRec() {
       className="pt-5 pb-5 flex justify-content-center border-2 surface-border border-round p-2"
       style={{ backgroundColor: "#6366F1" }}
     >
-      <div claclassName="">
+      <div className="">
         <h3
           className="flex justify-content-center font-normal"
           style={{ color: "white" }}

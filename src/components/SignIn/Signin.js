@@ -20,7 +20,10 @@ function SignInFun() {
           <span className="text-600 font-medium line-height-3">
             Don't have an account?
           </span>
-          <a className="font-medium no-underline ml-2 text-blue-500 cursor-pointer">
+          <a
+            href="https://www.google.com/"
+            className="font-medium no-underline ml-2 text-blue-500 cursor-pointer"
+          >
             Create today!
           </a>
         </div>
@@ -56,7 +59,10 @@ function SignInFun() {
               />
               <label htmlFor="rememberme">Remember me</label>
             </div>
-            <a className="font-medium no-underline ml-2 text-blue-500 text-right cursor-pointer">
+            <a
+              href="https://www.google.com/"
+              className="font-medium no-underline ml-2 text-blue-500 text-right cursor-pointer"
+            >
               Forgot your password?
             </a>
           </div>

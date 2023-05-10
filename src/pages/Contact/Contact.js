@@ -1,7 +1,7 @@
 import React, { useState } from "react";
+import { Button } from "primereact/button";
+
 import "./Contact.css";
-import ToolbarMenu from "../../components/Toolbar/Toolbar";
-import Footer from "../../components/Footer/Footer";
 function Contact() {
   const [email, setEmail] = useState("");
   const [message, setMessage] = useState("");
@@ -14,8 +14,7 @@ function Contact() {
   };
 
   return (
-    <div className="contact">
-      <ToolbarMenu />
+    <div className="contact pb-8">
       <div className="contact-form-container">
         <h2>Contact Us</h2>
         <form onSubmit={handleSubmit} className="contact-form">
@@ -39,10 +38,9 @@ function Contact() {
               onChange={(e) => setMessage(e.target.value)}
             ></textarea>
           </div>
-          <button type="submit">Submit</button>
+          <Button label="Submit" type="submit" icon="pi pi-check mt-2" />
         </form>
       </div>
-      <Footer />
     </div>
   );
 }
