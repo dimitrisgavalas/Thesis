@@ -7,7 +7,7 @@ import { Tag } from "primereact/tag";
 
 function EcourseCardHome() {
   const [ecourses, setProducts] = useState([]);
-  const [layout, setLayout] = useState("grid");
+  const [layout, setLayout] = useState("grid"); //to useState jekinaei me to grid
 
   useEffect(() => {
     EcoursesData.getProducts().then((data) => setProducts(data.slice(0, 12)));

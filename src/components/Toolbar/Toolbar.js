@@ -1,9 +1,14 @@
-import React from "react";
+import React, { useState } from "react";
 import { Button } from "primereact/button";
 import { Toolbar } from "primereact/toolbar";
 import SignInFun from "../SignIn/Signin";
+import { Dialog } from "primereact/dialog";
+import Contact from "../../pages/Contact/Contact";
+import { Link } from "react-router-dom";
 
 function ToolbarMenu() {
+  const [visible, setVisible] = useState(false);
+
   const leftContents = (
     <React.Fragment>
       <nav className="card flex justify-content-center">
@@ -17,8 +22,7 @@ function ToolbarMenu() {
         <a href="https://bobbyhadz.com">
           <Button label="About" className="mr-2" text />
         </a>
-        <a href="https://bobbyhadz.com">
-          {" "}
+        <a href={<Contact />}>
           <Button label="Contact" className="mr-2" text />
         </a>
       </nav>
@@ -33,15 +37,28 @@ function ToolbarMenu() {
         <Button icon="pi pi-bell" className="mr-2" text />
 
         <Button
+          label="Sign In"
           icon="pi pi-sign-in"
           className="p-button-danger"
           title="Sign in"
           variant="text"
+          //to text vgazei to xrwma mesa apo to button
           text
-          // onClick={() => setVisible(true)}
+          onClick={() => setVisible(true)}
+        />
+        {/* <Button
+          label="Show"
+          icon="pi pi-external-link"
+          onClick={() => setVisible(true)}
+        /> */}
+        <Dialog
+          header="Header"
+          visible={visible}
+          style={{ width: "50vw" }}
+          onHide={() => setVisible(false)}
         >
-          Sign in
-        </Button>
+          <SignInFun />
+        </Dialog>
       </nav>
     </React.Fragment>
   );
