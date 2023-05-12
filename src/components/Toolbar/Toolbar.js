@@ -3,33 +3,111 @@ import { Button } from "primereact/button";
 import { Toolbar } from "primereact/toolbar";
 import SignInFun from "../SignIn/Signin";
 import { Dialog } from "primereact/dialog";
-import Contact from "../../pages/Contact/Contact";
-import { Link } from "react-router-dom";
+import { Menubar } from "primereact/menubar";
+// import "./Toolbar.css";
 
-function ToolbarMenu() {
+// function ToolbarMenu() {
+export default function ToolbarMenu() {
   const [visible, setVisible] = useState(false);
 
-  const leftContents = (
-    <React.Fragment>
-      <nav className="card flex justify-content-center">
-        <a href="/">
-          {" "}
-          <Button label="Home" className="mr-2 " text />
-        </a>
-        <a href="/Ecourses">
-          <Button label="Courses" className="mr-2" text />
-        </a>
-        <a href="https://bobbyhadz.com">
-          <Button label="About" className="mr-2" text />
-        </a>
-        <a href={<Contact />}>
-          <Button label="Contact" className="mr-2" text />
-        </a>
-      </nav>
-    </React.Fragment>
-  );
+  const items = [
+    {
+      label: "Home",
+      url: "/",
+      // icon: "pi pi-fw pi-power-off",
+    },
+    {
+      label: "E-Courses",
+      // icon: "pi pi-fw pi-file",
+      items: [
+        // Unis
+        {
+          label: "Universities",
+          icon: "pi pi-building",
+          items: [
+            {
+              label: "Unipi",
+              icon: "pi pi-building ",
+            },
+            {
+              label: "EMP",
+              icon: "pi pi-building ",
+            },
+            ,
+            {
+              label: "EKPA",
+              icon: "pi pi-building ",
+            },
+            ,
+            {
+              label: "PADA",
+              icon: "pi pi-building ",
+            },
+            ,
+            {
+              label: "OPA",
+              icon: "pi pi-building ",
+            },
+          ],
+        },
+        {
+          separator: true,
+        },
+        // Fields
+        {
+          label: "Field",
+          icon: "pi pi-book ",
+          items: [
+            {
+              label: "Mathematics",
+              icon: "pi pi-book ",
+            },
+            {
+              label: "Physics",
+              icon: "pi pi-book ",
+            },
+            ,
+            {
+              label: "Programming",
+              icon: "pi pi-book ",
+            },
+            ,
+            {
+              label: "Linguistics",
+              icon: "pi pi-book ",
+            },
+            ,
+            {
+              label: "Physics",
+              icon: "pi pi-book ",
+            },
+          ],
+        },
+        {
+          separator: true,
+        },
+      ],
+    },
+    {
+      url: "/about",
+      label: "About",
+    },
+    ,
+    {
+      url: "/contact",
+      label: "Contact",
+    },
+  ];
 
-  const rightContents = (
+  const start = (
+    <img
+      alt="logo"
+      src="https://primefaces.org/cdn/primereact/images/logo.png"
+      height="40"
+      className="mr-2"
+    ></img>
+  );
+  const end = (
     // Fragment = lets you group elements without a wrapper node.
     <React.Fragment>
       <nav>
@@ -47,12 +125,12 @@ function ToolbarMenu() {
           onClick={() => setVisible(true)}
         />
         {/* <Button
-          label="Show"
-          icon="pi pi-external-link"
-          onClick={() => setVisible(true)}
-        /> */}
+            label="Show"
+            icon="pi pi-external-link"
+            onClick={() => setVisible(true)}
+          /> */}
         <Dialog
-          header="Header"
+          // header="Header"
           visible={visible}
           style={{ width: "50vw" }}
           onHide={() => setVisible(false)}
@@ -63,8 +141,24 @@ function ToolbarMenu() {
     </React.Fragment>
   );
 
-  return <Toolbar left={leftContents} right={rightContents} />;
-}
+  const end2 = [
+    {
+      // label: "Favorites",
+      icon: "pi pi-heart",
+    },
+    {
+      // label: "notification",
+      icon: "pi pi-bell",
+    },
+    {
+      label: "Sign In",
+      icon: "pi pi-sign-in",
+    },
+  ];
 
-export default ToolbarMenu;
-// na valw to menu mesa se ena router
+  return (
+    <div className="card absolute top-0 left-0 px-4 py-3 w-full fixedPosition">
+      <Menubar model={items} start={start} end={end} />
+    </div>
+  );
+}

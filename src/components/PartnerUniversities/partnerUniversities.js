@@ -81,3 +81,4 @@ function PartnerUniversitiesRec() {
 }
 
 export default PartnerUniversitiesRec;
+//

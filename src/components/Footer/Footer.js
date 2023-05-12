@@ -1,9 +1,10 @@
 import React from "react";
 import { Button } from "primereact/button";
+// import "./Footer.css";
 
 function Footer() {
   return (
-    <footer className="pt-7 pb-7 flex justify-content-center border-2 surface-border border-round p-2">
+    <footer className="down pt-7 pb-7 flex justify-content-center border-2 surface-border border-round p-2">
       <a href="/contact">
         {" "}
         <Button icon="pi pi-twitter" className="mr-2" />

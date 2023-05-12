@@ -1,4 +1,5 @@
 import React from "react";
+import ReactDOM from "react-dom/client";
 import Home from "./pages/Home/Home";
 import "./App.css";
 import Footer from "./components/Footer/Footer";
@@ -11,8 +12,7 @@ import {
 import Contact from "./pages/Contact/Contact";
 // import Home from "./pages/Home";
 // import Ecourses from "./pages/Ecourses";
-// import About from "./pages/About";
-
+import About from "./pages/About/About";
 function App() {
   return (
     <div className="container-fluid">
@@ -20,7 +20,8 @@ function App() {
       <BrowserRouter>
         <Routes>
           <Route exact path="/" element={<Home />} />
-          <Route path="/Contact" element={<Contact />} />
+          <Route path="/contact" element={<Contact />} />
+          <Route path="/about" element={<About />} />
         </Routes>
       </BrowserRouter>
       {/* <Contact /> */}

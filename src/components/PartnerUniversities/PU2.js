@@ -1,7 +1,7 @@
 import React from "react";
 // import { Image } from "primereact/image";
 
-function PartnerUniversitiesRec() {
+function PartnerUniversitiesRec2() {
   return (
     <div className="surface-0 text-center pt-5">
       <div className="mb-3 font-bold text-2xl">
@@ -103,4 +103,4 @@ function PartnerUniversitiesRec() {
   );
 }
 
-export default PartnerUniversitiesRec;
+export default PartnerUniversitiesRec2;

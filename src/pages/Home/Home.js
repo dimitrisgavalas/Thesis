@@ -1,5 +1,5 @@
 import React from "react";
-import PartnerUniversities from "../../components/PartnerUniversities/PartnerUniversities";
+import PartnerUniversitiesRec from "../../components/PartnerUniversities/PartnerUniversities";
 import SearchBar from "../../components/SearchBar/SearchBar";
 import EcourseCard from "../../components/EcourseCardHome/EcourseCard";
 // import Footer from "../../components/Footer/Footer";
@@ -10,7 +10,7 @@ function Home() {
     <div className="container-fluid">
       <SearchBar />
       <EcourseCard />
-      <PartnerUniversities />
+      <PartnerUniversitiesRec />
     </div>
   );
 }
