@@ -1,4 +1,4 @@
-/* .course {
+.course {
     margin: 0 auto;
     max-width: 1200px;
     display: flex;
@@ -63,10 +63,13 @@
     margin-bottom: 1rem;
   }
   
-   */
+  
 
 
-   .ecourses {
+
+   /* For grid */
+
+   /* .ecourses {
     margin: 0 auto;
     max-width: 1200px;
   }
@@ -89,5 +92,5 @@
     .ecourse-cards {
       grid-template-columns: 1fr;
     }
-  }
+  } */
   
