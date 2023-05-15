@@ -17,76 +17,78 @@ export default function ToolbarMenu() {
       // icon: "pi pi-fw pi-power-off",
     },
     {
+      url: "/ecourses",
       label: "E-Courses",
       // icon: "pi pi-fw pi-file",
-      items: [
-        // Unis
-        {
-          label: "Universities",
-          icon: "pi pi-building",
-          items: [
-            {
-              label: "Unipi",
-              icon: "pi pi-building ",
-            },
-            {
-              label: "EMP",
-              icon: "pi pi-building ",
-            },
-            ,
-            {
-              label: "EKPA",
-              icon: "pi pi-building ",
-            },
-            ,
-            {
-              label: "PADA",
-              icon: "pi pi-building ",
-            },
-            ,
-            {
-              label: "OPA",
-              icon: "pi pi-building ",
-            },
-          ],
-        },
-        {
-          separator: true,
-        },
-        // Fields
-        {
-          label: "Field",
-          icon: "pi pi-book ",
-          items: [
-            {
-              label: "Mathematics",
-              icon: "pi pi-book ",
-            },
-            {
-              label: "Physics",
-              icon: "pi pi-book ",
-            },
-            ,
-            {
-              label: "Programming",
-              icon: "pi pi-book ",
-            },
-            ,
-            {
-              label: "Linguistics",
-              icon: "pi pi-book ",
-            },
-            ,
-            {
-              label: "Physics",
-              icon: "pi pi-book ",
-            },
-          ],
-        },
-        {
-          separator: true,
-        },
-      ],
+      // items: [
+      //   // Unis
+      //   {
+      //     // url: "/ecoursegrid",
+      //     label: "Universities",
+      //     icon: "pi pi-building",
+      //     items: [
+      //       {
+      //         label: "Unipi",
+      //         icon: "pi pi-building ",
+      //       },
+      //       {
+      //         label: "EMP",
+      //         icon: "pi pi-building ",
+      //       },
+      //       ,
+      //       {
+      //         label: "EKPA",
+      //         icon: "pi pi-building ",
+      //       },
+      //       ,
+      //       {
+      //         label: "PADA",
+      //         icon: "pi pi-building ",
+      //       },
+      //       ,
+      //       {
+      //         label: "OPA",
+      //         icon: "pi pi-building ",
+      //       },
+      //     ],
+      //   },
+      //   {
+      //     separator: true,
+      //   },
+      //   // Fields
+      //   {
+      //     label: "Field",
+      //     icon: "pi pi-book ",
+      //     items: [
+      //       {
+      //         label: "Mathematics",
+      //         icon: "pi pi-book ",
+      //       },
+      //       {
+      //         label: "Physics",
+      //         icon: "pi pi-book ",
+      //       },
+      //       ,
+      //       {
+      //         label: "Programming",
+      //         icon: "pi pi-book ",
+      //       },
+      //       ,
+      //       {
+      //         label: "Linguistics",
+      //         icon: "pi pi-book ",
+      //       },
+      //       ,
+      //       {
+      //         label: "Physics",
+      //         icon: "pi pi-book ",
+      //       },
+      //     ],
+      //   },
+      //   {
+      //     separator: true,
+      //   },
+      // ],
     },
     {
       url: "/about",
@@ -157,7 +159,7 @@ export default function ToolbarMenu() {
   ];
 
   return (
-    <div className="card absolute top-0 left-0 px-4 py-3 w-full fixedPosition">
+    <div className="card  ">
       <Menubar model={items} start={start} end={end} />
     </div>
   );
