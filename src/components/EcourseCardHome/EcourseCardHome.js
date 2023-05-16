@@ -94,10 +94,10 @@ function EcourseCardHome() {
           <div className="flex flex-column align-items-center gap-3 py-5">
             <img
               className="w-9 shadow-2 border-round"
-              src={`https://primefaces.org/cdn/primereact/images/product/${ecourse.image}`}
-              alt={ecourse.name}
+              src={ecourse.image}
+              alt={ecourse.title}
             />
-            <div className="text-2xl font-bold">{ecourse.name}</div>
+            <div className="text-2xl font-bold">{ecourse.title}</div>
             <Rating value={ecourse.rating} readOnly cancel={false}></Rating>
           </div>
           <div className="flex align-items-center justify-content-between">

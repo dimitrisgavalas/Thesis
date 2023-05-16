@@ -1,8 +1,8 @@
 import React from "react";
-import "./Ecourse.css";
+import "./SingleEcourse.css";
 import { Image } from "primereact/image";
 
-function Ecourses() {
+function SingleEcourse() {
   const img = ["images/thumbnail.png"];
 
   // Sample course data, you can replace this with data fetched from an API or database
@@ -89,4 +89,4 @@ function Ecourses() {
   );
 }
 
-export default Ecourses;
+export default SingleEcourse;
