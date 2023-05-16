@@ -2,11 +2,7 @@ import React from "react";
 import { Link } from "react-router-dom";
 import "./EcourseMainPage.css";
 
-// Import components
-import Filters from "../../components/Filters/Filters";
-import EcourseCardHome from "../../components/EcourseCardHome/EcourseCardHome";
-
-function EcourseMainPage({ ecourses }) {
+function EcourseMainPage() {
   return (
     <div>
       <div>
