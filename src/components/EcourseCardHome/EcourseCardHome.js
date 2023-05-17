@@ -9,8 +9,9 @@ function EcourseCardHome() {
   const [ecourses, setProducts] = useState([]);
   const [layout, setLayout] = useState("grid"); //to useState jekinaei me to grid
 
+  // slice=ecourses from object array we want to view in home page
   useEffect(() => {
-    EcoursesData.getProducts().then((data) => setProducts(data.slice(0, 12)));
+    EcoursesData.getProducts().then((data) => setProducts(data.slice(0, 9)));
   }, []);
 
   // Chips me "Online", "On Campus", "Hybrid"
@@ -138,7 +139,7 @@ function EcourseCardHome() {
   return (
     <div className="card">
       <DataView
-        // kouti me ta 9 ecourses sthn arxikh
+        // kouti me ta 'x'(ex.9) ecourses sthn arxikh
         value={ecourses}
         itemTemplate={itemTemplate}
         layout={layout}

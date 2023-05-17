@@ -102,7 +102,7 @@ export default function ToolbarMenu() {
   ];
 
   const start = (
-    <img alt="logo" src="images/UNIPI.jpg" height="40" className="mr-2"></img>
+    <img alt="logo" src="/images/UNIPI.jpg" height="40" className="mr-2"></img>
   );
   const end = (
     // Fragment = lets you group elements without a wrapper node.

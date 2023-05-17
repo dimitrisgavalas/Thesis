@@ -1,6 +1,8 @@
 import React from "react";
 import "./Filters.css";
+import { EcoursesData } from "../../mock-d/EcoursesData";
 
+// EcoursesData.getUniversityName()
 function UniversityFilter({ universities, onChange }) {
   return (
     <div className="filter">

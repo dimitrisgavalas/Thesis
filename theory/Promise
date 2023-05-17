@@ -1,0 +1,32 @@
+A Promise is a built-in object in JavaScript that is used for asynchronous operations. It's essentially a placeholder for a value that is not yet known, typically because the operation is still in progress.
+
+A Promise is in one of three states:
+
+Pending: The Promise's outcome hasn't yet been determined, because the asynchronous operation that will produce its result hasn't completed yet.
+
+Fulfilled: The asynchronous operation has completed, and the Promise has a resulting value.
+
+Rejected: The asynchronous operation failed, and the Promise will never be fulfilled. In the rejected state, a Promise has a reason that indicates why the operation failed.
+
+Promises can be chained together to perform a sequence of asynchronous operations one after the other. Once a Promise is fulfilled or rejected, it is considered settled, and its state cannot change.
+
+Here's a simple example of creating a new Promise:
+let p = new Promise((resolve, reject) => {
+let a = 1 + 1;
+if (a == 2) {
+resolve('Success!');
+} else {
+reject('Failed!');
+}
+});
+
+p.then(message => {
+console.log('This is in the then ' + message);
+}).catch(err => {
+console.log('This is the catch ' + err);
+});
+In the above example, a new Promise p is created. It does a simple addition operation, and if the result is 2, it calls resolve with a success message. If the result is anything else, it calls reject with a failure message. The then method is called if the Promise is fulfilled, and the catch method is called if the Promise is rejected.
+
+In the context of your previous code snippet, the Promise.resolve function is used to return a Promise that is already fulfilled with the provided value, mimicking the behavior of an asynchronous operation that has completed.
+
+
