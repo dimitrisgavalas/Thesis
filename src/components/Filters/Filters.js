@@ -3,20 +3,12 @@ import "./Filters.css";
 import { EcoursesData } from "../../mock-d/EcoursesData";
 
 // EcoursesData.getUniversityName()
-function UniversityFilter({ universities, onChange }) {
+function Filters({ universities, onChange }) {
   return (
-    <div className="filter">
-      <label htmlFor="university">University:</label>
-      <select id="university" onChange={onChange}>
-        <option value="">All</option>
-        {universities.map((university) => (
-          <option key={university.id} value={university.id}>
-            {university.name}
-          </option>
-        ))}
-      </select>
+    <div className="border-1 surface-border border-round p-4 m-2">
+      <h1>Filters:</h1>
     </div>
   );
 }
 
-export default UniversityFilter;
+export default Filters;

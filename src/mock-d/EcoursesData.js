@@ -4,7 +4,7 @@ const img = ["/images/thumbnail.png"];
 
 export const EcoursesData = {
   // method that returns an array of Ecourse objects that appear in Home page
-  getProductsData() {
+  getHomePageEcourseData() {
     return [
       {
         id: "1000",
@@ -17,7 +17,7 @@ export const EcoursesData = {
         professors: ["Dimitris Dimitris", "Gavalas Gavalas"],
         duration: "12 weeks",
         ECTS: 6,
-        language: "Greek, English",
+        language: ["Greek", "English"],
         description:
           "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
         rating: 5,
@@ -27,14 +27,14 @@ export const EcoursesData = {
         title: "Algebra 2",
         image: img,
         price: 650,
-        category: "Programming",
-        ecourseLocation: "Hybrid",
+        category: "Mathematics",
+        ecourseLocation: "Online",
 
         university: "University of Piraeus",
         professors: ["Dimitris Dimitris", "Gavalas Gavalas"],
         duration: "12 weeks",
         ECTS: 6,
-        language: "Greek, English",
+        language: ["Greek", "English"],
         description:
           "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
         rating: 5,
@@ -44,13 +44,13 @@ export const EcoursesData = {
         title: "AI Bootcamp",
         image: img,
         price: 650,
-        category: "Programming",
+        category: "Physics",
         ecourseLocation: "Hybrid",
         university: "University of Piraeus",
         professors: ["Dimitris Dimitris", "Gavalas Gavalas"],
         duration: "12 weeks",
         ECTS: 6,
-        language: "Greek, English",
+        language: ["Greek", "English"],
         description:
           "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
         rating: 5,
@@ -60,13 +60,13 @@ export const EcoursesData = {
         title: "Algebra 1",
         image: img,
         price: 650,
-        category: "Programming",
-        ecourseLocation: "Hybrid",
+        category: "Biology",
+        ecourseLocation: "On Campus",
         university: "University of Piraeus",
         professors: ["Dimitris Dimitris", "Gavalas Gavalas"],
         duration: "12 weeks",
         ECTS: 6,
-        language: "Greek, English",
+        language: ["Greek", "English"],
         description:
           "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
         rating: 5,
@@ -76,13 +76,13 @@ export const EcoursesData = {
         title: "Python Bootcamp",
         image: img,
         price: 650,
-        category: "Programming",
-        ecourseLocation: "Hybrid",
+        category: "English",
+        ecourseLocation: "On Campus",
         university: "University of Piraeus",
         professors: ["Dimitris Dimitris", "Gavalas Gavalas"],
         duration: "12 weeks",
         ECTS: 6,
-        language: "Greek, English",
+        language: ["Greek", "English"],
         description:
           "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
         rating: 5,
@@ -92,13 +92,13 @@ export const EcoursesData = {
         title: "Web Development Bootcamp",
         image: img,
         price: 650,
-        category: "Programming",
+        category: "Greek",
         ecourseLocation: "Hybrid",
         university: "University of Piraeus",
         professors: ["Dimitris Dimitris", "Gavalas Gavalas"],
         duration: "12 weeks",
         ECTS: 6,
-        language: "Greek, English",
+        language: ["Greek", "English"],
         description:
           "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
         rating: 5,
@@ -108,14 +108,13 @@ export const EcoursesData = {
         title: "Web Development Bootcamp",
         image: img,
         price: 650,
-        category: "Programming",
-        ecourseLocation: "Hybrid",
-
+        category: "Linguistics",
+        ecourseLocation: "Online",
         university: "University of Piraeus",
         professors: ["Dimitris Dimitris", "Gavalas Gavalas"],
         duration: "12 weeks",
         ECTS: 6,
-        language: "Greek, English",
+        language: ["Greek", "English"],
         description:
           "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
         rating: 5,
@@ -125,13 +124,13 @@ export const EcoursesData = {
         title: "Web Development Bootcamp",
         image: img,
         price: 650,
-        category: "Programming",
+        category: "Psychology",
         ecourseLocation: "Hybrid",
         university: "University of Piraeus",
         professors: ["Dimitris Dimitris", "Gavalas Gavalas"],
         duration: "12 weeks",
         ECTS: 6,
-        language: "Greek, English",
+        language: ["Greek", "English"],
         description:
           "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
         rating: 5,
@@ -141,13 +140,13 @@ export const EcoursesData = {
         title: "Web Development Bootcamp",
         image: img,
         price: 650,
-        category: "Programming",
-        ecourseLocation: "Hybrid",
+        category: "History",
+        ecourseLocation: "On Campus",
         university: "University of Piraeus",
         professors: ["Dimitris Dimitris", "Gavalas Gavalas"],
         duration: "12 weeks",
         ECTS: 6,
-        language: "Greek, English",
+        language: ["Greek", "English"],
         description:
           "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
         rating: 5,
@@ -156,11 +155,11 @@ export const EcoursesData = {
   },
 
   // method that returns an array of All Ecourse objects
-  getAllProducts() {
+  getAllEcoursesData() {
     return [
       {
         id: "1000",
-        title: "Web Development Bootcamp",
+        title: "Web Develoaaapment Bootcamp",
         image: img,
         price: 650,
         category: "Programming",
@@ -169,152 +168,152 @@ export const EcoursesData = {
         professors: ["Dimitris Dimitris", "Gavalas Gavalas"],
         duration: "12 weeks",
         ECTS: 6,
-        language: "Greek, English",
+        language: ["Greek", "English"],
         description:
           "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
-        rating: 1,
+        rating: 5,
       },
       {
         id: "1001",
-        title: "Web Development Bootcamp",
+        title: "Algebra 2",
         image: img,
         price: 650,
-        category: "Programming",
-        ecourseLocation: "Hybrid",
+        category: "Mathematics",
+        ecourseLocation: "Online",
+
         university: "University of Piraeus",
         professors: ["Dimitris Dimitris", "Gavalas Gavalas"],
         duration: "12 weeks",
         ECTS: 6,
-        language: "Greek, English",
+        language: ["Greek", "English"],
         description:
           "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
-        rating: 1,
+        rating: 5,
       },
       {
         id: "1002",
-        title: "Web Development Bootcamp",
+        title: "AI Bootcamp",
         image: img,
         price: 650,
-        category: "Programming",
+        category: "Physics",
         ecourseLocation: "Hybrid",
         university: "University of Piraeus",
         professors: ["Dimitris Dimitris", "Gavalas Gavalas"],
         duration: "12 weeks",
         ECTS: 6,
-        language: "Greek, English",
+        language: ["Greek", "English"],
         description:
           "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
-        rating: 1,
+        rating: 5,
       },
       {
         id: "1003",
-        title: "Web Development Bootcamp",
+        title: "Algebra 1",
         image: img,
         price: 650,
-        category: "Programming",
-        ecourseLocation: "Hybrid",
+        category: "Biology",
+        ecourseLocation: "On Campus",
         university: "University of Piraeus",
         professors: ["Dimitris Dimitris", "Gavalas Gavalas"],
         duration: "12 weeks",
         ECTS: 6,
-        language: "Greek, English",
+        language: ["Greek", "English"],
         description:
           "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
-        rating: 1,
+        rating: 5,
       },
       {
         id: "1004",
-        title: "Web Development Bootcamp",
+        title: "Python Bootcamp",
         image: img,
         price: 650,
-        category: "Programming",
-        ecourseLocation: "Hybrid",
-        university: "University of West Attica",
+        category: "English",
+        ecourseLocation: "On Campus",
+        university: "University of Piraeus",
         professors: ["Dimitris Dimitris", "Gavalas Gavalas"],
         duration: "12 weeks",
         ECTS: 6,
-        language: "Greek, English",
+        language: ["Greek", "English"],
         description:
           "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
-        rating: 1,
+        rating: 5,
       },
       {
         id: "1005",
         title: "Web Development Bootcamp",
         image: img,
         price: 650,
-        category: "Programming",
+        category: "Greek",
         ecourseLocation: "Hybrid",
-        university: "University of West Attica",
+        university: "University of Piraeus",
         professors: ["Dimitris Dimitris", "Gavalas Gavalas"],
         duration: "12 weeks",
         ECTS: 6,
-        language: "Greek, English",
+        language: ["Greek", "English"],
         description:
           "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
-        rating: 2,
+        rating: 5,
       },
       {
         id: "1006",
         title: "Web Development Bootcamp",
         image: img,
         price: 650,
-        category: "Programming",
-        ecourseLocation: "Hybrid",
-        university: "University of West Attica",
+        category: "Linguistics",
+        ecourseLocation: "Online",
+        university: "University of Piraeus",
         professors: ["Dimitris Dimitris", "Gavalas Gavalas"],
         duration: "12 weeks",
         ECTS: 6,
-        language: "Greek, English",
+        language: ["Greek", "English"],
         description:
           "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
-        rating: 3,
+        rating: 5,
       },
       {
         id: "1007",
         title: "Web Development Bootcamp",
         image: img,
         price: 650,
-        category: "Programming",
+        category: "Psychology",
         ecourseLocation: "Hybrid",
-        university: "University of West Attica",
+        university: "University of Piraeus",
         professors: ["Dimitris Dimitris", "Gavalas Gavalas"],
         duration: "12 weeks",
         ECTS: 6,
-        language: "Greek, English",
+        language: ["Greek", "English"],
         description:
           "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
-        rating: 3,
+        rating: 5,
       },
       {
         id: "1008",
         title: "Web Development Bootcamp",
         image: img,
         price: 650,
-        category: "Programming",
-        ecourseLocation: "Hybrid",
-        university: "EMP",
+        category: "History",
+        ecourseLocation: "On Campus",
+        university: "University of Piraeus",
         professors: ["Dimitris Dimitris", "Gavalas Gavalas"],
         duration: "12 weeks",
         ECTS: 6,
-        language: "Greek, English",
+        language: ["Greek", "English"],
         description:
           "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
-        rating: 4,
+        rating: 5,
       },
-      ,
       {
         id: "1009",
         title: "Web Development Bootcamp",
         image: img,
         price: 650,
-        category: "Programming",
+        category: "Philosophy",
         ecourseLocation: "Hybrid",
         university: "EMP",
         professors: ["Dimitris Dimitris", "Gavalas Gavalas"],
         duration: "12 weeks",
         ECTS: 6,
-        language: "Greek, English",
+        language: ["Greek", "English"],
         description:
           "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
         rating: 4,
@@ -324,13 +323,13 @@ export const EcoursesData = {
         title: "Web Development Bootcamp",
         image: img,
         price: 650,
-        category: "Programming",
-        ecourseLocation: "Hybrid",
+        category: "Engineering",
+        ecourseLocation: "Online",
         university: "EMP",
         professors: ["Dimitris Dimitris", "Gavalas Gavalas"],
         duration: "12 weeks",
         ECTS: 6,
-        language: "Greek, English",
+        language: ["Greek", "English"],
         description:
           "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
         rating: 3,
@@ -340,13 +339,13 @@ export const EcoursesData = {
         title: "Web Development Bootcamp",
         image: img,
         price: 650,
-        category: "Programming",
-        ecourseLocation: "Hybrid",
+        category: "Art",
+        ecourseLocation: "On Campus",
         university: "EMP",
         professors: ["Dimitris Dimitris", "Gavalas Gavalas"],
         duration: "12 weeks",
         ECTS: 6,
-        language: "Greek, English",
+        language: ["Greek", "English"],
         description:
           "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
         rating: 2,
@@ -357,12 +356,12 @@ export const EcoursesData = {
         image: img,
         price: 650,
         category: "Programming",
-        ecourseLocation: "Hybrid",
+        ecourseLocation: "Online",
         university: "OPA",
         professors: ["Dimitris Dimitris", "Gavalas Gavalas"],
         duration: "12 weeks",
         ECTS: 6,
-        language: "Greek, English",
+        language: ["Greek", "English"],
         description:
           "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
         rating: 4,
@@ -372,13 +371,13 @@ export const EcoursesData = {
         title: "Web Development Bootcamp",
         image: img,
         price: 650,
-        category: "Programming",
+        category: "Mathematics",
         ecourseLocation: "Hybrid",
         university: "OPA",
         professors: ["Dimitris Dimitris", "Gavalas Gavalas"],
         duration: "12 weeks",
         ECTS: 6,
-        language: "Greek, English",
+        language: ["Greek", "English"],
         description:
           "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
         rating: 11,
@@ -388,13 +387,13 @@ export const EcoursesData = {
         title: "Web Development Bootcamp",
         image: img,
         price: 650,
-        category: "Programming",
+        category: "Physics",
         ecourseLocation: "Hybrid",
         university: "OPA",
         professors: ["Dimitris Dimitris", "Gavalas Gavalas"],
         duration: "12 weeks",
         ECTS: 6,
-        language: "Greek, English",
+        language: ["Greek", "English"],
         description:
           "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
         rating: 5,
@@ -404,13 +403,13 @@ export const EcoursesData = {
         title: "Web Development Bootcamp",
         image: img,
         price: 650,
-        category: "Programming",
-        ecourseLocation: "Hybrid",
+        category: "Biology",
+        ecourseLocation: "On Campus",
         university: "OPA",
         professors: ["Dimitris Dimitris", "Gavalas Gavalas"],
         duration: "12 weeks",
         ECTS: 6,
-        language: "Greek, English",
+        language: ["Greek", "English"],
         description:
           "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
         rating: 4,
@@ -420,13 +419,13 @@ export const EcoursesData = {
         title: "Web Development Bootcamp",
         image: img,
         price: 650,
-        category: "Programming",
+        category: "English",
         ecourseLocation: "Hybrid",
         university: "University of Athens",
         professors: ["Dimitris Dimitris", "Gavalas Gavalas"],
         duration: "12 weeks",
         ECTS: 6,
-        language: "Greek, English",
+        language: ["Greek", "English"],
         description:
           "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
         rating: 4.5,
@@ -436,13 +435,13 @@ export const EcoursesData = {
         title: "Web Development Bootcamp",
         image: img,
         price: 650,
-        category: "Programming",
-        ecourseLocation: "Hybrid",
+        category: "Greek",
+        ecourseLocation: "On Campus",
         university: "University of Athens",
         professors: ["Dimitris Dimitris", "Gavalas Gavalas"],
         duration: "12 weeks",
         ECTS: 6,
-        language: "Greek, English",
+        language: ["Greek", "English"],
         description:
           "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
         rating: 5,
@@ -452,13 +451,13 @@ export const EcoursesData = {
         title: "Web Development Bootcamp",
         image: img,
         price: 650,
-        category: "Programming",
-        ecourseLocation: "Hybrid",
+        category: "Linguistics",
+        ecourseLocation: "Online",
         university: "University of Athens",
         professors: ["Dimitris Dimitris", "Gavalas Gavalas"],
         duration: "12 weeks",
         ECTS: 6,
-        language: "Greek, English",
+        language: ["Greek", "English"],
         description:
           "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
         rating: 5,
@@ -468,13 +467,13 @@ export const EcoursesData = {
         title: "Web Development Bootcamp",
         image: img,
         price: 650,
-        category: "Programming",
+        category: "Law",
         ecourseLocation: "Hybrid",
         university: "University of Athens",
         professors: ["Dimitris Dimitris", "Gavalas Gavalas"],
         duration: "12 weeks",
         ECTS: 6,
-        language: "Greek, English",
+        language: ["Greek", "English"],
         description:
           "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
         rating: 5,
@@ -484,13 +483,13 @@ export const EcoursesData = {
         title: "Web Development Bootcamp",
         image: img,
         price: 650,
-        category: "Programming",
+        category: "Psychology",
         ecourseLocation: "Hybrid",
         university: "Panteion University",
         professors: ["Dimitris Dimitris", "Gavalas Gavalas"],
         duration: "12 weeks",
         ECTS: 6,
-        language: "Greek, English",
+        language: ["Greek", "English"],
         description:
           "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
         rating: 5,
@@ -500,13 +499,13 @@ export const EcoursesData = {
         title: "Web Development Bootcamp",
         image: img,
         price: 650,
-        category: "Programming",
-        ecourseLocation: "Hybrid",
+        category: "Archaelogy",
+        ecourseLocation: "Online",
         university: "Panteion University",
         professors: ["Dimitris Dimitris", "Gavalas Gavalas"],
         duration: "12 weeks",
         ECTS: 6,
-        language: "Greek, English",
+        language: ["Greek", "English"],
         description:
           "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
         rating: 5,
@@ -516,13 +515,13 @@ export const EcoursesData = {
         title: "Web Development Bootcamp",
         image: img,
         price: 650,
-        category: "Programming",
-        ecourseLocation: "Hybrid",
+        category: "Philosophy",
+        ecourseLocation: "On Campus",
         university: "Panteion University",
         professors: ["Dimitris Dimitris", "Gavalas Gavalas"],
         duration: "12 weeks",
         ECTS: 6,
-        language: "Greek, English",
+        language: ["Greek", "English"],
         description:
           "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
         rating: 5,
@@ -532,13 +531,13 @@ export const EcoursesData = {
         title: "Web Development Bootcamp",
         image: img,
         price: 650,
-        category: "Programming",
+        category: "Engineering",
         ecourseLocation: "Hybrid",
         university: "Panteion University",
         professors: ["Dimitris Dimitris", "Gavalas Gavalas"],
         duration: "12 weeks",
         ECTS: 6,
-        language: "Greek, English",
+        language: ["Greek", "English"],
         description:
           "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
         rating: 5,
@@ -548,13 +547,13 @@ export const EcoursesData = {
         title: "Web Development Bootcamp",
         image: img,
         price: 650,
-        category: "Programming",
-        ecourseLocation: "Hybrid",
+        category: "Art",
+        ecourseLocation: "On Campus",
         university: "Aristotle University of Thessaloniki",
         professors: ["Dimitris Dimitris", "Gavalas Gavalas"],
         duration: "12 weeks",
         ECTS: 6,
-        language: "Greek, English",
+        language: ["Greek", "English"],
         description:
           "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
         rating: 5,
@@ -565,12 +564,12 @@ export const EcoursesData = {
         image: img,
         price: 650,
         category: "Programming",
-        ecourseLocation: "Hybrid",
+        ecourseLocation: "Online",
         university: "Aristotle University of Thessaloniki",
         professors: ["Dimitris Dimitris", "Gavalas Gavalas"],
         duration: "12 weeks",
         ECTS: 6,
-        language: "Greek, English",
+        language: ["Greek", "English"],
         description:
           "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
         rating: 5,
@@ -581,12 +580,12 @@ export const EcoursesData = {
         image: img,
         price: 650,
         category: "Programming",
-        ecourseLocation: "Hybrid",
+        ecourseLocation: "On Campus",
         university: "Aristotle University of Thessaloniki",
         professors: ["Dimitris Dimitris", "Gavalas Gavalas"],
         duration: "12 weeks",
         ECTS: 6,
-        language: "Greek, English",
+        language: ["Greek", "English"],
         description:
           "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
         rating: 5,
@@ -597,12 +596,12 @@ export const EcoursesData = {
         image: img,
         price: 650,
         category: "Programming",
-        ecourseLocation: "Hybrid",
+        ecourseLocation: "Online",
         university: "Aristotle University of Thessaloniki",
         professors: ["Dimitris Dimitris", "Gavalas Gavalas"],
         duration: "12 weeks",
         ECTS: 6,
-        language: "Greek, English",
+        language: ["Greek", "English"],
         description:
           "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
         rating: 5,
@@ -644,29 +643,14 @@ export const EcoursesData = {
     ];
   },
 
-  // method that returns a Promise that resolves with the first five products from
-  // getProductsData. In a real application, this method might be used to fetch a
-  // small number of products for a preview or a "mini" view.
-  getProductsMini() {
-    return Promise.resolve(this.getProductsData().slice(0, 5));
+  //  method that returns a Promise that resolves with all ecourses from getHomePageEcourseData.
+  getEcoursesHomePage() {
+    return Promise.resolve(this.getHomePageEcourseData());
   },
 
-  // similar to getProductsMini, but it returns the first ten products.
-  getProductsSmall() {
-    return Promise.resolve(this.getProductsData().slice(0, 10));
-  },
-
-  //  method that returns a Promise that resolves with all products from getAllProducts.
-  getProducts() {
-    return Promise.resolve(this.getProductsData());
-  },
-
-  getProductsWithOrdersSmall() {
-    return Promise.resolve(this.getProductsWithOrdersData().slice(0, 10));
-  },
-
-  getProductsWithOrders() {
-    return Promise.resolve(this.getProductsWithOrdersData());
+  //  method that returns a Promise that resolves with all Ecourses from getAllEcourses.
+  getAllEcourses() {
+    return Promise.resolve(this.getAllEcoursesData());
   },
 };
 
@@ -1022,3 +1006,41 @@ export const EcoursesData = {
 //     },
 //   ];
 // },
+
+// getProductsWithOrdersSmall() {
+//   return Promise.resolve(this.getProductsWithOrdersData().slice(0, 10));
+// },
+
+// getEcoursesWithOrders() {
+//   return Promise.resolve(this.getProductsWithOrdersData());
+// },
+
+// method that returns a Promise that resolves with the first five products from
+// // getHomePageEcourseData. In a real application, this method might be used to fetch a
+// // small number of products for a preview or a "mini" view.
+// getEcoursesMini() {
+//   return Promise.resolve(this.getHomePageEcourseData().slice(0, 5));
+// },
+
+// // similar to getEcoursesMini, but it returns the first ten products.
+// getEcoursesSmall() {
+//   return Promise.resolve(this.getHomePageEcourseData().slice(0, 10));
+// },
+
+// Categories{
+//   Computer Science
+//   Programming
+//   Mathematics
+//   Physics
+//   Biology
+//   English
+//   Greek
+//   Linguistics
+//   Law
+//   Psychology
+//   History-Archaelogy
+//   Philosophy
+//   Engineering
+//   Art
+
+// }

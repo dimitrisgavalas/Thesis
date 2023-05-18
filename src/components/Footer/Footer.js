@@ -4,7 +4,7 @@ import { Button } from "primereact/button";
 
 function Footer() {
   return (
-    <footer className="down pt-7 pb-7 flex justify-content-center border-2 surface-border border-round p-2">
+    <footer className="m-2 down pt-7 pb-7 flex justify-content-center border-2 surface-border border-round p-2">
       <a href="/contact">
         {" "}
         <Button icon="pi pi-twitter" className="mr-2" />

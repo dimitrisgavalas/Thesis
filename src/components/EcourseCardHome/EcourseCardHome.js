@@ -6,12 +6,14 @@ import { Rating } from "primereact/rating";
 import { Tag } from "primereact/tag";
 
 function EcourseCardHome() {
-  const [ecourses, setProducts] = useState([]);
+  const [ecourses, setEcourses] = useState([]);
   const [layout, setLayout] = useState("grid"); //to useState jekinaei me to grid
 
   // slice=ecourses from object array we want to view in home page
   useEffect(() => {
-    EcoursesData.getProducts().then((data) => setProducts(data.slice(0, 9)));
+    EcoursesData.getEcoursesHomePage().then((data) =>
+      setEcourses(data.slice(0, 9))
+    );
   }, []);
 
   // Chips me "Online", "On Campus", "Hybrid"
