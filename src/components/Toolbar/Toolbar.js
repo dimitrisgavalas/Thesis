@@ -14,7 +14,6 @@ export default function ToolbarMenu() {
     {
       url: "/",
       label: "Home",
-      // icon: "pi pi-fw pi-power-off",
     },
     {
       label: "E-Courses",

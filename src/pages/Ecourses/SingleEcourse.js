@@ -5,7 +5,7 @@ import { Image } from "primereact/image";
 function SingleEcourse() {
   const img = ["images/thumbnail.png"];
 
-  // Sample course data, you can replace this with data fetched from an API or database. Will use mock data from mock-d
+  // Sample course data,  Will replace with mock data from mock-d in the future
   const course = {
     id: 1,
     title: "Introduction to Artificial Intelligence",
@@ -71,7 +71,7 @@ function SingleEcourse() {
         </div>
         <div className="contact-university">
           <h3>Contact University</h3>
-          {/* Add your contact form or contact information here */}
+          {/* Contact Info*/}
         </div>
         <div className="similar-courses">
           <h3>Similar Courses</h3>
