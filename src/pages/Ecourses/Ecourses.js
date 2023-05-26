@@ -1,8 +1,9 @@
+//Test. H selida pou emfanizetai otan patame sto Ecourses-->Field.
 import React from "react";
 import Filters from "../../components/Filters/Filters";
 import EcourseCard from "../../components/EcoursesPages/EcoursesCard";
 
-function Home() {
+function Ecourses() {
   return (
     <div className="container-fluid">
       <Filters />
@@ -11,4 +12,4 @@ function Home() {
   );
 }
 
-export default Home;
+export default Ecourses;

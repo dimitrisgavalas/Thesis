@@ -27,3 +27,9 @@ class Columns extends React.Component {
 }
 You can use <></> the same way you’d use any other element except that it doesn’t support keys or attributes.
 
+hello = function() {
+  return "Hello World!";
+}
+hello = () => {
+  return "Hello World!";
+}
