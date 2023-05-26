@@ -1,9 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { EcoursesData } from "../../mock-d/EcoursesData";
-
 import "./Ecourse.css";
 import EcourseCard from "./EcourseCard";
-import UniversityFilter from "../../components/Filters/Filters";
 
 function Ecourses() {
   const img = ["images/thumbnail.png"];
