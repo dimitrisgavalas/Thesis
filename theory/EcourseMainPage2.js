@@ -1,25 +1,23 @@
+//Test. H selida pou emfanizetai otan patame sto Ecourses-->Field.
+
 import React, { useState, useEffect } from "react";
 import "./EcourseMainPage.css";
-import { EcoursesData } from "../../mock-d/EcoursesData";
-import { Button } from "primereact/button";
-import { DataView, DataViewLayoutOptions } from "primereact/dataview";
-import { Rating } from "primereact/rating";
-import { Tag } from "primereact/tag";
-import Filters from "../../components/Filters/Filters";
-import Card from "./Card";
+import { EcoursesData } from "../src/mock-d/EcoursesData";
+// import { Button } from "primereact/button";
+// import { DataView, DataViewLayoutOptions } from "primereact/dataview";
+// import { Rating } from "primereact/rating";
+// import { Tag } from "primereact/tag";
+// import Filters from "../../components/Filters/Filters";
+import Card from "../src/components/EcoursesPages/Card";
 
 function EcourseMainPage() {
   const [ecourse, setEcourse] = useState(EcoursesData);
   return (
-    // <div className="border-1 surface-border border-round p-4 m-2">
-    //   <h1>Filters:</h1>
-    // </div>
-
     <>
       <div className="container-fluid">
         <div className="row">
           <h1 className="col-12 text-center my-3 fw-bold">E-Courses</h1>
-          <Card item={ecourse} />
+          <Card item={setEcourse} />
         </div>
       </div>
     </>

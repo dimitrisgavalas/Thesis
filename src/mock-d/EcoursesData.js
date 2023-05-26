@@ -21,6 +21,11 @@ export const EcoursesData = {
         description:
           "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
         rating: 5,
+        contact: [
+          "+302100000000",
+          "mailto:EMAILADDRESS",
+          "instagram://user?username={USERNAME}",
+        ],
       },
       {
         id: "1001",
@@ -38,6 +43,11 @@ export const EcoursesData = {
         description:
           "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
         rating: 5,
+        contact: [
+          "+302100000000",
+          "mailto:EMAILADDRESS",
+          "instagram://user?username={USERNAME}",
+        ],
       },
       {
         id: "1002",
@@ -54,6 +64,11 @@ export const EcoursesData = {
         description:
           "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
         rating: 5,
+        contact: [
+          "+302100000000",
+          "mailto:EMAILADDRESS",
+          "instagram://user?username={USERNAME}",
+        ],
       },
       {
         id: "1003",
@@ -70,6 +85,11 @@ export const EcoursesData = {
         description:
           "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
         rating: 5,
+        contact: [
+          "+302100000000",
+          "mailto:EMAILADDRESS",
+          "instagram://user?username={USERNAME}",
+        ],
       },
       {
         id: "1004",
@@ -86,6 +106,11 @@ export const EcoursesData = {
         description:
           "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
         rating: 5,
+        contact: [
+          "+302100000000",
+          "mailto:EMAILADDRESS",
+          "instagram://user?username={USERNAME}",
+        ],
       },
       {
         id: "1005",
@@ -102,6 +127,11 @@ export const EcoursesData = {
         description:
           "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
         rating: 5,
+        contact: [
+          "+302100000000",
+          "mailto:EMAILADDRESS",
+          "instagram://user?username={USERNAME}",
+        ],
       },
       {
         id: "1006",
@@ -118,6 +148,11 @@ export const EcoursesData = {
         description:
           "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
         rating: 5,
+        contact: [
+          "+302100000000",
+          "mailto:EMAILADDRESS",
+          "instagram://user?username={USERNAME}",
+        ],
       },
       {
         id: "1007",
@@ -134,6 +169,11 @@ export const EcoursesData = {
         description:
           "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
         rating: 5,
+        contact: [
+          "+302100000000",
+          "mailto:EMAILADDRESS",
+          "instagram://user?username={USERNAME}",
+        ],
       },
       {
         id: "1008",
@@ -150,6 +190,11 @@ export const EcoursesData = {
         description:
           "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
         rating: 5,
+        contact: [
+          "+302100000000",
+          "mailto:EMAILADDRESS",
+          "instagram://user?username={USERNAME}",
+        ],
       },
     ];
   },
@@ -172,6 +217,11 @@ export const EcoursesData = {
         description:
           "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
         rating: 5,
+        contact: [
+          "+302100000000",
+          "mailto:EMAILADDRESS",
+          "instagram://user?username={USERNAME}",
+        ],
       },
       {
         id: "1001",
@@ -189,6 +239,11 @@ export const EcoursesData = {
         description:
           "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
         rating: 5,
+        contact: [
+          "+302100000000",
+          "mailto:EMAILADDRESS",
+          "instagram://user?username={USERNAME}",
+        ],
       },
       {
         id: "1002",
@@ -205,6 +260,11 @@ export const EcoursesData = {
         description:
           "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
         rating: 5,
+        contact: [
+          "+302100000000",
+          "mailto:EMAILADDRESS",
+          "instagram://user?username={USERNAME}",
+        ],
       },
       {
         id: "1003",
@@ -221,6 +281,11 @@ export const EcoursesData = {
         description:
           "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
         rating: 5,
+        contact: [
+          "+302100000000",
+          "mailto:EMAILADDRESS",
+          "instagram://user?username={USERNAME}",
+        ],
       },
       {
         id: "1004",
@@ -237,6 +302,11 @@ export const EcoursesData = {
         description:
           "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
         rating: 5,
+        contact: [
+          "+302100000000",
+          "mailto:EMAILADDRESS",
+          "instagram://user?username={USERNAME}",
+        ],
       },
       {
         id: "1005",
@@ -253,6 +323,11 @@ export const EcoursesData = {
         description:
           "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
         rating: 5,
+        contact: [
+          "+302100000000",
+          "mailto:EMAILADDRESS",
+          "instagram://user?username={USERNAME}",
+        ],
       },
       {
         id: "1006",
@@ -269,6 +344,11 @@ export const EcoursesData = {
         description:
           "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
         rating: 5,
+        contact: [
+          "+302100000000",
+          "mailto:EMAILADDRESS",
+          "instagram://user?username={USERNAME}",
+        ],
       },
       {
         id: "1007",
@@ -285,6 +365,11 @@ export const EcoursesData = {
         description:
           "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
         rating: 5,
+        contact: [
+          "+302100000000",
+          "mailto:EMAILADDRESS",
+          "instagram://user?username={USERNAME}",
+        ],
       },
       {
         id: "1008",
@@ -301,6 +386,11 @@ export const EcoursesData = {
         description:
           "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
         rating: 5,
+        contact: [
+          "+302100000000",
+          "mailto:EMAILADDRESS",
+          "instagram://user?username={USERNAME}",
+        ],
       },
       {
         id: "1009",
@@ -317,6 +407,11 @@ export const EcoursesData = {
         description:
           "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
         rating: 4,
+        contact: [
+          "+302100000000",
+          "mailto:EMAILADDRESS",
+          "instagram://user?username={USERNAME}",
+        ],
       },
       {
         id: "1010",
@@ -333,6 +428,11 @@ export const EcoursesData = {
         description:
           "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
         rating: 3,
+        contact: [
+          "+302100000000",
+          "mailto:EMAILADDRESS",
+          "instagram://user?username={USERNAME}",
+        ],
       },
       {
         id: "1011",
@@ -349,6 +449,11 @@ export const EcoursesData = {
         description:
           "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
         rating: 2,
+        contact: [
+          "+302100000000",
+          "mailto:EMAILADDRESS",
+          "instagram://user?username={USERNAME}",
+        ],
       },
       {
         id: "1012",
@@ -365,6 +470,11 @@ export const EcoursesData = {
         description:
           "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
         rating: 4,
+        contact: [
+          "+302100000000",
+          "mailto:EMAILADDRESS",
+          "instagram://user?username={USERNAME}",
+        ],
       },
       {
         id: "1013",
@@ -381,6 +491,11 @@ export const EcoursesData = {
         description:
           "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
         rating: 11,
+        contact: [
+          "+302100000000",
+          "mailto:EMAILADDRESS",
+          "instagram://user?username={USERNAME}",
+        ],
       },
       {
         id: "1014",
@@ -397,6 +512,11 @@ export const EcoursesData = {
         description:
           "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
         rating: 5,
+        contact: [
+          "+302100000000",
+          "mailto:EMAILADDRESS",
+          "instagram://user?username={USERNAME}",
+        ],
       },
       {
         id: "1015",
@@ -413,6 +533,11 @@ export const EcoursesData = {
         description:
           "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
         rating: 4,
+        contact: [
+          "+302100000000",
+          "mailto:EMAILADDRESS",
+          "instagram://user?username={USERNAME}",
+        ],
       },
       {
         id: "1016",
@@ -429,6 +554,11 @@ export const EcoursesData = {
         description:
           "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
         rating: 4.5,
+        contact: [
+          "+302100000000",
+          "mailto:EMAILADDRESS",
+          "instagram://user?username={USERNAME}",
+        ],
       },
       {
         id: "1017",
@@ -445,6 +575,11 @@ export const EcoursesData = {
         description:
           "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
         rating: 5,
+        contact: [
+          "+302100000000",
+          "mailto:EMAILADDRESS",
+          "instagram://user?username={USERNAME}",
+        ],
       },
       {
         id: "1018",
@@ -461,6 +596,11 @@ export const EcoursesData = {
         description:
           "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
         rating: 5,
+        contact: [
+          "+302100000000",
+          "mailto:EMAILADDRESS",
+          "instagram://user?username={USERNAME}",
+        ],
       },
       {
         id: "1019",
@@ -477,6 +617,11 @@ export const EcoursesData = {
         description:
           "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
         rating: 5,
+        contact: [
+          "+302100000000",
+          "mailto:EMAILADDRESS",
+          "instagram://user?username={USERNAME}",
+        ],
       },
       {
         id: "1020",
@@ -493,6 +638,11 @@ export const EcoursesData = {
         description:
           "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
         rating: 5,
+        contact: [
+          "+302100000000",
+          "mailto:EMAILADDRESS",
+          "instagram://user?username={USERNAME}",
+        ],
       },
       {
         id: "1021",
@@ -509,6 +659,11 @@ export const EcoursesData = {
         description:
           "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
         rating: 5,
+        contact: [
+          "+302100000000",
+          "mailto:EMAILADDRESS",
+          "instagram://user?username={USERNAME}",
+        ],
       },
       {
         id: "1022",
@@ -525,6 +680,11 @@ export const EcoursesData = {
         description:
           "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
         rating: 5,
+        contact: [
+          "+302100000000",
+          "mailto:EMAILADDRESS",
+          "instagram://user?username={USERNAME}",
+        ],
       },
       {
         id: "1023",
@@ -541,6 +701,11 @@ export const EcoursesData = {
         description:
           "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
         rating: 5,
+        contact: [
+          "+302100000000",
+          "mailto:EMAILADDRESS",
+          "instagram://user?username={USERNAME}",
+        ],
       },
       {
         id: "1024",
@@ -557,6 +722,11 @@ export const EcoursesData = {
         description:
           "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
         rating: 5,
+        contact: [
+          "+302100000000",
+          "mailto:EMAILADDRESS",
+          "instagram://user?username={USERNAME}",
+        ],
       },
       {
         id: "1025",
@@ -573,6 +743,11 @@ export const EcoursesData = {
         description:
           "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
         rating: 5,
+        contact: [
+          "+302100000000",
+          "mailto:EMAILADDRESS",
+          "instagram://user?username={USERNAME}",
+        ],
       },
       {
         id: "1026",
@@ -589,6 +764,11 @@ export const EcoursesData = {
         description:
           "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
         rating: 5,
+        contact: [
+          "+302100000000",
+          "mailto:EMAILADDRESS",
+          "instagram://user?username={USERNAME}",
+        ],
       },
       {
         id: "1027",
@@ -605,6 +785,11 @@ export const EcoursesData = {
         description:
           "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
         rating: 5,
+        contact: [
+          "+302100000000",
+          "mailto:EMAILADDRESS",
+          "instagram://user?username={USERNAME}",
+        ],
       },
     ];
   },

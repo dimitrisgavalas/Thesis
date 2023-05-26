@@ -1,6 +1,9 @@
+//Test. H selida pou emfanizetai otan patame sto Ecourses-->University.
+
 import React from "react";
 import "./SingleEcourse.css";
 import { Image } from "primereact/image";
+import { EcoursesData } from "../../../mock-d/EcoursesData";
 
 function SingleEcourse() {
   const img = ["images/thumbnail.png"];

@@ -1,3 +1,5 @@
+// component gia to EcourseMainPage
+
 import React from "react";
 
 const Card = ({ item }) => {

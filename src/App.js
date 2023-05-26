@@ -4,7 +4,7 @@ import Home from "./pages/Home/Home";
 import "./App.css";
 import Footer from "./components/Footer/Footer";
 import ToolbarMenu from "./components/Toolbar/Toolbar";
-import SingleEcourse from "./pages/Ecourses/SingleEcourse";
+import SingleEcourse from "./components/EcoursesPages/SingleEcoursePage/SingleEcourse";
 import {
   BrowserRouter,
   Routes, // instead of "Switch"
@@ -14,14 +14,11 @@ import Contact from "./pages/Contact/Contact";
 // import Home from "./pages/Home";
 // import Ecourses from "./pages/Ecourses";
 import About from "./pages/About/About";
-import EcourseMainPage from "./pages/Ecourses/EcourseMainPage";
+import EcourseMainPage from "./components/EcoursesPages/EcourseMainPage2";
 
 function App() {
   return (
-    <div
-      className="container-flu
-    id"
-    >
+    <div className="container-fluid">
       <ToolbarMenu />
       <BrowserRouter>
         <Routes>

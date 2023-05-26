@@ -1,7 +1,7 @@
 import React from "react";
 import PartnerUniversitiesRec from "../../components/PartnerUniversities/PartnerUniversities";
 import SearchBar from "../../components/SearchBar/SearchBar";
-import EcourseCardHome from "../../components/EcourseCardHome/EcourseCardHome";
+import EcourseCardHome from "../../components/EcourseCardHomePage/EcourseCardHome";
 // import Footer from "../../components/Footer/Footer";
 // import ToolbarMenu from "../../components/Toolbar/Toolbar";
 
