@@ -21,34 +21,45 @@ export default function ToolbarMenu() {
       items: [
         // Unis
         {
-          url: "/ecourses",
           label: "Universities",
           icon: "pi pi-building",
-          // items: [
-          //   {
-          //     label: "Unipi",
-          //     icon: "pi pi-building ",
-          //   },
-          //   {
-          //     label: "EMP",
-          //     icon: "pi pi-building ",
-          //   },
-          //   ,
-          //   {
-          //     label: "EKPA",
-          //     icon: "pi pi-building ",
-          //   },
-          //   ,
-          //   {
-          //     label: "PADA",
-          //     icon: "pi pi-building ",
-          //   },
-          //   ,
-          //   {
-          //     label: "OPA",
-          //     icon: "pi pi-building ",
-          //   },
-          // ],
+          items: [
+            {
+              url: "/ecourses",
+              label: "Single Ecourse",
+              icon: "pi pi-building ",
+            },
+            // {
+            //   url: "/settings",
+            //   label: "Settings",
+            //   icon: "pi pi-building ",
+            // },
+            // ,
+            {
+              url: "/profile",
+              label: "Profile",
+              icon: "pi pi-building ",
+            },
+            {
+              label: "EMP",
+              icon: "pi pi-building ",
+            },
+            ,
+            {
+              label: "EKPA",
+              icon: "pi pi-building ",
+            },
+            ,
+            {
+              label: "PADA",
+              icon: "pi pi-building ",
+            },
+            ,
+            {
+              label: "OPA",
+              icon: "pi pi-building ",
+            },
+          ],
         },
         {
           separator: true,

@@ -13,6 +13,7 @@ import SingleEcourse from "./components/EcoursesPages/SingleEcoursePage/SingleEc
 import Contact from "./pages/Contact/Contact";
 import About from "./pages/About/About";
 import Ecourses from "./pages/Ecourses/Ecourses";
+import UserProfile from "./components/UserProfile/UserProfile";
 
 function App() {
   return (
@@ -23,6 +24,8 @@ function App() {
           <Route exact path="/" element={<Home />} />
           <Route path="/ecourses" element={<SingleEcourse />} />
           <Route path="/ecourses/ecoursemainpage" element={<Ecourses />} />
+          <Route path="/profile" element={<UserProfile />} />
+
           <Route path="/contact" element={<Contact />} />
           <Route path="/about" element={<About />} />
         </Routes>

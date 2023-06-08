@@ -1,0 +1,55 @@
+.user-profile {
+    text-align: center;
+  }
+  
+  .avatar {
+    position: relative;
+    display: inline-block;
+  }
+  
+  .avatar img {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+  }
+  
+  .change-avatar {
+    display: none;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;   
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+    line-height: 100px;
+    border-radius: 50%;
+    cursor: pointer;
+    }
+    
+    .avatar:hover .change-avatar {
+    display: block;
+    }
+    
+    .tabs {
+    margin: 1rem 0;
+    }
+    
+    .tabs button {
+    background-color: transparent;
+    border: none;
+    padding: 0.5rem 1rem;
+    cursor: pointer;
+    font-size: 1rem;
+    font-weight: bold;
+    color: #007bff;
+    }
+    
+    .tabs button.active {
+    color: #000;
+    border-bottom: 2px solid #007bff;
+    }
+    
+    .tab-content {
+    padding: 1rem;
+    }
