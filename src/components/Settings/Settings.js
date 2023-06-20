@@ -32,8 +32,9 @@ function Settings({ isUniversityUser }) {
             className="w-full mb-3"
           />
         </div>
-
-        <div className="m-2 pt-5 pb-5 flex justify-content-center border-2 surface-border border-round p-2">
+        {/* m-2(megalwnei margin by 2) pt-5(padding) pb-5(xwros apo katw) flex(ta xalaei pane ola se seira) justify-content-center border-2 surface-border border-round p-2(padding apo panw ligo maybe) */}
+        {/* class="border-2 surface-border border-round p-2 m-2 down pt-7 pb-7 flex justify-content-center " */}
+        <div className="border-2 border-round surface-border p-2 pb-5 m-2">
           <h3>Notifications</h3>
           <label>
             <input type="checkbox" />
@@ -45,12 +46,12 @@ function Settings({ isUniversityUser }) {
           </label>
         </div>
 
-        <div className="m-2 pt-5 pb-5 flex justify-content-center border-2 surface-border border-round p-2">
+        <div className="m-2 pt-5 pb-5  justify-content-center border-2 surface-border border-round p-2">
           <h3>Delete Account</h3>
           <button>Delete Account</button>
         </div>
 
-        <div className="m-2 pt-5 pb-5 flex justify-content-center border-2 surface-border border-round p-2">
+        <div className="m-2 pt-5 pb-5  justify-content-center border-2 surface-border border-round p-2">
           <h3>Marketing</h3>
           <label>
             <input type="checkbox" />
@@ -58,7 +59,7 @@ function Settings({ isUniversityUser }) {
           </label>
         </div>
 
-        <div className="m-2 pt-5 pb-5 flex justify-content-center border-2 surface-border border-round p-2">
+        <div className="m-2 pt-5 pb-5 justify-content-center border-2 surface-border border-round p-2">
           {!isUniversityUser && (
             <>
               <h3>Become a University User</h3>

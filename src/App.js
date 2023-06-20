@@ -14,6 +14,7 @@ import Contact from "./pages/Contact/Contact";
 import About from "./pages/About/About";
 import Ecourses from "./pages/Ecourses/Ecourses";
 import UserProfile from "./components/UserProfile/UserProfile";
+import Favorites from "./components/Favorites/Favorites";
 
 function App() {
   return (
@@ -25,6 +26,7 @@ function App() {
           <Route path="/ecourses" element={<SingleEcourse />} />
           <Route path="/ecourses/ecoursemainpage" element={<Ecourses />} />
           <Route path="/profile" element={<UserProfile />} />
+          <Route path="/favorites" element={<Favorites />} />
 
           <Route path="/contact" element={<Contact />} />
           <Route path="/about" element={<About />} />

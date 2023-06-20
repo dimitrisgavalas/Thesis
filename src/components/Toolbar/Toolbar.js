@@ -41,7 +41,8 @@ export default function ToolbarMenu() {
               icon: "pi pi-building ",
             },
             {
-              label: "EMP",
+              url: "/favorites",
+              label: "Favs EMP",
               icon: "pi pi-building ",
             },
             ,
@@ -67,7 +68,7 @@ export default function ToolbarMenu() {
         // Fields
         {
           url: "/ecourses/ecoursemainpage",
-          label: "Field",
+          label: "Ecourses Main page Field",
           icon: "pi pi-book ",
           // items: [
           //   {

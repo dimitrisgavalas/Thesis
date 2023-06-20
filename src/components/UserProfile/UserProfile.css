@@ -2,36 +2,12 @@
     text-align: center;
   }
   
-  .avatar {
+  /* .avatar {
     position: relative;
     display: inline-block;
-  }
-  
-  .avatar img {
-    width: 100px;
-    height: 100px;
-    border-radius: 50%;
-  }
-  
-  .change-avatar {
-    display: none;
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;   
-    background-color: rgba(0, 0, 0, 0.5);
-    color: white;
-    line-height: 100px;
-    border-radius: 50%;
-    cursor: pointer;
-    }
-    
-    .avatar:hover .change-avatar {
-    display: block;
-    }
-    
-    .tabs {
+  } */
+
+  .tabs {
     margin: 1rem 0;
     }
     
@@ -42,12 +18,12 @@
     cursor: pointer;
     font-size: 1rem;
     font-weight: bold;
-    color: #007bff;
+    color: #000;
     }
     
     .tabs button.active {
-    color: #000;
-    border-bottom: 2px solid #007bff;
+    color: #6366F1;
+    border-bottom: 2px solid #6366F1;
     }
     
     .tab-content {

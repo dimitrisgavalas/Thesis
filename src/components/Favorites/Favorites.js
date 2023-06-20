@@ -1,7 +1,5 @@
 import React from "react";
-import Header from "./Header";
-import Footer from "./Footer";
-import EcourseCard from "./EcourseCard";
+// import EcourseCard from "./EcourseCard";
 import "./Favorites.css";
 
 function Favorites() {
@@ -23,17 +21,8 @@ function Favorites() {
   ];
 
   return (
-    <div>
-      <Header />
-      <div className="favorites-container">
-        <h2>My Favorite E-courses</h2>
-        <div className="favorites-grid">
-          {favoriteCourses.map((course) => (
-            <EcourseCard key={course.id} course={course} />
-          ))}
-        </div>
-      </div>
-      <Footer />
+    <div className="favorites-container">
+      <h2>My Favorite E-courses</h2>
     </div>
   );
 }
