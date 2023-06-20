@@ -1,6 +1,7 @@
 import React from "react";
 // import EcourseCard from "./EcourseCard";
 import "./Favorites.css";
+import EcoursesGrid from "../EcoursesPages/Ecoursegrid";
 
 function Favorites() {
   // This array will be replaced with the actual data fetched from the server/mock-d
@@ -23,6 +24,9 @@ function Favorites() {
   return (
     <div className="favorites-container">
       <h2>My Favorite E-courses</h2>
+      <div>
+        <EcoursesGrid />
+      </div>
     </div>
   );
 }

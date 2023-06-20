@@ -11,28 +11,37 @@ function Settings({ isUniversityUser }) {
   return (
     <div className="settings">
       <>
-        <div className="m-2 pt-5 pb-5 justify-content-center border-2 surface-border border-round p-2">
-          <label htmlFor="email" className="block text-900 font-medium mb-2">
-            Email
+        <div className="m-2 pt-5 pb-5 justify-content-center border-2 surface-border border-round p-2 ">
+          <label
+            htmlFor="email"
+            className="block text-900 font-medium mb-2 inline-block "
+          >
+            Email: (yourEmail@email.com)
           </label>
-          <InputText
+          <button className="ml-4">Change Email</button>
+          {/* <InputText
             id="email"
             type="text"
             placeholder="Email address"
             className="w-full mb-3"
-          />
-
-          <label htmlFor="password" className="block text-900 font-medium mb-2">
-            Password
+          /> */}
+          <br />
+          <br />
+          <label
+            htmlFor="password"
+            className="block text-900 font-medium mb-2 inline-block "
+          >
+            Password: ●●●●●●●●
           </label>
-          <InputText
+          <button className="ml-4">Change Password</button>
+          {/* <InputText
             id="password"
             type="password"
             placeholder="Password"
             className="w-full mb-3"
-          />
+          /> */}
         </div>
-        {/* m-2(megalwnei margin by 2) pt-5(padding) pb-5(xwros apo katw) flex(ta xalaei pane ola se seira) justify-content-center border-2 surface-border border-round p-2(padding apo panw ligo maybe) */}
+        {/* ml-6(margin left 6. xwros ejw apo adikeimeno)m-2(megalwnei margin by 2) pt-5(padding) pb-5(xwros apo katw) flex(ta xalaei pane ola se seira) justify-content-center border-2 surface-border border-round p-2(padding apo panw ligo maybe) */}
         {/* class="border-2 surface-border border-round p-2 m-2 down pt-7 pb-7 flex justify-content-center " */}
         <div className="border-2 border-round surface-border p-2 pb-5 m-2">
           <h3>Notifications</h3>
@@ -44,6 +53,8 @@ function Settings({ isUniversityUser }) {
             <input type="checkbox" />
             Notification Type 2
           </label>
+          <br />
+          <button>Save Changes</button>
         </div>
 
         <div className="m-2 pt-5 pb-5  justify-content-center border-2 surface-border border-round p-2">
@@ -57,6 +68,8 @@ function Settings({ isUniversityUser }) {
             <input type="checkbox" />
             Opt out from marketing emails
           </label>
+          <br />
+          <button>Save Changes</button>
         </div>
 
         <div className="m-2 pt-5 pb-5 justify-content-center border-2 surface-border border-round p-2">

@@ -21,7 +21,7 @@
   }
   
   .settings button {
-    background-color: #007bff;
+    background-color: #6366F1;
     color: white;
     padding: 0.5rem 1rem;
     border: none;
@@ -30,6 +30,6 @@
   }
   
   .settings button:hover {
-    background-color: #0069d9;
+    background-color: #818181;
   }
   

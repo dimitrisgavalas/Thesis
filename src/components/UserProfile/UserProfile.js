@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import Settings from "../Settings/Settings";
 import "./UserProfile.css";
 import { Menubar } from "primereact/menubar";
+import Favorites from "../Favorites/Favorites";
 
 // added isUniversityUser = false for testing will change when we fetch data for users
 function UserProfile({ isUniversityUser = false }) {
@@ -45,7 +46,10 @@ function UserProfile({ isUniversityUser = false }) {
         {activeTab === "settings" && (
           <Settings isUniversityUser={isUniversityUser} />
         )}
-        {/* Υπολοιπα Tabs. Θα προστεθουν συντομα. */}
+
+        {activeTab === "favorites" && (
+          <Favorites isUniversityUser={isUniversityUser} />
+        )}
       </div>
     </div>
   );

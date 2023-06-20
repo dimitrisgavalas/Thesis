@@ -24,8 +24,14 @@
     .tabs button.active {
     color: #6366F1;
     border-bottom: 2px solid #6366F1;
+    border-radius: 5px;
     }
-    
+
+    .tabs button:hover {
+    background-color: #e8e5e5;
+    border-radius: 5px;
+    }
+
     .tab-content {
     padding: 1rem;
     }
