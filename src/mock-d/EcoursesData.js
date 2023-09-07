@@ -811,7 +811,7 @@ export const EcoursesData = {
       },
       {
         id: "2003",
-        name: "Univesity of West Attics",
+        name: "Univesity of West Attica",
       },
       {
         id: "2004",
@@ -904,25 +904,59 @@ export const EcoursesData = {
 //   Linguistics
 //   Law
 //   Psychology
-//   History-Archaelogy
+//   History-Archaeology
 //   Philosophy
 //   Engineering
 //   Art
 
 // Categories{
-//   Computer Science
-//   Programming
-//   Mathematics
-//   Physics
-//   Biology
-//   English
-//   Greek
-//   Linguistics
-//   Law
-//   Psychology
-//   History-Archaelogy
-//   Philosophy
-//   Engineering
-//   Art
+// Computer Science
+// Programming
+// Mathematics
+// Physics
+// Biology
+// English
+// Greek
+// Linguistics
+// Law
+// Psychology
+// History-Archaelogy
+// Philosophy
+// Engineering
+// Art
 
 // }
+
+//  Προγραμματισμός
+//  Μαθηματικά
+//  Φυσική
+//  Βιολογία
+//  Αγγλικά
+//  Ελληνικά
+//  Γλωσσολογία
+//  Ψυχολογία
+//  Ιστορία-Αρχαιολογία
+//  Φιλοσοφία
+//  Μηχανική
+//  Τέχνη
+
+// Programming
+// Mathematics
+// Physics
+// Biology
+// English
+// Greek
+// Linguistics
+// Psychology
+// History-Archaeology
+// Philosophy
+// Engineering
+// Art
+
+// University of Piraeus
+// National and Kapodistrian University of Athens
+// EMP
+// Univesity of West Attica
+// OPA
+// Panteion university
+// Aristotle University of Thessaloniki
