@@ -5,234 +5,41 @@ import { Tag } from "primereact/tag";
 import { Button } from "primereact/button";
 import { DataView } from "primereact/dataview";
 import { Dropdown } from "primereact/dropdown";
-import { MultiSelect } from "primereact/multiselect"; //Selection filter
-import { FilterMatchMode, FilterOperator } from "primereact/api";
-import { InputText } from "primereact/inputtext";
-import { DataTable } from "primereact/datatable";
-import { Column } from "primereact/column";
+import Filters from "../Filters/Filters";
 
 function EcoursesGrid() {
   const [ecourses, setEcourses] = useState([]);
-  const [loading, setLoading] = useState(true);
-  const [globalFilterValue, setGlobalFilterValue] = useState("");
-
   const [sortKey, setSortKey] = useState("");
   const [sortOrder, setSortOrder] = useState(0);
   const [sortField, setSortField] = useState("");
 
-  // FilterMatchMode library for filtering purposes.
-  // contains=contain letters you search
-  // IN= tick
-  // equals=hybrid, online on ccampus
-  // All filters on header
-  const [filters, setFilters] = useState({
-    global: { value: null, matchMode: FilterMatchMode.CONTAINS },
-    name: { value: null, matchMode: FilterMatchMode.STARTS_WITH },
-    fields: { value: null, matchMode: FilterMatchMode.IN },
-    university: { value: null, matchMode: FilterMatchMode.IN },
-    location: { value: null, matchMode: FilterMatchMode.EQUALS }, //hybrid, online on ccampus
-  });
-  const [fieldsEnglish] = useState([
-    { name: "Programming" },
-    { name: "Mathematics" },
-    { name: "Physics" },
-    { name: "Biology" },
-    { name: "English" },
-    { name: "Greek" },
-    { name: "Linguistics" },
-    { name: "Psychology" },
-    { name: "History" },
-    { name: "Philosophy" },
-    { name: "Engineering" },
-    { name: "Art" },
-  ]);
-  const [universitiesEnglish] = useState([
-    { name: "University of Piraeus" },
-    { name: "National and Kapodistrian University of Athens" },
-    { name: "EMP" },
-    { name: "Univesity of West Attica" },
-    { name: "OPA" },
-    { name: "Panteion university" },
-    { name: "Aristotle University of Thessaloniki" },
-  ]);
-  const [fieldsGreek] = useState([
-    { name: "Προγραμματισμός" },
-    { name: "Μαθηματικά" },
-    { name: "Φυσική" },
-    { name: "Βιολογία" },
-    { name: "Αγγλικά" },
-    { name: "Ελληνικά" },
-    { name: "Γλωσσολογία" },
-    { name: "Ψυχολογία" },
-    { name: "Ιστορία-Αρχαιολογία" },
-    { name: "Φιλοσοφία" },
-    { name: "Μηχανική" },
-    { name: "Τέχνη" },
-  ]);
-  const [universitiesGreek] = useState([
-    { name: "Πανεπιστήμιο Πειραιώς" },
-    { name: "Εθνικό και Καποδιστριακό Πανεπιστήμιο Αθηνών" },
-    { name: "Εθνικό Μετσόβιο Πολυτεχνείο" },
-    { name: "Πανεπιστήμιο Δυτικής Αττικής" },
-    { name: "Οικονομικό Πανεπιστήμιο Αθηνών" },
-    { name: "Πάντειο Πανεπιστήμιο" },
-    { name: "Αριστοτέλειο Πανεπιστήμιο Θεσσαλονίκης" },
-  ]);
+  // const sortOptions = [
+  //   { label: "Price High to Low", value: "!price" },
+  //   { label: "Price Low to High", value: "price" },
+  // ];
 
-  const [fields] = useState(EcoursesData.getFieldName());
+  // const onSortChange = (event) => {
+  //   const value = event.value;
 
-  const sortOptions = [
-    { label: "Price High to Low", value: "!price" },
-    { label: "Price Low to High", value: "price" },
-  ];
+  //   if (value.indexOf("!") === 0) {
+  //     setSortOrder(-1);
+  //     setSortField(value.substring(1, value.length));
+  //     setSortKey(value);
+  //   } else {
+  //     setSortOrder(1);
+  //     setSortField(value);
+  //     setSortKey(value);
+  //   }
+  // };
 
-  // sorting by Price
-  const onSortChange = (event) => {
-    const value = event.value;
-    // descending
-    if (value.indexOf("!") === 0) {
-      setSortOrder(-1);
-      setSortField(value.substring(1, value.length));
-      setSortKey(value);
-      // ascending
-    } else {
-      setSortOrder(1);
-      setSortField(value);
-      setSortKey(value);
-    }
+  const header = () => {
+    return <Filters />;
   };
 
   // slice=ecourses from object array we want to view in home page. .slice(0, 9)
-  // useEffect(() => {
-  //   EcoursesData.getAllEcourses().then((data) => setEcourses(data));
-  // }, []);
   useEffect(() => {
-    EcoursesData.getAllEcourses().then((data) => {
-      setEcourses(getEcourses(data));
-      setLoading(false);
-    });
+    EcoursesData.getAllEcourses().then((data) => setEcourses(data));
   }, []);
-
-  // function takes an array of data, ensures it's a valid array
-  // (defaulting to an empty array if necessary), creates a shallow copy of the array to
-  //  avoid mutation, and then converts the date property of each element into a JavaScript
-  //  Date object. The modified array with updated date properties is then returned.
-  const getEcourses = (data) => {
-    return [...(data || [])].map((d) => {
-      d.date = new Date(d.date);
-
-      return d;
-    });
-  };
-
-  const onGlobalFilterChange = (e) => {
-    const value = e.target.value;
-    let _filters = { ...filters };
-
-    _filters["global"].value = value;
-
-    setFilters(_filters);
-    setGlobalFilterValue(value);
-  };
-
-  // field filter
-  const fieldBodyTemplate = (rowData) => {
-    const fields = rowData.fields;
-
-    return (
-      <div className="flex align-items-center gap-2">
-        <span>{fields.name}</span>
-      </div>
-    );
-  };
-
-  // field filter
-  const fieldItemTemplate = (option) => {
-    return (
-      <div className="flex align-items-center gap-2">
-        <span>{option.name}</span>
-      </div>
-    );
-  };
-
-  // University filter
-  const universityBodyTemplate = (rowData) => {
-    const universitiesEnglish = rowData.universitiesEnglish;
-
-    return (
-      <div className="flex align-items-center gap-2">
-        <span>{universitiesEnglish.name}</span>
-      </div>
-    );
-  };
-
-  // University filter
-  const universityItemTemplate = (option) => {
-    return (
-      <div className="flex align-items-center gap-2">
-        <span>{option.name}</span>
-      </div>
-    );
-  };
-
-  // location filter
-  const locationBodyTemplate = (rowData) => {
-    return (
-      <Tag value={rowData.status} severity={getLocation(rowData.status)} />
-    );
-  };
-
-  // location filter
-  const locationItemTemplate = (option) => {
-    return <Tag value={option} severity={getLocation(option)} />;
-  };
-
-  const fieldRowFilterTemplate = (options) => {
-    return (
-      <MultiSelect
-        value={options.value}
-        options={fields}
-        itemTemplate={fieldItemTemplate}
-        onChange={(e) => options.filterApplyCallback(e.value)}
-        optionLabel="name"
-        placeholder="Any"
-        className="p-column-filter"
-        maxSelectedLabels={1}
-        style={{ minWidth: "14rem" }}
-      />
-    );
-  };
-
-  const universityRowFilterTemplate = (options) => {
-    return (
-      <MultiSelect
-        value={options.value}
-        options={universitiesEnglish}
-        itemTemplate={universityItemTemplate}
-        onChange={(e) => options.filterApplyCallback(e.value)}
-        optionLabel="name"
-        placeholder="Any"
-        className="p-column-filter"
-        maxSelectedLabels={1}
-        style={{ minWidth: "14rem" }}
-      />
-    );
-  };
-
-  const locationRowFilterTemplate = (options) => {
-    return (
-      <Dropdown
-        value={options.value}
-        options={getLocation}
-        onChange={(e) => options.filterApplyCallback(e.value)}
-        itemTemplate={locationItemTemplate}
-        placeholder="Select One"
-        className="p-column-filter"
-        showClear
-        style={{ minWidth: "12rem" }}
-      />
-    );
-  };
 
   // Chips me "Online", "On Campus", "Hybrid"
   const getLocation = (ecourse) => {
@@ -300,99 +107,8 @@ function EcoursesGrid() {
     return gridItem(ecourse);
   };
 
-  // //  Header with filters
-  const header = () => {
-    return (
-      <Dropdown
-        options={sortOptions}
-        value={sortKey}
-        optionLabel="label"
-        placeholder="Sort By Price"
-        onChange={onSortChange}
-        className="w-full sm:w-14rem"
-      />
-    );
-  };
-
-  // add global search above other filters
-  const renderHeader = () => {
-    return (
-      <div className="flex justify-content-end">
-        <span className="p-input-icon-left">
-          <i className="pi pi-search" />
-          <InputText
-            value={globalFilterValue}
-            onChange={onGlobalFilterChange}
-            placeholder="Keyword Search"
-          />
-        </span>
-      </div>
-    );
-  };
-  // const header = renderHeader();
-
   return (
     <div className="card">
-      <DataTable
-        value={ecourses}
-        paginator
-        rows={10}
-        dataKey="id"
-        filters={filters}
-        filterDisplay="row"
-        loading={loading}
-        globalFilterFields={[
-          "name",
-          "country.name",
-          "fields.name",
-          "university.name",
-          "location",
-        ]}
-        header={header}
-        emptyMessage="No customers found."
-      >
-        {/* Onoma */}
-        <Column
-          field="name"
-          header="Name"
-          filter
-          filterPlaceholder="Search by name"
-          style={{ minWidth: "12rem" }}
-        />
-        {/* Field */}
-        <Column
-          header="Field" //Κατεύθυνση
-          filterField="fields"
-          showFilterMenu={false}
-          filterMenuStyle={{ width: "14rem" }}
-          style={{ minWidth: "14rem" }}
-          body={fieldBodyTemplate}
-          filter
-          filterElement={fieldRowFilterTemplate}
-        />
-        {/* University */}
-        <Column
-          header="University" //Πανεπιστήμιο
-          filterField="university"
-          showFilterMenu={false}
-          filterMenuStyle={{ width: "14rem" }}
-          style={{ minWidth: "14rem" }}
-          body={universityBodyTemplate}
-          filter
-          filterElement={universityRowFilterTemplate}
-        />
-        {/* Location */}
-        <Column
-          field="location"
-          header="Location"
-          showFilterMenu={false}
-          filterMenuStyle={{ width: "14rem" }}
-          style={{ minWidth: "12rem" }}
-          body={locationBodyTemplate}
-          filter
-          filterElement={locationRowFilterTemplate}
-        />
-      </DataTable>
       <DataView
         // kouti me ta 'x'(ex.9) ecourses
         value={ecourses}

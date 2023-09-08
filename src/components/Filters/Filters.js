@@ -82,21 +82,21 @@ function Filters() {
   //   { label: "Price Low to High", value: "price" },
   // ];
 
-  // sorting by Price
-  const onSortChange = (event) => {
-    const value = event.value;
-    // descending
-    if (value.indexOf("!") === 0) {
-      setSortOrder(-1);
-      setSortField(value.substring(1, value.length));
-      setSortKey(value);
-      // ascending
-    } else {
-      setSortOrder(1);
-      setSortField(value);
-      setSortKey(value);
-    }
-  };
+  //   // sorting by Price
+  //   const onSortChange = (event) => {
+  //     const value = event.value;
+  //     // descending
+  //     if (value.indexOf("!") === 0) {
+  //       setSortOrder(-1);
+  //       setSortField(value.substring(1, value.length));
+  //       setSortKey(value);
+  //       // ascending
+  //     } else {
+  //       setSortOrder(1);
+  //       setSortField(value);
+  //       setSortKey(value);
+  //     }
+  //   };
 
   // slice=ecourses from object array we want to view in home page. .slice(0, 9)
   // useEffect(() => {
@@ -150,44 +150,11 @@ function Filters() {
       </div>
     );
   };
-
-  // University filter
-  const universityBodyTemplate = (rowData) => {
-    const universitiesEnglish = rowData.universitiesEnglish;
-
-    return (
-      <div className="flex align-items-center gap-2">
-        <span>{universitiesEnglish.name}</span>
-      </div>
-    );
-  };
-
-  // University filter
-  const universityItemTemplate = (option) => {
-    return (
-      <div className="flex align-items-center gap-2">
-        <span>{option.name}</span>
-      </div>
-    );
-  };
-
-  // location filter
-  const locationBodyTemplate = (rowData) => {
-    return (
-      <Tag value={rowData.status} severity={getLocation(rowData.status)} />
-    );
-  };
-
-  // location filter
-  const locationItemTemplate = (option) => {
-    return <Tag value={option} severity={getLocation(option)} />;
-  };
-
   const fieldRowFilterTemplate = (options) => {
     return (
       <MultiSelect
         value={options.value}
-        options={fields}
+        options={fieldsEnglish}
         itemTemplate={fieldItemTemplate}
         onChange={(e) => options.filterApplyCallback(e.value)}
         optionLabel="name"
@@ -198,39 +165,6 @@ function Filters() {
       />
     );
   };
-
-  const universityRowFilterTemplate = (options) => {
-    return (
-      <MultiSelect
-        value={options.value}
-        options={universitiesEnglish}
-        itemTemplate={universityItemTemplate}
-        onChange={(e) => options.filterApplyCallback(e.value)}
-        optionLabel="name"
-        placeholder="Any"
-        className="p-column-filter"
-        maxSelectedLabels={1}
-        style={{ minWidth: "14rem" }}
-      />
-    );
-  };
-
-  const locationRowFilterTemplate = (options) => {
-    return (
-      <Dropdown
-        value={options.value}
-        options={getLocation}
-        onChange={(e) => options.filterApplyCallback(e.value)}
-        itemTemplate={locationItemTemplate}
-        placeholder="Select One"
-        className="p-column-filter"
-        showClear
-        style={{ minWidth: "12rem" }}
-      />
-    );
-  };
-
-  // add global search above other filters
   const renderHeader = () => {
     return (
       <div className="flex justify-content-end">
@@ -238,7 +172,7 @@ function Filters() {
           <i className="pi pi-search" />
           <InputText
             value={globalFilterValue}
-            onChange={onGlobalFilterChange}
+            onChange={onGlobalFilterChange} //me auto mporw kai grafw sto kouti tou search
             placeholder="Keyword Search"
           />
         </span>
@@ -266,56 +200,137 @@ function Filters() {
         ]}
         header={header}
         emptyMessage="No customers found."
-      >
-        {/* Onoma */}
-        <Column
-          field="name"
-          header="Name"
-          filter
-          filterPlaceholder="Search by name"
-          style={{ minWidth: "12rem" }}
-        />
-        {/* Field */}
-        <Column
-          header="Field" //Κατεύθυνση
-          filterField="fields"
-          showFilterMenu={false}
-          filterMenuStyle={{ width: "14rem" }}
-          style={{ minWidth: "14rem" }}
-          body={fieldBodyTemplate}
-          filter
-          filterElement={fieldRowFilterTemplate}
-        />
-        {/* University */}
-        <Column
-          header="University" //Πανεπιστήμιο
-          filterField="university"
-          showFilterMenu={false}
-          filterMenuStyle={{ width: "14rem" }}
-          style={{ minWidth: "14rem" }}
-          body={universityBodyTemplate}
-          filter
-          filterElement={universityRowFilterTemplate}
-        />
-        {/* Location */}
-        <Column
-          field="location"
-          header="Location"
-          showFilterMenu={false}
-          filterMenuStyle={{ width: "14rem" }}
-          style={{ minWidth: "12rem" }}
-          body={locationBodyTemplate}
-          filter
-          filterElement={locationRowFilterTemplate}
-        />
-      </DataTable>
+      ></DataTable>
     </div>
   );
+  //   // University filter
+  //   const universityBodyTemplate = (rowData) => {
+  //     const universitiesEnglish = rowData.universitiesEnglish;
+
+  //     return (
+  //       <div className="flex align-items-center gap-2">
+  //         <span>{universitiesEnglish.name}</span>
+  //       </div>
+  //     );
+  //   };
+
+  //   // University filter
+  //   const universityItemTemplate = (option) => {
+  //     return (
+  //       <div className="flex align-items-center gap-2">
+  //         <span>{option.name}</span>
+  //       </div>
+  //     );
+  //   };
+
+  //   // location filter
+  //   const locationBodyTemplate = (rowData) => {
+  //     return (
+  //       <Tag value={rowData.status} severity={getLocation(rowData.status)} />
+  //     );
+  //   };
+  //   // Chips me "Online", "On Campus", "Hybrid"
+  //   const getLocation = (ecourse) => {
+  //     switch (ecourse.ecourseLocation) {
+  //       // prasino "On campus" chip panw dejia sto ecourse
+  //       case "On Campus":
+  //         return "success";
+
+  //       // kitrino "Online" chip panw dejia sto ecourse
+  //       case "Online":
+  //         return "warning";
+
+  //       // Kokkino "Hybrid" chip panw dejia sto ecourse
+  //       case "Hybrid":
+  //         return "danger";
+
+  //       default:
+  //         return null;
+  //     }
+  //   };
+  //   // location filter
+  //   const locationItemTemplate = (option) => {
+  //     return <Tag value={option} severity={getLocation(option)} />;
+  //   };
+
+  //   const universityRowFilterTemplate = (options) => {
+  //     return (
+  //       <MultiSelect
+  //         value={options.value}
+  //         options={universitiesEnglish}
+  //         itemTemplate={universityItemTemplate}
+  //         onChange={(e) => options.filterApplyCallback(e.value)}
+  //         optionLabel="name"
+  //         placeholder="Any"
+  //         className="p-column-filter"
+  //         maxSelectedLabels={1}
+  //         style={{ minWidth: "14rem" }}
+  //       />
+  //     );
+  //   };
+
+  //   const locationRowFilterTemplate = (options) => {
+  //     return (
+  //       <Dropdown
+  //         value={options.value}
+  //         options={getLocation}
+  //         onChange={(e) => options.filterApplyCallback(e.value)}
+  //         itemTemplate={locationItemTemplate}
+  //         placeholder="Select One"
+  //         className="p-column-filter"
+  //         showClear
+  //         style={{ minWidth: "12rem" }}
+  //       />
+  //     );
+  //   };
+
+  // add global search above other filters
 }
 export default Filters;
 
+// {/* Onoma */}
+// <Column
+// field="name"
+// header="Name"
+// filter
+// filterPlaceholder="Search by name"
+// style={{ minWidth: "12rem" }}
+// />
+// {/* Field */}
+// <Column
+// header="Field" //Κατεύθυνση
+// filterField="fields"
+// showFilterMenu={false}
+// filterMenuStyle={{ width: "14rem" }}
+// style={{ minWidth: "14rem" }}
+// body={fieldBodyTemplate}
+// filter
+// filterElement={fieldRowFilterTemplate}
+// />
+// {/* University */}
+// <Column
+// header="University" //Πανεπιστήμιο
+// filterField="university"
+// showFilterMenu={false}
+// filterMenuStyle={{ width: "14rem" }}
+// style={{ minWidth: "14rem" }}
+// body={universityBodyTemplate}
+// filter
+// filterElement={universityRowFilterTemplate}
+// />
+// {/* Location */}
+// <Column
+// field="location"
+// header="Location"
+// showFilterMenu={false}
+// filterMenuStyle={{ width: "14rem" }}
+// style={{ minWidth: "12rem" }}
+// body={locationBodyTemplate}
+// filter
+// filterElement={locationRowFilterTemplate}
+// />
 //onchange=detects when the value of an input element changes.
-
+// ***************************************************************
 // {
 //   const [sortOrder, setSortOrder] = useState(0);
 //   const [sortField, setSortField] = useState("");
