@@ -69,7 +69,7 @@ function Filters() {
     { name: "Πάντειο Πανεπιστήμιο" },
     { name: "Αριστοτέλειο Πανεπιστήμιο Θεσσαλονίκης" },
   ]);
-  const [location] = useState([
+  const [locations] = useState([
     { name: "On Campus" },
     { name: "Online" },
     { name: "Hybrid" },
