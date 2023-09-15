@@ -47,6 +47,12 @@ export default function ToolbarMenu() {
             },
             ,
             {
+              url: "/addecourse",
+              label: "Add Course",
+              icon: "pi pi-building ",
+            },
+
+            {
               label: "EKPA",
               icon: "pi pi-building ",
             },

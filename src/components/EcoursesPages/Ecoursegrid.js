@@ -6,31 +6,13 @@ import { Button } from "primereact/button";
 import { DataView } from "primereact/dataview";
 import { Dropdown } from "primereact/dropdown";
 import Filters from "../Filters/Filters";
+import { Column } from "primereact/column";
 
 function EcoursesGrid() {
   const [ecourses, setEcourses] = useState([]);
   const [sortKey, setSortKey] = useState("");
   const [sortOrder, setSortOrder] = useState(0);
   const [sortField, setSortField] = useState("");
-
-  // const sortOptions = [
-  //   { label: "Price High to Low", value: "!price" },
-  //   { label: "Price Low to High", value: "price" },
-  // ];
-
-  // const onSortChange = (event) => {
-  //   const value = event.value;
-
-  //   if (value.indexOf("!") === 0) {
-  //     setSortOrder(-1);
-  //     setSortField(value.substring(1, value.length));
-  //     setSortKey(value);
-  //   } else {
-  //     setSortOrder(1);
-  //     setSortField(value);
-  //     setSortKey(value);
-  //   }
-  // };
 
   const header = () => {
     return <Filters />;
@@ -111,6 +93,7 @@ function EcoursesGrid() {
     <div className="card">
       <DataView
         // kouti me ta 'x'(ex.9) ecourses
+        globalFilterFields={["name", "category.name", "location"]}
         value={ecourses}
         itemTemplate={itemTemplate}
         paginator
@@ -124,6 +107,25 @@ function EcoursesGrid() {
 }
 
 export default EcoursesGrid;
+
+// / const sortOptions = [
+//   { label: "Price High to Low", value: "!price" },
+//   { label: "Price Low to High", value: "price" },
+// ];
+
+// const onSortChange = (event) => {
+//   const value = event.value;
+
+//   if (value.indexOf("!") === 0) {
+//     setSortOrder(-1);
+//     setSortField(value.substring(1, value.length));
+//     setSortKey(value);
+//   } else {
+//     setSortOrder(1);
+//     setSortField(value);
+//     setSortKey(value);
+//   }
+// };
 
 // // Sample e-courses data
 // const ecourses = [

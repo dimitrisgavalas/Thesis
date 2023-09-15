@@ -1,5 +1,7 @@
 import "./Filters.css";
 import React, { useState, useEffect } from "react";
+import { FilterMatchMode, FilterOperator } from "primereact/api";
+import { InputText } from "primereact/inputtext";
 import { EcoursesData } from "../../mock-d/EcoursesData";
 import { Rating } from "primereact/rating";
 import { Tag } from "primereact/tag";
@@ -7,22 +9,22 @@ import { Button } from "primereact/button";
 import { DataView } from "primereact/dataview";
 import { Dropdown } from "primereact/dropdown";
 import { MultiSelect } from "primereact/multiselect"; //Selection filter
-import { FilterMatchMode, FilterOperator } from "primereact/api";
-import { InputText } from "primereact/inputtext";
 import { DataTable } from "primereact/datatable";
 import { Column } from "primereact/column";
+
 // EcoursesData.getUniversityName()
 function Filters() {
   const [ecourses, setEcourses] = useState([]);
   const [loading, setLoading] = useState(true);
   const [globalFilterValue, setGlobalFilterValue] = useState("");
+  // all the filters on header
   const [filters, setFilters] = useState({
     global: { value: null, matchMode: FilterMatchMode.CONTAINS },
     name: { value: null, matchMode: FilterMatchMode.STARTS_WITH },
-    fields: { value: null, matchMode: FilterMatchMode.IN },
-    university: { value: null, matchMode: FilterMatchMode.IN },
-    location: { value: null, matchMode: FilterMatchMode.EQUALS }, //hybrid, online on ccampus
+    category: { value: null, matchMode: FilterMatchMode.IN },
+    location: { value: null, matchMode: FilterMatchMode.EQUALS },
   });
+
   const [fieldsEnglish] = useState([
     { name: "Programming" },
     { name: "Mathematics" },
@@ -75,33 +77,6 @@ function Filters() {
     { name: "Hybrid" },
   ]);
 
-  // const [fields] = useState(EcoursesData.getFieldName());
-
-  // const sortOptions = [
-  //   { label: "Price High to Low", value: "!price" },
-  //   { label: "Price Low to High", value: "price" },
-  // ];
-
-  //   // sorting by Price
-  //   const onSortChange = (event) => {
-  //     const value = event.value;
-  //     // descending
-  //     if (value.indexOf("!") === 0) {
-  //       setSortOrder(-1);
-  //       setSortField(value.substring(1, value.length));
-  //       setSortKey(value);
-  //       // ascending
-  //     } else {
-  //       setSortOrder(1);
-  //       setSortField(value);
-  //       setSortKey(value);
-  //     }
-  //   };
-
-  // slice=ecourses from object array we want to view in home page. .slice(0, 9)
-  // useEffect(() => {
-  //   EcoursesData.getAllEcourses().then((data) => setEcourses(data));
-  // }, []);
   useEffect(() => {
     EcoursesData.getAllEcourses().then((data) => {
       setEcourses(getEcourses(data));
@@ -131,162 +106,56 @@ function Filters() {
     setGlobalFilterValue(value);
   };
 
-  // field filter
-  const fieldBodyTemplate = (rowData) => {
-    const fields = rowData.fields;
-
-    return (
-      <div className="flex align-items-center gap-2">
-        <span>{fields.name}</span>
-      </div>
-    );
-  };
-
-  // field filter
-  const fieldItemTemplate = (option) => {
-    return (
-      <div className="flex align-items-center gap-2">
-        <span>{option.name}</span>
-      </div>
-    );
-  };
-  const fieldRowFilterTemplate = (options) => {
-    return (
-      <MultiSelect
-        value={options.value}
-        options={fieldsEnglish}
-        itemTemplate={fieldItemTemplate}
-        onChange={(e) => options.filterApplyCallback(e.value)}
-        optionLabel="name"
-        placeholder="Any"
-        className="p-column-filter"
-        maxSelectedLabels={1}
-        style={{ minWidth: "14rem" }}
-      />
-    );
-  };
+  //Globar Search Bar
   const renderHeader = () => {
     return (
       <div className="flex justify-content-end">
         <span className="p-input-icon-left">
           <i className="pi pi-search" />
+          {/* Global Search Bar */}
           <InputText
             value={globalFilterValue}
-            onChange={onGlobalFilterChange} //me auto mporw kai grafw sto kouti tou search
+            onChange={onGlobalFilterChange}
             placeholder="Keyword Search"
           />
         </span>
       </div>
     );
   };
+
   const header = renderHeader();
 
-  return (
-    <div className="card">
-      <DataTable
-        value={ecourses}
-        paginator
-        rows={10}
-        dataKey="id"
-        filters={filters}
-        filterDisplay="row"
-        loading={loading}
-        globalFilterFields={[
-          "name",
-          "country.name",
-          "fields.name",
-          "university.name",
-          "location",
-        ]}
-        header={header}
-        emptyMessage="No customers found."
-      ></DataTable>
-    </div>
-  );
-  //   // University filter
-  //   const universityBodyTemplate = (rowData) => {
-  //     const universitiesEnglish = rowData.universitiesEnglish;
-
-  //     return (
-  //       <div className="flex align-items-center gap-2">
-  //         <span>{universitiesEnglish.name}</span>
-  //       </div>
-  //     );
-  //   };
-
-  //   // University filter
-  //   const universityItemTemplate = (option) => {
-  //     return (
-  //       <div className="flex align-items-center gap-2">
-  //         <span>{option.name}</span>
-  //       </div>
-  //     );
-  //   };
-
-  //   // location filter
-  //   const locationBodyTemplate = (rowData) => {
-  //     return (
-  //       <Tag value={rowData.status} severity={getLocation(rowData.status)} />
-  //     );
-  //   };
-  //   // Chips me "Online", "On Campus", "Hybrid"
-  //   const getLocation = (ecourse) => {
-  //     switch (ecourse.ecourseLocation) {
-  //       // prasino "On campus" chip panw dejia sto ecourse
-  //       case "On Campus":
-  //         return "success";
-
-  //       // kitrino "Online" chip panw dejia sto ecourse
-  //       case "Online":
-  //         return "warning";
-
-  //       // Kokkino "Hybrid" chip panw dejia sto ecourse
-  //       case "Hybrid":
-  //         return "danger";
-
-  //       default:
-  //         return null;
-  //     }
-  //   };
-  //   // location filter
-  //   const locationItemTemplate = (option) => {
-  //     return <Tag value={option} severity={getLocation(option)} />;
-  //   };
-
-  //   const universityRowFilterTemplate = (options) => {
-  //     return (
-  //       <MultiSelect
-  //         value={options.value}
-  //         options={universitiesEnglish}
-  //         itemTemplate={universityItemTemplate}
-  //         onChange={(e) => options.filterApplyCallback(e.value)}
-  //         optionLabel="name"
-  //         placeholder="Any"
-  //         className="p-column-filter"
-  //         maxSelectedLabels={1}
-  //         style={{ minWidth: "14rem" }}
-  //       />
-  //     );
-  //   };
-
-  //   const locationRowFilterTemplate = (options) => {
-  //     return (
-  //       <Dropdown
-  //         value={options.value}
-  //         options={getLocation}
-  //         onChange={(e) => options.filterApplyCallback(e.value)}
-  //         itemTemplate={locationItemTemplate}
-  //         placeholder="Select One"
-  //         className="p-column-filter"
-  //         showClear
-  //         style={{ minWidth: "12rem" }}
-  //       />
-  //     );
-  //   };
-
-  // add global search above other filters
+  return header;
 }
 export default Filters;
+
+// const [fields] = useState(EcoursesData.getFieldName());
+
+// const sortOptions = [
+//   { label: "Price High to Low", value: "!price" },
+//   { label: "Price Low to High", value: "price" },
+// ];
+
+//   // sorting by Price
+//   const onSortChange = (event) => {
+//     const value = event.value;
+//     // descending
+//     if (value.indexOf("!") === 0) {
+//       setSortOrder(-1);
+//       setSortField(value.substring(1, value.length));
+//       setSortKey(value);
+//       // ascending
+//     } else {
+//       setSortOrder(1);
+//       setSortField(value);
+//       setSortKey(value);
+//     }
+//   };
+
+// slice=ecourses from object array we want to view in home page. .slice(0, 9)
+// useEffect(() => {
+//   EcoursesData.getAllEcourses().then((data) => setEcourses(data));
+// }, []);
 
 // {/* Onoma */}
 // <Column

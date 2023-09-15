@@ -1,24 +1,35 @@
 import React, { useState } from "react";
-import Header from "./Header";
-import Footer from "./Footer";
+import { Button } from "primereact/button";
+import { InputText } from "primereact/inputtext";
+import { InputTextarea } from "primereact/inputtextarea";
+import { FileUpload } from "primereact/fileupload";
+import DropdownList from "./DropdownList";
+import { MultiSelect } from "primereact/multiselect";
+import { Dropdown } from "primereact/dropdown";
+// import Header from "./Header";
+// import Footer from "./Footer";
 import "./AddCourse.css";
 
 function AddCourse() {
+  const [selectedFields, setSelectedFields] = useState(null);
+
   const [course, setCourse] = useState({
-    name: "",
-    professors: "",
+    id: "",
+    title: "",
+    image: "",
+    price: "",
+    category: "",
+    ecourseLocation: "",
+    university: "",
+    professors: [{ professor1: "", professor2: "", professor3: "" }],
     duration: "",
     ECTS: "",
-    price: "",
-    mode: "",
-    description: "",
-    contactInfo: {
-      email: "",
-      phone: "",
-      socialMedia: "",
-    },
-    categories: "",
+    language: [{ language1: "", language2: "" }],
+    description: " ",
+    rating: "",
+    contact: [{ phone: "", email: "", socialMedia: "" }],
   });
+  const [value, setValue] = useState("");
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -49,113 +60,233 @@ function AddCourse() {
     // Save the course data to the server as a published course
   };
 
+  const [categories] = useState([
+    { name: "Programming" },
+    { name: "Mathematics" },
+    { name: "Physics" },
+    { name: "Biology" },
+    { name: "English" },
+    { name: "Greek" },
+    { name: "Linguistics" },
+    { name: "Psychology" },
+    { name: "History" },
+  ]);
+  const [locations] = useState([
+    { name: "Hybrid" },
+    { name: "Online" },
+    { name: "Onsite" },
+  ]);
+
+  const [universities] = useState([
+    { name: "University of Piraeus" },
+    {
+      name: "National and Kapodistrian University of Athens",
+    },
+    {
+      name: "EMP",
+    },
+    {
+      name: "Univesity of West Attica",
+    },
+    {
+      name: "OPA",
+    },
+    {
+      name: "Panteion University",
+    },
+    {
+      name: "Aristotle University of Thessaloniki",
+    },
+  ]);
+
   return (
     <div>
-      <Header />
       <div className="add-course-container">
         <h2>Add Course</h2>
         <form>
           {/* Course Details */}
           <div className="course-details">
-            <input
-              type="text"
-              name="name"
+            {/* Add Course Name */}
+
+            <InputText
               placeholder="Course Name"
-              value={course.name}
+              // value={course.name}
               onChange={handleChange}
             />
-            <input
-              type="text"
-              name="professors"
+
+            {/* Add University */}
+
+            <DropdownList
+              list={universities}
+              placeholder={"Select University"}
+            />
+
+            {/* <select
+              name="mode"
+              value={course.university}
+              onChange={handleChange}
+            >
+              <option value="">University</option>
+              <option value="University of Piraeus">
+                University of Piraeus
+              </option>
+              <option value="National and Kapodistrian University of Athens">
+                National and Kapodistrian University of Athens
+              </option>
+              <option value="EMP">EMP</option>
+              <option value="Univesity of West Attica">
+                Univesity of West Attica
+              </option>
+              <option value="OPA">OPA</option>
+              <option
+                value="Panteion
+            university"
+              >
+                Panteion university
+              </option>
+              <option value="Aristotle University of Thessaloniki">
+                Aristotle University of Thessaloniki
+              </option>
+            </select> */}
+
+            {/* Add Professors Name */}
+            <InputText
               placeholder="Professors Name"
-              value={course.professors}
+              // value={course.professors[1]}
               onChange={handleChange}
             />
-            <input
+
+            {/* Duration */}
+            <InputText
               type="text"
-              name="duration"
               placeholder="Duration"
-              value={course.duration}
+              // value={course.duration}
               onChange={handleChange}
             />
-            <input
+
+            {/* ECTS */}
+            <InputText
+              keyfilter="int"
               type="text"
               name="ECTS"
               placeholder="ECTS"
-              value={course.ECTS}
+              // value={course.ECTS}
               onChange={handleChange}
             />
-            <input
+
+            {/* Price */}
+            <InputText
+              keyfilter="int"
               type="text"
               name="price"
               placeholder="Price"
-              value={course.price}
+              // value={course.price}
               onChange={handleChange}
             />
-            <select name="mode" value={course.mode} onChange={handleChange}>
-              <option value="">Select Mode</option>
+
+            {/* Location */}
+            {/* <select name="mode" value={course.mode} onChange={handleChange}>
+              <option value="">Select Location</option>
               <option value="online">Online</option>
               <option value="onsite">Onsite</option>
-            </select>
-            <textarea
+              <option value="hybrid">Hybrid</option>
+            </select> */}
+
+            <DropdownList list={locations} placeholder={"Select Location"} />
+
+            {/* Fields */}
+            {/* <select name="mode" value={course.mode} onChange={handleChange}>
+              <option value="">Select Field</option>
+              <option value="Computer Science">Computer Science</option>
+              <option value="Programming">Programming</option>
+              <option value="Mathematics">Mathematics</option>
+              <option value="Physics">Physics</option>
+              <option value="Biology">Biology</option>
+              <option value="English">English</option>
+              <option value="Greek">Greek</option>
+              <option value="Linguistics">Linguistics</option>
+              <option value="Law">Law</option>
+              <option value="Psychology">Psychology</option>
+              <option value="History-Archaelogy">History-Archaelogy</option>
+              <option value="Philosophy">Philosophy</option>
+              <option value="Engineering">Engineering</option>
+              <option value="Art">Art</option>
+            </select> */}
+
+            <DropdownList list={categories} placeholder={"Select Field"} />
+
+            {/* Course Desciption */}
+
+            <InputTextarea
               name="description"
               placeholder="Course Description"
-              value={course.description}
-              onChange={handleChange}
-            ></textarea>
-            <input type="file" name="media" />
+              // value={value}
+              // onChange={(e) => setValue(e.target.value)}
+              // value={course.description}
+              // onChange={handleChange}
+              rows={5}
+              cols={300}
+            />
           </div>
+          {/* Upload Files */}
+          <h3>Upload thumbnail</h3>
+          <FileUpload
+            name="demo[]"
+            url={"/api/upload"}
+            multiple
+            accept="image/*"
+            maxFileSize={1000000}
+            emptyTemplate={
+              <p className="m-0">Drag and drop files to here to upload.</p>
+            }
+          />
+          {/* Upload Photo
+          <h2>Upload Photos</h2>
+          <FileUpload
+            name="demo[]"
+            url={"/api/upload"}
+            multiple
+            accept="image/*"
+            maxFileSize={1000000}
+            emptyTemplate={
+              <p className="m-0">Drag and drop files to here to upload.</p>
+            }
+          /> */}
 
           {/* Contact Info */}
           <div className="contact-info">
-            <h3>Contact Info</h3>
-            <input
-              type="email"
-              name="email"
+            <h3>Add Contact Info</h3>
+            <InputText
+              keyfilter="email"
               placeholder="Email"
-              value={course.contactInfo.email}
+              // value={}
               onChange={handleContactInfoChange}
             />
-            <input
-              type="tel"
-              name="phone"
+            <InputText
+              keyfilter="pint"
               placeholder="Phone"
-              value={course.contactInfo.phone}
+              // value={\}
               onChange={handleContactInfoChange}
             />
-            <input
-              type="text"
-              name="socialMedia"
+
+            <InputText
+              // keyfilter="hex"
               placeholder="Social Media"
-              value={course.contactInfo.socialMedia}
+              // value={course.contactInfo.socialMedia}
               onChange={handleContactInfoChange}
             />
           </div>
-
-          {/* Categories */}
-          <div className="categories">
-            <h3>Categories</h3>
-            <input
-              type="text"
-              name="categories"
-              placeholder="Field, Duration, Price, Onsite/Online, University"
-              value={course.categories}
-              onChange={handleChange}
-            />
-          </div>
-
           {/* Buttons */}
-          <div className="buttons">
-            <button type="button" onClick={handleSave}>
-              Save Course
-            </button>
-            <button type="button" onClick={handlePublish}>
-              Publish Course
-            </button>
+          <div className="card flex buttons">
+            <Button label="Save Course" type="submit" onClick={handleSave} />
+            <Button
+              label="Publish Course"
+              type="submit"
+              onClick={handlePublish}
+            />
           </div>
         </form>
       </div>
-      <Footer />
     </div>
   );
 }

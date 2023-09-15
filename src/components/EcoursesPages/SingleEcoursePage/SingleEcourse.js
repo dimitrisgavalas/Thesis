@@ -4,6 +4,8 @@ import React from "react";
 import "./SingleEcourse.css";
 import { Image } from "primereact/image";
 import { EcoursesData } from "../../../mock-d/EcoursesData";
+import notes from "../../../mock-d/notes";
+import Note from "./Note";
 
 function SingleEcourse() {
   const img = ["images/thumbnail.png"];
@@ -39,13 +41,13 @@ function SingleEcourse() {
   ];
 
   return (
-    <div className="course ">
+    <div className="m-2 pt-5 pb-5 justify-content-center border-2 surface-border border-round p-2 ">
       <div className="course-container p-image-preview-container	">
         <h2>{course.title}</h2>
         <Image src={img} alt="thumbnail" width="2500" />
         {/* <img src={course.image} alt={course.title} /> */}
-        <div className="course-info">
-          <div className="quick-info">
+        <div className="course-info ">
+          <div className="quick-info m-2 pt-5 pb-5 justify-content-center border-2 surface-border border-round p-2 ">
             <p>
               <strong>University:</strong> {course.university}
             </p>
@@ -68,11 +70,11 @@ function SingleEcourse() {
               <strong>Mode:</strong> {course.mode}
             </p>
           </div>
-          <div className="description">
+          <div className="description m-2 pt-5 pb-5 justify-content-center border-2 surface-border border-round p-2 ">
             <p>{course.description}</p>
           </div>
         </div>
-        <div className="contact-university">
+        <div className="contact-university m-2 pt-5 pb-5 justify-content-center border-2 surface-border border-round p-2 ">
           <h3>Contact University</h3>
           {/* Contact Info*/}
         </div>
@@ -85,6 +87,19 @@ function SingleEcourse() {
                 <img src={similarCourse.image} alt={similarCourse.title} />
               </div>
             ))}
+          </div>
+          {/* **************************************************** */}
+          <div className="m-2 pt-5 pb-5 justify-content-center border-2 surface-border border-round p-2 ">
+            <h2>Comments</h2>
+            {notes.map((noteItem) => {
+              {
+                /* <Note
+                key={noteItem.key}
+                title={noteItem.title}
+                content={noteItem.content}
+              />; */
+              }
+            })}
           </div>
         </div>
       </div>
