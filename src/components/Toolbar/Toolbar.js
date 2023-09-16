@@ -5,11 +5,15 @@ import SignInFun from "../SignIn/Signin";
 import { Dialog } from "primereact/dialog";
 import { Menubar } from "primereact/menubar";
 // import "./Toolbar.css";
+import { Routes, Route, useNavigate } from "react-router-dom";
+import Favorites from "../Favorites/Favorites";
 
 // function ToolbarMenu() {
 export default function ToolbarMenu() {
   const [visible, setVisible] = useState(false);
 
+  // track login status
+  const [isLoggedIn, setIsLoggedIn] = useState(false);
   const items = [
     {
       url: "/",
@@ -25,7 +29,7 @@ export default function ToolbarMenu() {
           icon: "pi pi-building",
           items: [
             {
-              url: "/ecourses",
+              url: "/singleEcourse",
               label: "Single Ecourse",
               icon: "pi pi-building ",
             },
@@ -37,15 +41,9 @@ export default function ToolbarMenu() {
             // ,
             {
               url: "/profile",
-              label: "Profile",
+              label: "User Profile",
               icon: "pi pi-building ",
             },
-            {
-              url: "/favorites",
-              label: "Favs EMP",
-              icon: "pi pi-building ",
-            },
-            ,
             {
               url: "/addecourse",
               label: "Add Course",
@@ -53,16 +51,19 @@ export default function ToolbarMenu() {
             },
 
             {
-              label: "EKPA",
+              url: "/uniprofile",
+              label: "Uni Profile",
               icon: "pi pi-building ",
             },
             ,
             {
+              url: "/ecourses",
               label: "PADA",
               icon: "pi pi-building ",
             },
             ,
             {
+              url: "/ratings",
               label: "OPA",
               icon: "pi pi-building ",
             },
@@ -124,55 +125,71 @@ export default function ToolbarMenu() {
   const end = (
     // Fragment = lets you group elements without a wrapper node.
     <React.Fragment>
-      <nav>
-        <Button icon="pi pi-heart" className="mr-2" text />
-        <Button icon="pi pi-bell" className="mr-2" text />
+      {/* <nav> */}
+      {isLoggedIn && (
+        <>
+          {/* <a href="/favorites"> */}
+          <Button icon="pi pi-heart" className="mr-2" text />
+          {/* </a> */}
+          {/* <a href="/profile"> */}
+          <Button icon="pi pi-user" className="mr-2" text />
+          {/* </a> */}
+        </>
+      )}
 
+      {!isLoggedIn && (
         <Button
           label="Sign In"
           icon="pi pi-sign-in"
           className="p-button-danger"
           title="Sign in"
           variant="text"
-          //to text vgazei to xrwma mesa apo to button
           text
           onClick={() => setVisible(true)}
         />
-        {/* <Button
-            label="Show"
-            icon="pi pi-external-link"
-            onClick={() => setVisible(true)}
-          /> */}
-        <Dialog
-          // header="Header"
-          visible={visible}
-          style={{ width: "50vw" }}
+      )}
+
+      <Dialog
+        visible={visible}
+        style={{ width: "50vw" }}
+        onHide={() => setVisible(false)} // Pass onHide function to close the dialog
+      >
+        {/* Pass the onSignIn and onHide callbacks to SignInFun */}
+        <SignInFun
+          onSignIn={() => setIsLoggedIn(true)}
           onHide={() => setVisible(false)}
-        >
-          <SignInFun />
-        </Dialog>
-      </nav>
+        />
+      </Dialog>
+      {/* </nav> */}
     </React.Fragment>
   );
 
-  const end2 = [
-    {
-      // label: "Favorites",
-      icon: "pi pi-heart",
-    },
-    {
-      // label: "notification",
-      icon: "pi pi-bell",
-    },
-    {
-      label: "Sign In",
-      icon: "pi pi-sign-in",
-    },
-  ];
+  // const end2 = [
+  // {
+  //   // label: "Favorites",
+  //   icon: "pi pi-heart",
+  // },
+  //   {
+  //     // label: "notification",
+  //     icon: "pi pi-bell",
+  //   },
+  //   {
+  //     label: "Sign In",
+  //     icon: "pi pi-sign-in",
+  //   },
+  // ];
 
   return (
     <div className="card  ">
       <Menubar model={items} start={start} end={end} />
     </div>
   );
+}
+
+{
+  /* <Button
+            label="Show"
+            icon="pi pi-external-link"
+            onClick={() => setVisible(true)}
+          /> */
 }

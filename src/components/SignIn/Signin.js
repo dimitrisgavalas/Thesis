@@ -3,8 +3,39 @@ import { InputText } from "primereact/inputtext";
 import { Checkbox } from "primereact/checkbox";
 import { Button } from "primereact/button";
 
-function SignInFun() {
+function SignInFun({ onSignIn, onHide }) {
   const [checked, setChecked] = useState([]);
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+  const [error, setError] = useState("");
+
+  const handleLogin = () => {
+    let isUniversityUser = false; // Default to false
+
+    // Check if the entered email and password are valid
+    if (email === "user@email.com" && password === "unipi") {
+      // Clear the form fields and error message
+      setEmail("");
+      setPassword("");
+      setError("");
+      // Close the login dialog
+      onHide();
+    } else if (email === "uniuser@email.com" && password === "uni") {
+      // For another specific email and password combination, set isUniversityUser to true
+      isUniversityUser = true;
+      // Clear the form fields and error message
+      setEmail("");
+      setPassword("");
+      setError("");
+      // Close the login dialog
+      onHide();
+    } else {
+      setError("Invalid email or password");
+    }
+
+    // Notify the parent component of the successful login and isUniversityUser value
+    onSignIn(isUniversityUser);
+  };
 
   return (
     <div className="flex align-items-center justify-content-center">
@@ -37,6 +68,8 @@ function SignInFun() {
             type="text"
             placeholder="Email address"
             className="w-full mb-3"
+            value={email}
+            onChange={(e) => setEmail(e.target.value)}
           />
 
           <label htmlFor="password" className="block text-900 font-medium mb-2">
@@ -47,6 +80,8 @@ function SignInFun() {
             type="password"
             placeholder="Password"
             className="w-full mb-3"
+            value={password}
+            onChange={(e) => setPassword(e.target.value)}
           />
 
           <div className="flex align-items-center justify-content-between mb-6">
@@ -67,7 +102,12 @@ function SignInFun() {
             </a>
           </div>
 
-          <Button label="Sign In" icon="pi pi-user" className="w-full" />
+          <Button
+            label="Sign In"
+            icon="pi pi-user"
+            className="w-full"
+            onClick={handleLogin}
+          />
         </div>
       </div>
     </div>

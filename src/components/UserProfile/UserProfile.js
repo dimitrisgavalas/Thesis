@@ -3,7 +3,7 @@ import Settings from "../Settings/Settings";
 import "./UserProfile.css";
 import { Menubar } from "primereact/menubar";
 import Favorites from "../Favorites/Favorites";
-
+import AddCourse from "../AddCourse/AddCourse";
 // added isUniversityUser = false for testing will change when we fetch data for users
 function UserProfile({ isUniversityUser = false }) {
   // start @setting when accesing profile. Just for testing will change
@@ -29,7 +29,7 @@ function UserProfile({ isUniversityUser = false }) {
       </div>
 
       {/* add u/n variable */}
-      <h2>Welcome, Dimitris!</h2>
+      <h2>Welcome!</h2>
       <div className="tabs">
         {tabs.map((tab) => (
           <button
@@ -48,6 +48,13 @@ function UserProfile({ isUniversityUser = false }) {
         )}
 
         {activeTab === "favorites" && (
+          <Favorites isUniversityUser={isUniversityUser} />
+        )}
+        {activeTab === "add-course" && isUniversityUser && <AddCourse />}
+        {activeTab === "uploaded-courses" && (
+          <Favorites isUniversityUser={isUniversityUser} />
+        )}
+        {activeTab === "unpublished-courses" && (
           <Favorites isUniversityUser={isUniversityUser} />
         )}
       </div>

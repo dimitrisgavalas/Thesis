@@ -16,6 +16,9 @@ import Ecourses from "./pages/Ecourses/Ecourses";
 import UserProfile from "./components/UserProfile/UserProfile";
 import Favorites from "./components/Favorites/Favorites";
 import AddCourse from "./components/AddCourse/AddCourse";
+import { Rating } from "primereact/rating";
+import CommentAndRating from "./components/Ratings/Rating";
+// import uniProfile from "./components/uniProfile/uniProfile";
 
 function App() {
   return (
@@ -24,11 +27,15 @@ function App() {
       <BrowserRouter>
         <Routes>
           <Route exact path="/" element={<Home />} />
-          <Route path="/ecourses" element={<SingleEcourse />} />
+          <Route path="/singleEcourse" element={<SingleEcourse />} />
           <Route path="/ecourses/ecoursemainpage" element={<Ecourses />} />
           <Route path="/profile" element={<UserProfile />} />
           <Route path="/favorites" element={<Favorites />} />
-          <Route path="/addecourse" element={<AddCourse />} />
+          <Route
+            path="/uniprofile"
+            element={<UserProfile isUniversityUser={true} />}
+          />
+          <Route path="/ratings" element={<CommentAndRating />} />
 
           <Route path="/contact" element={<Contact />} />
           <Route path="/about" element={<About />} />

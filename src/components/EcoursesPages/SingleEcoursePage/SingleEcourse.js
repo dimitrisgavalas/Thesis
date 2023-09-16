@@ -6,6 +6,7 @@ import { Image } from "primereact/image";
 import { EcoursesData } from "../../../mock-d/EcoursesData";
 import notes from "../../../mock-d/notes";
 import Note from "./Note";
+import Rating from "../../Ratings/Rating";
 
 function SingleEcourse() {
   const img = ["images/thumbnail.png"];
@@ -103,8 +104,21 @@ function SingleEcourse() {
           </div>
         </div>
       </div>
+      <Rating />
     </div>
   );
 }
 
 export default SingleEcourse;
+
+// id: ,
+// title: "",
+// image: ,
+// university: "",
+// professors: ["", ""],
+// duration: "",
+// ECTS: ,
+// rating: ,
+// price: "",
+// mode: "",
+// description:""

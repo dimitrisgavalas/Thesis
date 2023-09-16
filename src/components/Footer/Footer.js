@@ -9,11 +9,11 @@ function Footer() {
         {" "}
         <Button icon="pi pi-twitter" className="mr-2" />
       </a>
-      <a href="/fb">
+      <a href="/contact">
         {" "}
         <Button icon="pi pi-facebook" className="mr-2" />
       </a>
-      <a href="/Instagram">
+      <a href="/contact">
         {" "}
         <Button icon="pi pi-instagram" className="mr-2" />
       </a>
