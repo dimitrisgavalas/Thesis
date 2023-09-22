@@ -7,7 +7,7 @@ import { Menubar } from "primereact/menubar";
 // import "./Toolbar.css";
 import { Routes, Route, useNavigate } from "react-router-dom";
 import Favorites from "../Favorites/Favorites";
-import { useVisibilityService, useLoginService } from './toolbar.service';
+import { useVisibilityService, useLoginService } from "./toolbar.service";
 
 // function ToolbarMenu() {
 export default function ToolbarMenu() {
@@ -25,7 +25,7 @@ export default function ToolbarMenu() {
   const login = () => {
     setLogingState(true);
   };
-  
+
   const logout = () => {
     setLogingState(false);
   };
@@ -38,7 +38,7 @@ export default function ToolbarMenu() {
   const items = [
     {
       command: () => {
-        navigate('/')
+        navigate("/");
       },
       label: "Home",
     },
@@ -53,7 +53,7 @@ export default function ToolbarMenu() {
           items: [
             {
               command: () => {
-                navigate('/singleEcourse')
+                navigate("/singleEcourse");
               },
               label: "Single Ecourse",
               icon: "pi pi-building ",
@@ -66,14 +66,14 @@ export default function ToolbarMenu() {
             // ,
             {
               command: () => {
-                navigate('/profile')
+                navigate("/profile");
               },
               label: "User Profile",
               icon: "pi pi-building ",
             },
             {
               command: () => {
-                navigate('/addecourse')
+                navigate("/addecourse");
               },
               label: "Add Course",
               icon: "pi pi-building ",
@@ -81,7 +81,7 @@ export default function ToolbarMenu() {
 
             {
               command: () => {
-                navigate('/uniprofile')
+                navigate("/uniprofile");
               },
               label: "Uni Profile",
               icon: "pi pi-building ",
@@ -151,8 +151,8 @@ export default function ToolbarMenu() {
   ];
 
   const test = () => {
-    console.log('dfdf')
-  }
+    console.log("dfdf");
+  };
 
   const start = (
     <img alt="logo" src="/images/UNIPI.jpg" height="40" className="mr-2"></img>
@@ -190,10 +190,7 @@ export default function ToolbarMenu() {
         onHide={() => hide()} // Pass onHide function to close the dialog
       >
         {/* Pass the onSignIn and onHide callbacks to SignInFun */}
-        <SignInFun
-          onSignIn={() => login()}
-          onHide={() => hide()}
-        />
+        <SignInFun onSignIn={() => login()} onHide={() => hide()} />
       </Dialog>
       {/* </nav> */}
     </React.Fragment>
@@ -214,11 +211,9 @@ export default function ToolbarMenu() {
   //   },
   // ];
 
-
-
   return (
     <div className="card  ">
-      <Menubar model={items} start={start} end={end} item={test()}/>
+      <Menubar model={items} start={start} end={end} item={test()} />
     </div>
   );
 }

@@ -10,7 +10,7 @@ export const EcoursesData = {
         id: "1000",
         title: "Web Develoaaapment Bootcamp",
         image: img,
-        price: 650,
+        price: 350,
         category: "Programming",
         ecourseLocation: "Hybrid",
         university: "University of Piraeus",
@@ -26,12 +26,13 @@ export const EcoursesData = {
           "mailto:EMAILADDRESS",
           "instagram://user?username={USERNAME}",
         ],
+        website: "https://www.ds.unipi.gr/",
       },
       {
         id: "1001",
         title: "Algebra 2",
         image: img,
-        price: 650,
+        price: 950,
         category: "Mathematics",
         ecourseLocation: "Online",
 
@@ -48,12 +49,13 @@ export const EcoursesData = {
           "mailto:EMAILADDRESS",
           "instagram://user?username={USERNAME}",
         ],
+        website: "https://www.ds.unipi.gr/",
       },
       {
         id: "1002",
         title: "AI Bootcamp",
         image: img,
-        price: 650,
+        price: 60,
         category: "Physics",
         ecourseLocation: "Hybrid",
         university: "University of Piraeus",
@@ -69,6 +71,7 @@ export const EcoursesData = {
           "mailto:EMAILADDRESS",
           "instagram://user?username={USERNAME}",
         ],
+        website: "https://www.ds.unipi.gr/",
       },
       {
         id: "1003",
@@ -90,12 +93,13 @@ export const EcoursesData = {
           "mailto:EMAILADDRESS",
           "instagram://user?username={USERNAME}",
         ],
+        website: "https://www.ds.unipi.gr/",
       },
       {
         id: "1004",
         title: "Python Bootcamp",
         image: img,
-        price: 650,
+        price: 660,
         category: "English",
         ecourseLocation: "On Campus",
         university: "University of Piraeus",
@@ -111,12 +115,13 @@ export const EcoursesData = {
           "mailto:EMAILADDRESS",
           "instagram://user?username={USERNAME}",
         ],
+        website: "https://www.ds.unipi.gr/",
       },
       {
         id: "1005",
         title: "Web Development Bootcamp",
         image: img,
-        price: 650,
+        price: 90,
         category: "Greek",
         ecourseLocation: "Hybrid",
         university: "University of Piraeus",
@@ -132,12 +137,13 @@ export const EcoursesData = {
           "mailto:EMAILADDRESS",
           "instagram://user?username={USERNAME}",
         ],
+        website: "https://www.ds.unipi.gr/",
       },
       {
         id: "1006",
         title: "Web Development Bootcamp",
         image: img,
-        price: 650,
+        price: 6580,
         category: "Linguistics",
         ecourseLocation: "Online",
         university: "University of Piraeus",
@@ -153,12 +159,13 @@ export const EcoursesData = {
           "mailto:EMAILADDRESS",
           "instagram://user?username={USERNAME}",
         ],
+        website: "https://www.ds.unipi.gr/",
       },
       {
         id: "1007",
         title: "Web Development Bootcamp",
         image: img,
-        price: 650,
+        price: 320,
         category: "Psychology",
         ecourseLocation: "Hybrid",
         university: "University of Piraeus",
@@ -174,12 +181,13 @@ export const EcoursesData = {
           "mailto:EMAILADDRESS",
           "instagram://user?username={USERNAME}",
         ],
+        website: "https://www.ds.unipi.gr/",
       },
       {
         id: "1008",
         title: "Web Development Bootcamp",
         image: img,
-        price: 650,
+        price: 430,
         category: "History",
         ecourseLocation: "On Campus",
         university: "University of Piraeus",
@@ -195,6 +203,7 @@ export const EcoursesData = {
           "mailto:EMAILADDRESS",
           "instagram://user?username={USERNAME}",
         ],
+        website: "https://www.ds.unipi.gr/",
       },
     ];
   },
@@ -222,6 +231,7 @@ export const EcoursesData = {
           "mailto:EMAILADDRESS",
           "instagram://user?username={USERNAME}",
         ],
+        website: "https://www.ds.unipi.gr/",
       },
       {
         id: "1001",
@@ -244,6 +254,7 @@ export const EcoursesData = {
           "mailto:EMAILADDRESS",
           "instagram://user?username={USERNAME}",
         ],
+        website: "https://www.ds.unipi.gr/",
       },
       {
         id: "1002",
@@ -265,6 +276,7 @@ export const EcoursesData = {
           "mailto:EMAILADDRESS",
           "instagram://user?username={USERNAME}",
         ],
+        website: "https://www.ds.unipi.gr/",
       },
       {
         id: "1003",
@@ -286,6 +298,7 @@ export const EcoursesData = {
           "mailto:EMAILADDRESS",
           "instagram://user?username={USERNAME}",
         ],
+        website: "https://www.ds.unipi.gr/",
       },
       {
         id: "1004",
@@ -307,6 +320,7 @@ export const EcoursesData = {
           "mailto:EMAILADDRESS",
           "instagram://user?username={USERNAME}",
         ],
+        website: "https://www.ds.unipi.gr/",
       },
       {
         id: "1005",
@@ -328,6 +342,7 @@ export const EcoursesData = {
           "mailto:EMAILADDRESS",
           "instagram://user?username={USERNAME}",
         ],
+        website: "https://www.ds.unipi.gr/",
       },
       {
         id: "1006",
@@ -349,6 +364,7 @@ export const EcoursesData = {
           "mailto:EMAILADDRESS",
           "instagram://user?username={USERNAME}",
         ],
+        website: "https://www.ds.unipi.gr/",
       },
       {
         id: "1007",
@@ -370,6 +386,7 @@ export const EcoursesData = {
           "mailto:EMAILADDRESS",
           "instagram://user?username={USERNAME}",
         ],
+        website: "https://www.ds.unipi.gr/",
       },
       {
         id: "1008",
@@ -391,6 +408,7 @@ export const EcoursesData = {
           "mailto:EMAILADDRESS",
           "instagram://user?username={USERNAME}",
         ],
+        website: "https://www.ds.unipi.gr/",
       },
       {
         id: "1009",
@@ -412,6 +430,7 @@ export const EcoursesData = {
           "mailto:EMAILADDRESS",
           "instagram://user?username={USERNAME}",
         ],
+        website: "https://www.ds.unipi.gr/",
       },
       {
         id: "1010",
@@ -433,6 +452,7 @@ export const EcoursesData = {
           "mailto:EMAILADDRESS",
           "instagram://user?username={USERNAME}",
         ],
+        website: "https://www.ds.unipi.gr/",
       },
       {
         id: "1011",
@@ -454,6 +474,7 @@ export const EcoursesData = {
           "mailto:EMAILADDRESS",
           "instagram://user?username={USERNAME}",
         ],
+        website: "https://www.ds.unipi.gr/",
       },
       {
         id: "1012",
@@ -475,6 +496,7 @@ export const EcoursesData = {
           "mailto:EMAILADDRESS",
           "instagram://user?username={USERNAME}",
         ],
+        website: "https://www.ds.unipi.gr/",
       },
       {
         id: "1013",
@@ -496,6 +518,7 @@ export const EcoursesData = {
           "mailto:EMAILADDRESS",
           "instagram://user?username={USERNAME}",
         ],
+        website: "https://www.ds.unipi.gr/",
       },
       {
         id: "1014",
@@ -517,6 +540,7 @@ export const EcoursesData = {
           "mailto:EMAILADDRESS",
           "instagram://user?username={USERNAME}",
         ],
+        website: "https://www.ds.unipi.gr/",
       },
       {
         id: "1015",
@@ -538,6 +562,7 @@ export const EcoursesData = {
           "mailto:EMAILADDRESS",
           "instagram://user?username={USERNAME}",
         ],
+        website: "https://www.ds.unipi.gr/",
       },
       {
         id: "1016",
@@ -559,6 +584,7 @@ export const EcoursesData = {
           "mailto:EMAILADDRESS",
           "instagram://user?username={USERNAME}",
         ],
+        website: "https://www.ds.unipi.gr/",
       },
       {
         id: "1017",
@@ -580,6 +606,7 @@ export const EcoursesData = {
           "mailto:EMAILADDRESS",
           "instagram://user?username={USERNAME}",
         ],
+        website: "https://www.ds.unipi.gr/",
       },
       {
         id: "1018",
@@ -601,6 +628,7 @@ export const EcoursesData = {
           "mailto:EMAILADDRESS",
           "instagram://user?username={USERNAME}",
         ],
+        website: "https://www.ds.unipi.gr/",
       },
       {
         id: "1019",
@@ -622,6 +650,7 @@ export const EcoursesData = {
           "mailto:EMAILADDRESS",
           "instagram://user?username={USERNAME}",
         ],
+        website: "https://www.ds.unipi.gr/",
       },
       {
         id: "1020",
@@ -643,6 +672,7 @@ export const EcoursesData = {
           "mailto:EMAILADDRESS",
           "instagram://user?username={USERNAME}",
         ],
+        website: "https://www.ds.unipi.gr/",
       },
       {
         id: "1021",
@@ -664,6 +694,7 @@ export const EcoursesData = {
           "mailto:EMAILADDRESS",
           "instagram://user?username={USERNAME}",
         ],
+        website: "https://www.ds.unipi.gr/",
       },
       {
         id: "1022",
@@ -685,6 +716,7 @@ export const EcoursesData = {
           "mailto:EMAILADDRESS",
           "instagram://user?username={USERNAME}",
         ],
+        website: "https://www.ds.unipi.gr/",
       },
       {
         id: "1023",
@@ -706,6 +738,7 @@ export const EcoursesData = {
           "mailto:EMAILADDRESS",
           "instagram://user?username={USERNAME}",
         ],
+        website: "https://www.ds.unipi.gr/",
       },
       {
         id: "1024",
@@ -727,6 +760,7 @@ export const EcoursesData = {
           "mailto:EMAILADDRESS",
           "instagram://user?username={USERNAME}",
         ],
+        website: "https://www.ds.unipi.gr/",
       },
       {
         id: "1025",
@@ -748,6 +782,7 @@ export const EcoursesData = {
           "mailto:EMAILADDRESS",
           "instagram://user?username={USERNAME}",
         ],
+        website: "https://www.ds.unipi.gr/",
       },
       {
         id: "1026",
@@ -769,6 +804,7 @@ export const EcoursesData = {
           "mailto:EMAILADDRESS",
           "instagram://user?username={USERNAME}",
         ],
+        website: "https://www.ds.unipi.gr/",
       },
       {
         id: "1027",
@@ -790,6 +826,7 @@ export const EcoursesData = {
           "mailto:EMAILADDRESS",
           "instagram://user?username={USERNAME}",
         ],
+        website: "https://www.ds.unipi.gr/",
       },
     ];
   },
