@@ -1,5 +1,5 @@
 import React from "react";
-import PartnerUniversitiesRec from "../../components/PartnerUniversities/PartnerUniversities";
+import PartnerUniversitiesRec from "../../components/PartnerUniversities/partnerUniversities";
 import SearchBar from "../../components/SearchBar/SearchBar";
 import EcourseCardHome from "../../components/EcourseCardHomePage/EcourseCardHome";
 // import Footer from "../../components/Footer/Footer";

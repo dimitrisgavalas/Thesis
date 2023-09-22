@@ -3,6 +3,7 @@ import { EcoursesData } from "../../mock-d/EcoursesData";
 import { Button } from "primereact/button";
 import { DataView, DataViewLayoutOptions } from "primereact/dataview";
 import { Rating } from "primereact/rating";
+import { Link } from 'react-router-dom';
 import { Tag } from "primereact/tag";
 
 function EcourseCardHome() {
@@ -79,8 +80,11 @@ function EcourseCardHome() {
   const gridItem = (ecourse) => {
     return (
       <div className="pb-5 col-12 sm:col-6 lg:col-12 xl:col-4 p-2">
+
         <div className="p-4 border-1 surface-border surface-card border-round">
+
           <div className="flex flex-wrap align-items-center justify-content-between gap-2">
+
             <div className="flex align-items-center gap-2">
               <i className="pi pi-book"></i>
               {/* in span we add ecourse category. ex Programming, Education, Physics etc */}
@@ -92,17 +96,19 @@ function EcourseCardHome() {
               // den allazoume to severity giati to xrwma twn chips ejartatai apo auth thn lejh
               severity={getLocation(ecourse)}
             ></Tag>
-          </div>
 
-          <div className="flex flex-column align-items-center gap-3 py-5">
-            <img
-              className="w-9 shadow-2 border-round"
-              src={ecourse.image}
-              alt={ecourse.title}
-            />
-            <div className="text-2xl font-bold">{ecourse.title}</div>
-            <Rating value={ecourse.rating} readOnly cancel={false}></Rating>
           </div>
+          <Link to={`/singleEcourse/${ecourse.id}`}>
+            <div className="flex flex-column align-items-center gap-3 py-5">
+              <img
+                className="w-9 shadow-2 border-round"
+                src={ecourse.image}
+                alt={ecourse.title}
+              />
+              <div className="text-2xl font-bold">{ecourse.title}</div>
+              <Rating value={ecourse.rating} readOnly cancel={false}></Rating>
+            </div>
+          </Link>
           <div className="flex align-items-center justify-content-between">
             <span className="text-2xl font-semibold">€{ecourse.price}</span>
             <Button
@@ -111,8 +117,10 @@ function EcourseCardHome() {
               disabled={ecourse.ecourseLocation === "OUTOFSTOCK"}
             ></Button>
           </div>
+
         </div>
-      </div>
+
+      </div >
     );
   };
 

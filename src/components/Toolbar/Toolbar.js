@@ -7,16 +7,39 @@ import { Menubar } from "primereact/menubar";
 // import "./Toolbar.css";
 import { Routes, Route, useNavigate } from "react-router-dom";
 import Favorites from "../Favorites/Favorites";
+import { useVisibilityService, useLoginService } from './toolbar.service';
 
 // function ToolbarMenu() {
 export default function ToolbarMenu() {
-  const [visible, setVisible] = useState(false);
+  // const [visible, setVisible] = useState(false);
+  const { visible, setVisibility, toggleVisibility } = useVisibilityService();
 
+  const show = () => {
+    setVisibility(true);
+  };
+
+  const hide = () => {
+    setVisibility(false);
+  };
+
+  const login = () => {
+    setLogingState(true);
+  };
+  
+  const logout = () => {
+    setLogingState(false);
+  };
+
+  const navigate = useNavigate();
+
+  const { isLoggedIn, setLogingState } = useLoginService();
   // track login status
-  const [isLoggedIn, setIsLoggedIn] = useState(false);
+  // const [isLoggedIn, setIsLoggedIn] = useState(true);
   const items = [
     {
-      url: "/",
+      command: () => {
+        navigate('/')
+      },
       label: "Home",
     },
     {
@@ -29,7 +52,9 @@ export default function ToolbarMenu() {
           icon: "pi pi-building",
           items: [
             {
-              url: "/singleEcourse",
+              command: () => {
+                navigate('/singleEcourse')
+              },
               label: "Single Ecourse",
               icon: "pi pi-building ",
             },
@@ -40,18 +65,24 @@ export default function ToolbarMenu() {
             // },
             // ,
             {
-              url: "/profile",
+              command: () => {
+                navigate('/profile')
+              },
               label: "User Profile",
               icon: "pi pi-building ",
             },
             {
-              url: "/addecourse",
+              command: () => {
+                navigate('/addecourse')
+              },
               label: "Add Course",
               icon: "pi pi-building ",
             },
 
             {
-              url: "/uniprofile",
+              command: () => {
+                navigate('/uniprofile')
+              },
               label: "Uni Profile",
               icon: "pi pi-building ",
             },
@@ -119,6 +150,10 @@ export default function ToolbarMenu() {
     },
   ];
 
+  const test = () => {
+    console.log('dfdf')
+  }
+
   const start = (
     <img alt="logo" src="/images/UNIPI.jpg" height="40" className="mr-2"></img>
   );
@@ -145,19 +180,19 @@ export default function ToolbarMenu() {
           title="Sign in"
           variant="text"
           text
-          onClick={() => setVisible(true)}
+          onClick={() => show()}
         />
       )}
 
       <Dialog
         visible={visible}
         style={{ width: "50vw" }}
-        onHide={() => setVisible(false)} // Pass onHide function to close the dialog
+        onHide={() => hide()} // Pass onHide function to close the dialog
       >
         {/* Pass the onSignIn and onHide callbacks to SignInFun */}
         <SignInFun
-          onSignIn={() => setIsLoggedIn(true)}
-          onHide={() => setVisible(false)}
+          onSignIn={() => login()}
+          onHide={() => hide()}
         />
       </Dialog>
       {/* </nav> */}
@@ -179,9 +214,11 @@ export default function ToolbarMenu() {
   //   },
   // ];
 
+
+
   return (
     <div className="card  ">
-      <Menubar model={items} start={start} end={end} />
+      <Menubar model={items} start={start} end={end} item={test()}/>
     </div>
   );
 }

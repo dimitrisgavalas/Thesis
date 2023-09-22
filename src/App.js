@@ -23,11 +23,12 @@ import CommentAndRating from "./components/Ratings/Rating";
 function App() {
   return (
     <div className="container-fluid">
-      <ToolbarMenu />
+
       <BrowserRouter>
+      <ToolbarMenu />
         <Routes>
           <Route exact path="/" element={<Home />} />
-          <Route path="/singleEcourse" element={<SingleEcourse />} />
+          <Route path="/singleEcourse/:id" element={<SingleEcourse />} />
           <Route path="/ecourses/ecoursemainpage" element={<Ecourses />} />
           <Route path="/profile" element={<UserProfile />} />
           <Route path="/favorites" element={<Favorites />} />
@@ -41,9 +42,10 @@ function App() {
           <Route path="/about" element={<About />} />
         </Routes>
       </BrowserRouter>
+
+      <Footer />
       {/* <Contact /> */}
       {/* me routing */}
-      <Footer />
     </div>
   );
 }

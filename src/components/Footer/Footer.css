@@ -1,4 +1,12 @@
-.down{position:absolute;
-    left:0;
-    bottom:0;
-    right:0;}
+.footerEnd {
+    padding: 10px;
+    text-align: center;
+    position: relative;
+    bottom: 0;
+    height: 2.5rem;
+    width: 100%;
+}
+
+.footfooterEnder p {
+    color: #ccc;
+}
