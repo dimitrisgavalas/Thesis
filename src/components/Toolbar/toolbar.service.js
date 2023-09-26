@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState } from "react";
 
 export function useVisibilityService() {
   const [visible, setVisible] = useState(false);
@@ -27,6 +27,6 @@ export function useLoginService() {
 
   return {
     isLoggedIn,
-    setLogingState
+    setLogingState,
   };
 }

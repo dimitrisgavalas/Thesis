@@ -13,6 +13,7 @@ import { useVisibilityService, useLoginService } from "./toolbar.service";
 export default function ToolbarMenu() {
   // const [visible, setVisible] = useState(false);
   const { visible, setVisibility, toggleVisibility } = useVisibilityService();
+  const [isUniversityUser, setIsUniversityUser] = useState(false);
 
   const show = () => {
     setVisibility(true);
@@ -51,13 +52,13 @@ export default function ToolbarMenu() {
           label: "Universities",
           icon: "pi pi-building",
           items: [
-            {
-              command: () => {
-                navigate("/singleEcourse");
-              },
-              label: "Single Ecourse",
-              icon: "pi pi-building ",
-            },
+            // {
+            //   command: () => {
+            //     navigate("/singleEcourse");
+            //   },
+            //   label: "Single Ecourse",
+            //   icon: "pi pi-building ",
+            // },
             // {
             //   url: "/settings",
             //   label: "Settings",
@@ -73,20 +74,18 @@ export default function ToolbarMenu() {
             },
             {
               command: () => {
-                navigate("/addecourse");
-              },
-              label: "Add Course",
-              icon: "pi pi-building ",
-            },
-
-            {
-              command: () => {
                 navigate("/uniprofile");
               },
               label: "Uni Profile",
               icon: "pi pi-building ",
             },
-            ,
+            {
+              command: () => {
+                navigate("/addecourse");
+              },
+              label: "Add Course",
+              icon: "pi pi-building ",
+            },
             {
               url: "/ecourses",
               label: "PADA",
@@ -163,12 +162,12 @@ export default function ToolbarMenu() {
       {/* <nav> */}
       {isLoggedIn && (
         <>
-          {/* <a href="/favorites"> */}
-          <Button icon="pi pi-heart" className="mr-2" text />
-          {/* </a> */}
-          {/* <a href="/profile"> */}
-          <Button icon="pi pi-user" className="mr-2" text />
-          {/* </a> */}
+          <a href="/favorites">
+            <Button icon="pi pi-heart" className="mr-2" text />
+          </a>
+          <a href={isUniversityUser ? "/uniprofile" : "/profile"}>
+            <Button icon="pi pi-user" className="mr-2" text />
+          </a>
         </>
       )}
 
@@ -190,26 +189,17 @@ export default function ToolbarMenu() {
         onHide={() => hide()} // Pass onHide function to close the dialog
       >
         {/* Pass the onSignIn and onHide callbacks to SignInFun */}
-        <SignInFun onSignIn={() => login()} onHide={() => hide()} />
+        <SignInFun
+          onSignIn={(value) => {
+            login();
+            setIsUniversityUser(value);
+          }}
+          onHide={() => hide()}
+        />
       </Dialog>
       {/* </nav> */}
     </React.Fragment>
   );
-
-  // const end2 = [
-  // {
-  //   // label: "Favorites",
-  //   icon: "pi pi-heart",
-  // },
-  //   {
-  //     // label: "notification",
-  //     icon: "pi pi-bell",
-  //   },
-  //   {
-  //     label: "Sign In",
-  //     icon: "pi pi-sign-in",
-  //   },
-  // ];
 
   return (
     <div className="card  ">
@@ -217,6 +207,21 @@ export default function ToolbarMenu() {
     </div>
   );
 }
+
+// const end2 = [
+// {
+//   // label: "Favorites",
+//   icon: "pi pi-heart",
+// },
+//   {
+//     // label: "notification",
+//     icon: "pi pi-bell",
+//   },
+//   {
+//     label: "Sign In",
+//     icon: "pi pi-sign-in",
+//   },
+// ];
 
 {
   /* <Button

@@ -3,12 +3,19 @@ import { InputText } from "primereact/inputtext";
 import { Checkbox } from "primereact/checkbox";
 import { Button } from "primereact/button";
 
-function SignInFun({ onSignIn, onHide }) {
+// onSig.. eidos account
+// onHide state login kruvei to parathuro an signed in
+function SignInFun({ onSignIn, onHide, isUniversityUser }) {
+  //check gia remember me
   const [checked, setChecked] = useState([]);
+  //  Stores the user's email input.
   const [email, setEmail] = useState("");
+  //  Stores the user's [pass] input.
   const [password, setPassword] = useState("");
+  // Used to display an error message if the login is unsuccessful.
   const [error, setError] = useState("");
 
+  // when sign in button is clicked
   const handleLogin = () => {
     let isUniversityUser = false; // Default to false
 
@@ -31,6 +38,7 @@ function SignInFun({ onSignIn, onHide }) {
       onHide();
     } else {
       setError("Invalid email or password");
+      alert("Acount Not Found");
     }
 
     // Notify the parent component of the successful login and isUniversityUser value
