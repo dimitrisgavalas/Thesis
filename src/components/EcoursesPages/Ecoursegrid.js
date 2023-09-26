@@ -7,6 +7,7 @@ import { DataView } from "primereact/dataview";
 import { Dropdown } from "primereact/dropdown";
 import Filters from "../Filters/Filters";
 import { Column } from "primereact/column";
+import { Link } from "react-router-dom";
 
 function EcoursesGrid() {
   const [ecourses, setEcourses] = useState([]);
@@ -61,16 +62,17 @@ function EcoursesGrid() {
               severity={getLocation(ecourse)}
             ></Tag>
           </div>
-
-          <div className="flex flex-column align-items-center gap-3 py-5">
-            <img
-              className="w-9 shadow-2 border-round"
-              src={ecourse.image}
-              alt={ecourse.title}
-            />
-            <div className="text-2xl font-bold">{ecourse.title}</div>
-            <Rating value={ecourse.rating} readOnly cancel={false}></Rating>
-          </div>
+          <Link to={`/singleEcourse/${ecourse.id}`}>
+            <div className="flex flex-column align-items-center gap-3 py-5">
+              <img
+                className="w-9 shadow-2 border-round"
+                src={ecourse.image}
+                alt={ecourse.title}
+              />
+              <div className="text-2xl font-bold">{ecourse.title}</div>
+              <Rating value={ecourse.rating} readOnly cancel={false}></Rating>
+            </div>
+          </Link>
           <div className="flex align-items-center justify-content-between">
             <span className="text-2xl font-semibold">€{ecourse.price}</span>
             <Button

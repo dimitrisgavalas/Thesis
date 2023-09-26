@@ -149,7 +149,7 @@ function EcourseCardHome() {
         itemTemplate={itemTemplate}
         layout={layout}
         //button gia na allazei apo grid se lista
-        header={header()}
+        // header={header()}
       />
     </div>
   );

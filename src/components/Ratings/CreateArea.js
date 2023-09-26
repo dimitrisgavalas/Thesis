@@ -40,7 +40,7 @@ function CreateArea(props) {
         {/* <br></br> */}
         <Rating value={4} cancel={false} />
       </div>
-      <form>
+      <form className="forms">
         {/* <input
           name="userName"
           onChange={handleChange}

@@ -1,13 +1,13 @@
 //Test. H selida pou emfanizetai otan patame sto Ecourses-->University.
 
-import React, { useEffect } from "react";
+import React, { useState, useEffect } from "react";
 import "./SingleEcourse.css";
 import { Image } from "primereact/image";
 import { EcoursesData } from "../../../mock-d/EcoursesData";
 import notes from "../../../mock-d/notes";
 import Note from "./Note";
 import Rating from "../../Ratings/Rating";
-import { useParams } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 import { Button } from "primereact/button";
 
 function SingleEcourse() {
@@ -15,7 +15,7 @@ function SingleEcourse() {
     // Scroll to the top of the page when the component mounts
     window.scrollTo(0, 0);
   }, []);
-
+  const [similarEcourses, setEcourses] = useState([]);
   const openInNewTab = (url) => {
     window.open(url, "_blank");
   };
@@ -49,13 +49,13 @@ function SingleEcourse() {
   // Sample similar courses data
   const similarCourses = [
     {
-      id: 2,
-      title: "Machine Learning for Beginners",
+      id: 1026,
+      title: "ReactJs Basics",
       image: img,
     },
     {
-      id: 3,
-      title: "Networks",
+      id: 1027,
+      title: "Build a Game in 30 days",
       image: img,
     },
   ];
@@ -97,24 +97,28 @@ function SingleEcourse() {
         <div className="similar-courses m-2 flex justify-content-center border-2 surface-border border-round p-2">
           <div className=" ">
             <h3>Contact University </h3>
+            <p>course links</p>
             <br></br>
             <a onClick={() => openInNewTab(course.website)}>
               {" "}
               <Button
-                icon="pi pi-twitter"
+                icon="pi pi-external-link"
                 className=" justify-content-center"
               />
             </a>
           </div>
           {/* Contact Info*/}
         </div>
-        <div className="similar-courses">
+        <div className="similar-courses mt-5">
           <h3>Similar Courses</h3>
+
           <div className="similar-courses-grid">
             {similarCourses.map((similarCourse) => (
               <div key={similarCourse.id} className="similar-course">
-                <h4>{similarCourse.title}</h4>
-                <img src={similarCourse.image} alt={similarCourse.title} />
+                <Link to={`/singleEcourse/${similarCourse.id}`}>
+                  <h4>{similarCourse.title}</h4>
+                  <img src={similarCourse.image} alt={similarCourse.title} />
+                </Link>
               </div>
             ))}
           </div>

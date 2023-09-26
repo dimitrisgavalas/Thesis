@@ -38,7 +38,7 @@ function Contact() {
               onChange={(e) => setMessage(e.target.value)}
             ></textarea>
           </div>
-          <Button label="Submit" type="submit" icon="pi pi-check mt-2" />
+          <Button label="Submit" type="submit" />
         </form>
       </div>
     </div>

@@ -8,8 +8,8 @@ function Note(props) {
   }
 
   return (
-    <div className="note">
-      <h1>Dimitris Dim</h1>
+    <div className="noteComment">
+      <h1>user</h1>
       {/* <div>{props.rating}</div> */}
       <Rating value={props.rating} cancel={false} />
       <p>{props.content}</p>

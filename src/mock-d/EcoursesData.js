@@ -324,7 +324,7 @@ export const EcoursesData = {
       },
       {
         id: "1005",
-        title: "Web Development Bootcamp",
+        title: "CONTEMPORARY ART",
         image: img,
         price: 90,
         category: "Greek",
@@ -346,7 +346,7 @@ export const EcoursesData = {
       },
       {
         id: "1006",
-        title: "Web Development Bootcamp",
+        title: "Linguistics 5",
         image: img,
         price: 6580,
         category: "Linguistics",
@@ -368,7 +368,7 @@ export const EcoursesData = {
       },
       {
         id: "1007",
-        title: "Web Development Bootcamp",
+        title: "Psychology Introduction",
         image: img,
         price: 320,
         category: "Psychology",
@@ -390,7 +390,7 @@ export const EcoursesData = {
       },
       {
         id: "1008",
-        title: "Web Development Bootcamp",
+        title: "WW2 DDAY",
         image: img,
         price: 430,
         category: "History",
@@ -412,7 +412,7 @@ export const EcoursesData = {
       },
       {
         id: "1009",
-        title: "Web Development Bootcamp",
+        title: "What if?",
         image: img,
         price: 870,
         category: "Philosophy",
@@ -434,7 +434,7 @@ export const EcoursesData = {
       },
       {
         id: "1010",
-        title: "Web Development Bootcamp",
+        title: "Build a rocket",
         image: img,
         price: 2210,
         category: "Engineering",
@@ -456,7 +456,7 @@ export const EcoursesData = {
       },
       {
         id: "1011",
-        title: "Web Development Bootcamp",
+        title: "Clay Sculptures",
         image: img,
         price: 850,
         category: "Art",
@@ -478,7 +478,7 @@ export const EcoursesData = {
       },
       {
         id: "1012",
-        title: "Web Development Bootcamp",
+        title: "C# Bootcamp",
         image: img,
         price: 490,
         category: "Programming",
@@ -500,7 +500,7 @@ export const EcoursesData = {
       },
       {
         id: "1013",
-        title: "Web Development Bootcamp",
+        title: "Geometry",
         image: img,
         price: 50,
         category: "Mathematics",
@@ -522,7 +522,7 @@ export const EcoursesData = {
       },
       {
         id: "1014",
-        title: "Web Development Bootcamp",
+        title: "Quantum Physics Intro",
         image: img,
         price: 90,
         category: "Physics",
@@ -544,7 +544,7 @@ export const EcoursesData = {
       },
       {
         id: "1015",
-        title: "Web Development Bootcamp",
+        title: "Mitochondria",
         image: img,
         price: 120,
         category: "Biology",
@@ -566,7 +566,7 @@ export const EcoursesData = {
       },
       {
         id: "1016",
-        title: "Web Development Bootcamp",
+        title: "English 3",
         image: img,
         price: 9990,
         category: "English",
@@ -588,7 +588,7 @@ export const EcoursesData = {
       },
       {
         id: "1017",
-        title: "Web Development Bootcamp",
+        title: "Introduction to the Greek Alphabet",
         image: img,
         price: 650,
         category: "Greek",
@@ -610,7 +610,7 @@ export const EcoursesData = {
       },
       {
         id: "1018",
-        title: "Web Development Bootcamp",
+        title: "Linguistics 1",
         image: img,
         price: 650,
         category: "Linguistics",
@@ -632,7 +632,7 @@ export const EcoursesData = {
       },
       {
         id: "1019",
-        title: "Web Development Bootcamp",
+        title: "Moon Landing",
         image: img,
         price: 650,
         category: "History",
@@ -654,7 +654,7 @@ export const EcoursesData = {
       },
       {
         id: "1020",
-        title: "Web Development Bootcamp",
+        title: "Psychology 3",
         image: img,
         price: 650,
         category: "Psychology",
@@ -676,7 +676,7 @@ export const EcoursesData = {
       },
       {
         id: "1021",
-        title: "Web Development Bootcamp",
+        title: "Linguistics 4",
         image: img,
         price: 650,
         category: "Linguistics",
@@ -698,7 +698,7 @@ export const EcoursesData = {
       },
       {
         id: "1022",
-        title: "Web Development Bootcamp",
+        title: "Greek Philosophers",
         image: img,
         price: 650,
         category: "Philosophy",
@@ -720,7 +720,7 @@ export const EcoursesData = {
       },
       {
         id: "1023",
-        title: "Web Development Bootcamp",
+        title: "Thermodynamics 1",
         image: img,
         price: 650,
         category: "Engineering",
@@ -742,7 +742,7 @@ export const EcoursesData = {
       },
       {
         id: "1024",
-        title: "Web Development Bootcamp",
+        title: "Renaissance",
         image: img,
         price: 650,
         category: "Art",
@@ -764,7 +764,7 @@ export const EcoursesData = {
       },
       {
         id: "1025",
-        title: "Web Development Bootcamp",
+        title: "SQL",
         image: img,
         price: 650,
         category: "Programming",
@@ -786,7 +786,7 @@ export const EcoursesData = {
       },
       {
         id: "1026",
-        title: "Web Development Bootcamp",
+        title: "ReactJs Basics",
         image: img,
         price: 650,
         category: "Programming",
@@ -808,7 +808,7 @@ export const EcoursesData = {
       },
       {
         id: "1027",
-        title: "Web Development Bootcamp",
+        title: "Build a Game in 30 days",
         image: img,
         price: 650,
         category: "Programming",
