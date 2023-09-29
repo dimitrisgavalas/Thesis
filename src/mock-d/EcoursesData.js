@@ -8,7 +8,7 @@ export const EcoursesData = {
     return [
       {
         id: "1000",
-        title: "Web Develoaaapment Bootcamp",
+        title: "Satelite Connections",
         image: img,
         price: 350,
         category: "Programming",
@@ -225,7 +225,7 @@ export const EcoursesData = {
         language: ["Greek", "English"],
         description:
           "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
-        rating: 5,
+        rating: 3,
         contact: [
           "+302100000000",
           "mailto:EMAILADDRESS",
@@ -262,7 +262,7 @@ export const EcoursesData = {
         image: img,
         price: 60,
         category: "Physics",
-        ecourseLocation: "Hybrid",
+        ecourseLocation: "On Campus",
         university: "University of Piraeus",
         professors: ["Dimitris Dimitris", "Gavalas Gavalas"],
         duration: "12 weeks",
@@ -270,7 +270,7 @@ export const EcoursesData = {
         language: ["Greek", "English"],
         description:
           "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
-        rating: 5,
+        rating: 4,
         contact: [
           "+302100000000",
           "mailto:EMAILADDRESS",
@@ -864,6 +864,17 @@ export const EcoursesData = {
       },
     ];
   },
+  favoriteEcourses: [],
+
+  getFavoriteEcoursesData() {
+    // Retrieve and parse the data from localStorage
+    const favoritesJSON = localStorage.getItem("favoriteEcourses");
+    if (favoritesJSON) {
+      return JSON.parse(favoritesJSON);
+    } else {
+      return [];
+    }
+  },
 
   // method that returns an array of different universities.
   getFieldName() {
@@ -927,6 +938,21 @@ export const EcoursesData = {
   //  method that returns a Promise that resolves with all Ecourses from getAllEcourses.
   getAllEcourses() {
     return Promise.resolve(this.getAllEcoursesData());
+  },
+  getFavoriteEcourses() {
+    return new Promise((resolve) => {
+      setTimeout(() => {
+        resolve(this.getFavoriteEcoursesData());
+      }, 100); // Simulate an asynchronous request (e.g., API call)
+    });
+  },
+  // Method to update favorite ecourses
+  // Method to update favorite ecourses and store in localStorage
+  updateFavoriteEcourses(newFavorites) {
+    this.favoriteEcourses = newFavorites;
+
+    // Store the updated favorites in localStorage
+    localStorage.setItem("favoriteEcourses", JSON.stringify(newFavorites));
   },
 };
 
