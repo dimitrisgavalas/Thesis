@@ -1,7 +1,7 @@
 .container {
   height: 400px;
   /* background-color: rgb(190, 178, 207); */
-  background-image: url("/images/bck.gif");
+  background-image: url('/public/images/bck.gif');
 
 }
 
