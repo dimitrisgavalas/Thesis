@@ -23,9 +23,8 @@ import CommentAndRating from "./components/Ratings/Rating";
 function App() {
   return (
     <div className="container-fluid">
-
       <BrowserRouter>
-      <ToolbarMenu />
+        <ToolbarMenu />
         <Routes>
           <Route exact path="/" element={<Home />} />
           <Route path="/singleEcourse/:id" element={<SingleEcourse />} />
