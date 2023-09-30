@@ -3,6 +3,20 @@
 const img = ["/images/thumbnail.png"];
 
 export const EcoursesData = {
+  addNewCourse(newCourse) {
+    // You can generate a unique ID for the new course here
+    const courseId = Date.now().toString();
+
+    // Add the new course to the array
+    this.getAllEcoursesData().push({
+      id: courseId,
+      ...newCourse,
+    });
+
+    // You may want to save this updated data to a server or localStorage here
+
+    return Promise.resolve(courseId);
+  },
   // method that returns an array of Ecourse objects that appear in Home page
   getHomePageEcourseData() {
     return [
@@ -210,7 +224,9 @@ export const EcoursesData = {
 
   // method that returns an array of All Ecourse objects
   getAllEcoursesData() {
-    return [
+    const localStorageData =
+      JSON.parse(localStorage.getItem("allCourses")) || [];
+    const staticData = [
       {
         id: "1000",
         title: "Web Development Bootcamp",
@@ -829,6 +845,10 @@ export const EcoursesData = {
         website: "https://www.ds.unipi.gr/",
       },
     ];
+
+    const allData = [...localStorageData, ...staticData];
+
+    return allData;
   },
 
   // method that returns an array of different universities.

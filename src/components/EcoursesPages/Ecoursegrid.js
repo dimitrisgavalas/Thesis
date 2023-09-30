@@ -122,7 +122,7 @@ function EcoursesGrid() {
     <div className="card">
       <DataView
         // kouti me ta 'x'(ex.9) ecourses
-        globalFilterFields={["name", "category.name", "location"]}
+        // globalFilterFields={["name", "category.name", "location"]}
         value={filteredEcourses}
         itemTemplate={itemTemplate}
         paginator

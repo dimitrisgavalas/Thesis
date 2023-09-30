@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { Button } from "primereact/button";
 import { InputText } from "primereact/inputtext";
 import { InputTextarea } from "primereact/inputtextarea";
@@ -6,17 +6,42 @@ import { FileUpload } from "primereact/fileupload";
 import DropdownList from "./DropdownList";
 import { MultiSelect } from "primereact/multiselect";
 import { Dropdown } from "primereact/dropdown";
-// import Header from "./Header";
-// import Footer from "./Footer";
+import { EcoursesData } from "../../mock-d/EcoursesData";
 import "./AddCourse.css";
 
 function AddCourse() {
   const [selectedFields, setSelectedFields] = useState(null);
+  const [university, setUniversity] = useState("");
+  const [professors, setProfessors] = useState("");
+  const [location, setLocation] = useState("");
+  const [field, setField] = useState("");
+  const [description, setDescrription] = useState("");
+
+  const generateUniqueId = () => {
+    // Generate a unique ID for the new course
+    return Date.now().toString();
+  };
+
+  useEffect(() => {
+    // Retrieve data from localStorage and merge it with data from getAllEcoursesData
+    const localStorageCourses =
+      JSON.parse(localStorage.getItem("allCourses")) || [];
+    const allEcourses = EcoursesData.getAllEcoursesData(); // Assuming this function exists in your code
+
+    // Combine the two arrays
+    const allCourses = [...localStorageCourses, ...allEcourses];
+
+    // Now, you can use the allCourses array in your component's state or for rendering.
+    // For example, you can set it in the component's state:
+    // setCourses(allCourses);
+
+    // ... (any other logic you want to perform with the combined data)
+  }, []);
 
   const [course, setCourse] = useState({
     id: "",
     title: "",
-    image: "",
+    image: "/images/thumbnail.png",
     price: "",
     category: "",
     ecourseLocation: "",
@@ -30,12 +55,60 @@ function AddCourse() {
     contact: [{ phone: "", email: "", socialMedia: "" }],
   });
   const [value, setValue] = useState("");
+  // fix University, Proffesors, Location, description
+  const handleUniChange = (e) => {
+    const { value } = e.target;
+    setCourse((prevCourse) => ({
+      ...prevCourse,
+      university: value,
+    }));
+  };
 
-  const handleChange = (e) => {
+  const handleNameChange = (e) => {
+    const { value } = e.target;
+    setCourse((prevCourse) => ({
+      ...prevCourse,
+      title: value,
+    }));
+  };
+
+  const handleProfChange = (e) => {
+    const { value } = e.target;
+    setCourse((prevCourse) => ({
+      ...prevCourse,
+      professors: value,
+    }));
+  };
+
+  const handleDurationChange = (e) => {
+    const { value } = e.target;
+    setCourse((prevCourse) => ({
+      ...prevCourse,
+      duration: value,
+    }));
+  };
+
+  const handleECTSChange = (e) => {
+    const { value } = e.target;
+    setCourse((prevCourse) => ({
+      ...prevCourse,
+      ECTS: value,
+    }));
+  };
+
+  const handlePriceChange = (e) => {
     const { name, value } = e.target;
     setCourse((prevCourse) => ({
       ...prevCourse,
       [name]: value,
+    }));
+  };
+
+  const handleFieldChange = (e) => {
+    const { value } = e.target;
+    setCourse((prevCourse) => ({
+      ...prevCourse,
+      category: value,
     }));
   };
 
@@ -51,13 +124,28 @@ function AddCourse() {
   };
 
   const handleSave = () => {
-    console.log("Save course:", course);
-    // Save the course data to the server as an unpublished course
+    const courseId = generateUniqueId();
+    const savedCourses = JSON.parse(localStorage.getItem("savedCourses")) || [];
+    const newCourse = { ...course, id: courseId };
+    savedCourses.push(newCourse);
+    localStorage.setItem("savedCourses", JSON.stringify(savedCourses));
+    console.log("Saved course:", newCourse);
+    // Reset the form or perform any other necessary actions
   };
 
-  const handlePublish = () => {
-    console.log("Publish course:", course);
-    // Save the course data to the server as a published course
+  const handlePublish = (e) => {
+    e.preventDefault(); // Prevent the default form submission
+    const courseId = generateUniqueId();
+    const allCourses = JSON.parse(localStorage.getItem("allCourses")) || [];
+    const newCourse = { ...course, id: courseId };
+    allCourses.push(newCourse);
+    localStorage.setItem("allCourses", JSON.stringify(allCourses));
+    console.log("Published course:", newCourse);
+
+    // Display a success message
+    window.alert("Course published successfully!"); // Show an alert message
+
+    // Reset the form or perform any other necessary actions
   };
 
   const [categories] = useState([
@@ -74,7 +162,7 @@ function AddCourse() {
   const [locations] = useState([
     { name: "Hybrid" },
     { name: "Online" },
-    { name: "Onsite" },
+    { name: "On Campus" },
   ]);
 
   const [universities] = useState([
@@ -111,7 +199,7 @@ function AddCourse() {
             <InputText
               placeholder="Course Name"
               // value={course.name}
-              onChange={handleChange}
+              onChange={handleNameChange}
             />
 
             {/* Add University */}
@@ -119,41 +207,14 @@ function AddCourse() {
             <DropdownList
               list={universities}
               placeholder={"Select University"}
+              onChange={handleUniChange}
             />
-
-            {/* <select
-              name="mode"
-              value={course.university}
-              onChange={handleChange}
-            >
-              <option value="">University</option>
-              <option value="University of Piraeus">
-                University of Piraeus
-              </option>
-              <option value="National and Kapodistrian University of Athens">
-                National and Kapodistrian University of Athens
-              </option>
-              <option value="EMP">EMP</option>
-              <option value="Univesity of West Attica">
-                Univesity of West Attica
-              </option>
-              <option value="OPA">OPA</option>
-              <option
-                value="Panteion
-            university"
-              >
-                Panteion university
-              </option>
-              <option value="Aristotle University of Thessaloniki">
-                Aristotle University of Thessaloniki
-              </option>
-            </select> */}
 
             {/* Add Professors Name */}
             <InputText
               placeholder="Professors Name"
               // value={course.professors[1]}
-              onChange={handleChange}
+              // onChange={handleProfChange}
             />
 
             {/* Duration */}
@@ -161,7 +222,7 @@ function AddCourse() {
               type="text"
               placeholder="Duration"
               // value={course.duration}
-              onChange={handleChange}
+              onChange={handleDurationChange}
             />
 
             {/* ECTS */}
@@ -171,7 +232,7 @@ function AddCourse() {
               name="ECTS"
               placeholder="ECTS"
               // value={course.ECTS}
-              onChange={handleChange}
+              onChange={handleECTSChange}
             />
 
             {/* Price */}
@@ -181,39 +242,20 @@ function AddCourse() {
               name="price"
               placeholder="Price"
               // value={course.price}
-              onChange={handleChange}
+              onChange={handlePriceChange}
             />
 
-            {/* Location */}
-            {/* <select name="mode" value={course.mode} onChange={handleChange}>
-              <option value="">Select Location</option>
-              <option value="online">Online</option>
-              <option value="onsite">Onsite</option>
-              <option value="hybrid">Hybrid</option>
-            </select> */}
+            <DropdownList
+              list={locations}
+              placeholder={"Select Location"}
+              onChange={handlePriceChange}
+            />
 
-            <DropdownList list={locations} placeholder={"Select Location"} />
-
-            {/* Fields */}
-            {/* <select name="mode" value={course.mode} onChange={handleChange}>
-              <option value="">Select Field</option>
-              <option value="Computer Science">Computer Science</option>
-              <option value="Programming">Programming</option>
-              <option value="Mathematics">Mathematics</option>
-              <option value="Physics">Physics</option>
-              <option value="Biology">Biology</option>
-              <option value="English">English</option>
-              <option value="Greek">Greek</option>
-              <option value="Linguistics">Linguistics</option>
-              <option value="Law">Law</option>
-              <option value="Psychology">Psychology</option>
-              <option value="History-Archaelogy">History-Archaelogy</option>
-              <option value="Philosophy">Philosophy</option>
-              <option value="Engineering">Engineering</option>
-              <option value="Art">Art</option>
-            </select> */}
-
-            <DropdownList list={categories} placeholder={"Select Field"} />
+            <DropdownList
+              list={categories}
+              placeholder={"Select Field"}
+              onChange={handleFieldChange}
+            />
 
             {/* Course Desciption */}
 
@@ -228,6 +270,7 @@ function AddCourse() {
               cols={300}
             />
           </div>
+
           {/* Upload Files */}
           <h3>Upload thumbnail</h3>
           <FileUpload
@@ -240,18 +283,6 @@ function AddCourse() {
               <p className="m-0">Drag and drop files to here to upload.</p>
             }
           />
-          {/* Upload Photo
-          <h2>Upload Photos</h2>
-          <FileUpload
-            name="demo[]"
-            url={"/api/upload"}
-            multiple
-            accept="image/*"
-            maxFileSize={1000000}
-            emptyTemplate={
-              <p className="m-0">Drag and drop files to here to upload.</p>
-            }
-          /> */}
 
           {/* Contact Info */}
           <div className="contact-info">
@@ -292,3 +323,83 @@ function AddCourse() {
 }
 
 export default AddCourse;
+
+{
+  /* <select
+              name="mode"
+              value={course.university}
+              onChange={handleChange}
+            >
+              <option value="">University</option>
+              <option value="University of Piraeus">
+                University of Piraeus
+              </option>
+              <option value="National and Kapodistrian University of Athens">
+                National and Kapodistrian University of Athens
+              </option>
+              <option value="EMP">EMP</option>
+              <option value="Univesity of West Attica">
+                Univesity of West Attica
+              </option>
+              <option value="OPA">OPA</option>
+              <option
+                value="Panteion
+            university"
+              >
+                Panteion university
+              </option>
+              <option value="Aristotle University of Thessaloniki">
+                Aristotle University of Thessaloniki
+              </option>
+            </select> */
+}
+
+{
+  /* Location */
+}
+{
+  /* <select name="mode" value={course.mode} onChange={handleChange}>
+              <option value="">Select Location</option>
+              <option value="online">Online</option>
+              <option value="onsite">Onsite</option>
+              <option value="hybrid">Hybrid</option>
+            </select> */
+}
+
+{
+  /* Fields */
+}
+{
+  /* <select name="mode" value={course.mode} onChange={handleChange}>
+              <option value="">Select Field</option>
+              <option value="Computer Science">Computer Science</option>
+              <option value="Programming">Programming</option>
+              <option value="Mathematics">Mathematics</option>
+              <option value="Physics">Physics</option>
+              <option value="Biology">Biology</option>
+              <option value="English">English</option>
+              <option value="Greek">Greek</option>
+              <option value="Linguistics">Linguistics</option>
+              <option value="Law">Law</option>
+              <option value="Psychology">Psychology</option>
+              <option value="History-Archaelogy">History-Archaelogy</option>
+              <option value="Philosophy">Philosophy</option>
+              <option value="Engineering">Engineering</option>
+              <option value="Art">Art</option>
+            </select> */
+}
+
+{
+  /* Upload Photo
+          <h2>Upload Photos</h2>
+          <FileUpload
+            name="demo[]"
+            url={"/api/upload"}
+            multiple
+            accept="image/*"
+            maxFileSize={1000000}
+            emptyTemplate={
+              <p className="m-0">Drag and drop files to here to upload.</p>
+            }
+          /> */
+}
