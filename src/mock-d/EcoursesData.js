@@ -8,7 +8,7 @@ export const EcoursesData = {
     return [
       {
         id: "1000",
-        title: "Satelite Connections",
+        title: "Web Develoaaapment Bootcamp",
         image: img,
         price: 350,
         category: "Programming",
@@ -213,7 +213,7 @@ export const EcoursesData = {
     return [
       {
         id: "1000",
-        title: "Web Develoaaapment Bootcamp",
+        title: "Web Development Bootcamp",
         image: img,
         price: 350,
         category: "Programming",

@@ -15,9 +15,36 @@ function EcoursesGrid() {
   const [sortOrder, setSortOrder] = useState(0);
   const [sortField, setSortField] = useState("");
 
+  const [filters, setFilters] = useState({
+    university: null,
+    location: null,
+    fields: [],
+  });
+
   const header = () => {
-    return <Filters />;
+    return <Filters onFilter={handleFilters} />;
   };
+
+  const handleFilters = (filterValues) => {
+    setFilters(filterValues);
+  };
+
+  // Filter the ecourses based on the selected filters
+  const filteredEcourses = ecourses.filter((ecourse) => {
+    if (filters.university && ecourse.university !== filters.university) {
+      return false;
+    }
+    if (filters.location && ecourse.ecourseLocation !== filters.location) {
+      return false;
+    }
+    if (
+      filters.fields.length > 0 &&
+      !filters.fields.includes(ecourse.category)
+    ) {
+      return false;
+    }
+    return true;
+  });
 
   // slice=ecourses from object array we want to view in home page. .slice(0, 9)
   useEffect(() => {
@@ -96,7 +123,7 @@ function EcoursesGrid() {
       <DataView
         // kouti me ta 'x'(ex.9) ecourses
         globalFilterFields={["name", "category.name", "location"]}
-        value={ecourses}
+        value={filteredEcourses}
         itemTemplate={itemTemplate}
         paginator
         rows={9}

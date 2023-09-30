@@ -1,33 +1,40 @@
-import React from "react";
-// import EcourseCard from "./EcourseCard";
-import "./Favorites.css";
+import React, { useState, useEffect } from "react";
 import EcoursesGrid from "../EcoursesPages/Ecoursegrid";
+import { EcoursesData } from "../../mock-d/EcoursesData";
 
 function Favorites() {
-  // This array will be replaced with the actual data fetched from the server/mock-d
-  const favoriteCourses = [
-    // Sample data
-    {
-      id: 1,
-      title: "E-course 1",
-      university: "University 1",
-      thumbnail: "https://via.placeholder.com/150",
-    },
-    {
-      id: 2,
-      title: "E-course 2",
-      university: "University 2",
-      thumbnail: "https://via.placeholder.com/150",
-    },
-  ];
+  const [ecoursesData, setEcoursesData] = useState([]);
+  const [favoriteCourses, setFavoriteCourses] = useState([]);
+
+  useEffect(() => {
+    EcoursesData.getFavoriteEcourses().then((data) => {
+      console.log(data); // Log the resolved data
+      setEcoursesData(data);
+    });
+  }, []);
+
+  const handleToggleFavorite = (ecourse) => {
+    // Check if the course is already in favorites
+    if (!favoriteCourses.some((favCourse) => favCourse.id === ecourse.id)) {
+      // Add it to favorites
+      const updatedFavorites = [...favoriteCourses, ecourse];
+      setFavoriteCourses(updatedFavorites);
+
+      // Update the favorites data in EcoursesData
+      EcoursesData.updateFavoriteEcourses(updatedFavorites);
+    }
+  };
 
   return (
-    <div className="favorites-container">
-      <h2>My Favorite E-courses</h2>
-      <div>
-        <EcoursesGrid />
+    <>
+      <div className="border-1 surface-border border-round p-4 m-2">
+        <h1 className="col-12 text-center my-3 fw-bold">E-Courses</h1>
+        <EcoursesGrid
+          ecoursesData={ecoursesData}
+          onToggleFavorite={handleToggleFavorite}
+        />
       </div>
-    </div>
+    </>
   );
 }
 

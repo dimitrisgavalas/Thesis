@@ -1,133 +1,296 @@
-import "./Filters.css";
-import React, { useState, useEffect } from "react";
-import { FilterMatchMode, FilterOperator } from "primereact/api";
-import { InputText } from "primereact/inputtext";
-import { EcoursesData } from "../../mock-d/EcoursesData";
-import { Rating } from "primereact/rating";
-import { Tag } from "primereact/tag";
-import { Button } from "primereact/button";
-import { DataView } from "primereact/dataview";
+import React, { useState } from "react";
 import { Dropdown } from "primereact/dropdown";
-import { MultiSelect } from "primereact/multiselect"; //Selection filter
-import { DataTable } from "primereact/datatable";
-import { Column } from "primereact/column";
+import { MultiSelect } from "primereact/multiselect"; // Import MultiSelect
 
-// EcoursesData.getUniversityName()
-function Filters() {
-  const [ecourses, setEcourses] = useState([]);
-  const [loading, setLoading] = useState(true);
-  const [globalFilterValue, setGlobalFilterValue] = useState("");
-  // all the filters on header
-  const [filters, setFilters] = useState({
-    global: { value: null, matchMode: FilterMatchMode.CONTAINS },
-    name: { value: null, matchMode: FilterMatchMode.STARTS_WITH },
-    category: { value: null, matchMode: FilterMatchMode.IN },
-    location: { value: null, matchMode: FilterMatchMode.EQUALS },
-  });
+function Filters(props) {
+  const [selectedUniversity, setSelectedUniversity] = useState(null);
+  const [selectedLocation, setSelectedLocation] = useState(null);
+  const [selectedFields, setSelectedFields] = useState([]);
 
-  const [fieldsEnglish] = useState([
-    { name: "Programming" },
-    { name: "Mathematics" },
-    { name: "Physics" },
-    { name: "Biology" },
-    { name: "English" },
-    { name: "Greek" },
-    { name: "Linguistics" },
-    { name: "Psychology" },
-    { name: "History" },
-    { name: "Philosophy" },
-    { name: "Engineering" },
-    { name: "Art" },
-  ]);
-  const [universitiesEnglish] = useState([
-    { name: "University of Piraeus" },
-    { name: "National and Kapodistrian University of Athens" },
-    { name: "EMP" },
-    { name: "Univesity of West Attica" },
-    { name: "OPA" },
-    { name: "Panteion university" },
-    { name: "Aristotle University of Thessaloniki" },
-  ]);
-  const [fieldsGreek] = useState([
-    { name: "Προγραμματισμός" },
-    { name: "Μαθηματικά" },
-    { name: "Φυσική" },
-    { name: "Βιολογία" },
-    { name: "Αγγλικά" },
-    { name: "Ελληνικά" },
-    { name: "Γλωσσολογία" },
-    { name: "Ψυχολογία" },
-    { name: "Ιστορία-Αρχαιολογία" },
-    { name: "Φιλοσοφία" },
-    { name: "Μηχανική" },
-    { name: "Τέχνη" },
-  ]);
-  const [universitiesGreek] = useState([
-    { name: "Πανεπιστήμιο Πειραιώς" },
-    { name: "Εθνικό και Καποδιστριακό Πανεπιστήμιο Αθηνών" },
-    { name: "Εθνικό Μετσόβιο Πολυτεχνείο" },
-    { name: "Πανεπιστήμιο Δυτικής Αττικής" },
-    { name: "Οικονομικό Πανεπιστήμιο Αθηνών" },
-    { name: "Πάντειο Πανεπιστήμιο" },
-    { name: "Αριστοτέλειο Πανεπιστήμιο Θεσσαλονίκης" },
-  ]);
-  const [locations] = useState([
-    { name: "On Campus" },
-    { name: "Online" },
-    { name: "Hybrid" },
-  ]);
+  const universityOptions = [
+    { label: "University of Piraeus", value: "University of Piraeus" },
+    {
+      label: "National and Kapodistrian University of Athens",
+      value: "National and Kapodistrian University of Athens",
+    },
+    { label: "EMP", value: "EMP" },
+    { label: "Univesity of West Attica", value: "Univesity of West Attica" },
+    { label: "OPA", value: "OPA" },
+    ,
+    { label: "Panteion university", value: "Panteion university" },
+    ,
+    {
+      label: "Aristotle University of Thessaloniki",
+      value: "Aristotle University of Thessaloniki",
+    },
+    ,
+  ];
 
-  useEffect(() => {
-    EcoursesData.getAllEcourses().then((data) => {
-      setEcourses(getEcourses(data));
-      setLoading(false);
-    });
-  }, []);
+  const locationOptions = [
+    { label: "Online", value: "Online" },
+    { label: "On Campus", value: "On Campus" },
+    { label: "Hybrid", value: "Hybrid" },
+  ];
 
-  // function takes an array of data, ensures it's a valid array
-  // (defaulting to an empty array if necessary), creates a shallow copy of the array to
-  //  avoid mutation, and then converts the date property of each element into a JavaScript
-  //  Date object. The modified array with updated date properties is then returned.
-  const getEcourses = (data) => {
-    return [...(data || [])].map((d) => {
-      d.date = new Date(d.date);
+  const fieldOptions = [
+    { label: "Programming", value: "Programming" },
+    { label: "Mathematics", value: "Mathematics" },
+    { label: "Physics", value: "Physics" },
+    { label: "Biology", value: "Biology" },
+    { label: "English", value: "English" },
+    { label: "Greek", value: "Greek" },
+    { label: "Linguistics", value: "Linguistics" },
+    { label: "Psychology", value: "MathemaPsychologytics" },
+    { label: "History", value: "History" },
+    { label: "Philosophy", value: "Philosophy" },
+    { label: "Engineering", value: "Engineering" },
+    { label: "Art", value: "Art" },
+  ];
 
-      return d;
-    });
+  const handleUniversityChange = (e) => {
+    setSelectedUniversity(e.value);
   };
 
-  const onGlobalFilterChange = (e) => {
-    const value = e.target.value;
-    let _filters = { ...filters };
-
-    _filters["global"].value = value;
-
-    setFilters(_filters);
-    setGlobalFilterValue(value);
+  const handleLocationChange = (e) => {
+    setSelectedLocation(e.value);
   };
 
-  //Globar Search Bar
-  const renderHeader = () => {
-    return (
-      <div className="flex justify-content-end">
-        <span className="p-input-icon-left">
-          <i className="pi pi-search" />
-          {/* Global Search Bar */}
-          <InputText
-            value={globalFilterValue}
-            onChange={onGlobalFilterChange}
-            placeholder="Keyword Search"
-          />
-        </span>
+  const handleFieldsChange = (e) => {
+    setSelectedFields(e.value);
+  };
+
+  const clearFilters = () => {
+    setSelectedUniversity(null);
+    setSelectedLocation(null);
+    setSelectedFields([]);
+  };
+
+  const applyFilters = () => {
+    const filters = {
+      university: selectedUniversity,
+      location: selectedLocation,
+      fields: selectedFields,
+    };
+    props.onFilter(filters);
+  };
+
+  return (
+    <div className="p-grid flex align-items-center gap-2">
+      <div className="p-col">
+        <Dropdown
+          value={selectedUniversity}
+          options={universityOptions}
+          onChange={handleUniversityChange}
+          placeholder="Select University"
+        />
       </div>
-    );
-  };
+      <div className="p-col">
+        <Dropdown
+          value={selectedLocation}
+          options={locationOptions}
+          onChange={handleLocationChange}
+          placeholder="Select Location"
+        />
+      </div>
 
-  const header = renderHeader();
+      <div className="p-col">
+        <MultiSelect
+          value={selectedFields}
+          options={fieldOptions}
+          onChange={handleFieldsChange}
+          placeholder="Select Fields"
+          optionLabel="label"
+          optionValue="value"
+        />
+      </div>
 
-  return header;
+      <div className="p-col ">
+        <button
+          className="p-button p-button-secondary mr-2"
+          onClick={applyFilters}
+        >
+          Apply Filters
+        </button>
+        <button className="p-button p-button-secondary" onClick={clearFilters}>
+          Clear Filters
+        </button>
+      </div>
+    </div>
+  );
 }
+
 export default Filters;
+
+// const universityOptions = [
+//   { label: "University of Piraeus", value: "University of Piraeus" },
+//   {
+//     label: "National and Kapodistrian University of Athens",
+//     value: "National and Kapodistrian University of Athens",
+//   },
+//   { label: "EMP", value: "EMP" },
+//   { label: "Univesity of West Attica", value: "Univesity of West Attica" },
+//   { label: "OPA", value: "OPA" },
+//   ,
+//   { label: "Panteion university", value: "Panteion university" },
+//   ,
+//   {
+//     label: "Aristotle University of Thessaloniki",
+//     value: "Aristotle University of Thessaloniki",
+//   },
+//   ,
+// ];
+
+// const locationOptions = [
+//   { label: "Online", value: "Online" },
+//   { label: "On Campus", value: "On Campus" },
+//   { label: "Hybrid", value: "Hybrid" },
+// ];
+
+// const fieldOptions = [
+//   { label: "Programming", value: "Programming" },
+//   { label: "Mathematics", value: "Mathematics" },
+//   { label: "Physics", value: "Physics" },
+//   { label: "Biology", value: "Biology" },
+//   { label: "English", value: "English" },
+//   { label: "Greek", value: "Greek" },
+//   { label: "Linguistics", value: "Linguistics" },
+//   { label: "Psychology", value: "MathemaPsychologytics" },
+//   { label: "History", value: "History" },
+//   { label: "Philosophy", value: "Philosophy" },
+//   { label: "Engineering", value: "Engineering" },
+//   { label: "Art", value: "Art" },
+// ];
+
+// import "./Filters.css";
+// import React, { useState, useEffect } from "react";
+// import { FilterMatchMode, FilterOperator } from "primereact/api";
+// import { InputText } from "primereact/inputtext";
+// import { EcoursesData } from "../../mock-d/EcoursesData";
+// import { Rating } from "primereact/rating";
+// import { Tag } from "primereact/tag";
+// import { Button } from "primereact/button";
+// import { DataView } from "primereact/dataview";
+// import { Dropdown } from "primereact/dropdown";
+// import { MultiSelect } from "primereact/multiselect"; //Selection filter
+// import { DataTable } from "primereact/datatable";
+// import { Column } from "primereact/column";
+
+// // EcoursesData.getUniversityName()
+// function Filters() {
+//   const [ecourses, setEcourses] = useState([]);
+//   const [loading, setLoading] = useState(true);
+//   const [globalFilterValue, setGlobalFilterValue] = useState("");
+//   // all the filters on header
+//   const [filters, setFilters] = useState({
+//     global: { value: null, matchMode: FilterMatchMode.CONTAINS },
+//     name: { value: null, matchMode: FilterMatchMode.STARTS_WITH },
+//     category: { value: null, matchMode: FilterMatchMode.IN },
+//     location: { value: null, matchMode: FilterMatchMode.EQUALS },
+//   });
+
+//   const [fieldsEnglish] = useState([
+//     { name: "Programming" },
+//     { name: "Mathematics" },
+//     { name: "Physics" },
+//     { name: "Biology" },
+//     { name: "English" },
+//     { name: "Greek" },
+//     { name: "Linguistics" },
+//     { name: "Psychology" },
+//     { name: "History" },
+//     { name: "Philosophy" },
+//     { name: "Engineering" },
+//     { name: "Art" },
+//   ]);
+//   const [universitiesEnglish] = useState([
+//     { name: "University of Piraeus" },
+//     { name: "National and Kapodistrian University of Athens" },
+//     { name: "EMP" },
+//     { name: "Univesity of West Attica" },
+//     { name: "OPA" },
+//     { name: "Panteion university" },
+//     { name: "Aristotle University of Thessaloniki" },
+//   ]);
+//   const [fieldsGreek] = useState([
+//     { name: "Προγραμματισμός" },
+//     { name: "Μαθηματικά" },
+//     { name: "Φυσική" },
+//     { name: "Βιολογία" },
+//     { name: "Αγγλικά" },
+//     { name: "Ελληνικά" },
+//     { name: "Γλωσσολογία" },
+//     { name: "Ψυχολογία" },
+//     { name: "Ιστορία-Αρχαιολογία" },
+//     { name: "Φιλοσοφία" },
+//     { name: "Μηχανική" },
+//     { name: "Τέχνη" },
+//   ]);
+//   const [universitiesGreek] = useState([
+//     { name: "Πανεπιστήμιο Πειραιώς" },
+//     { name: "Εθνικό και Καποδιστριακό Πανεπιστήμιο Αθηνών" },
+//     { name: "Εθνικό Μετσόβιο Πολυτεχνείο" },
+//     { name: "Πανεπιστήμιο Δυτικής Αττικής" },
+//     { name: "Οικονομικό Πανεπιστήμιο Αθηνών" },
+//     { name: "Πάντειο Πανεπιστήμιο" },
+//     { name: "Αριστοτέλειο Πανεπιστήμιο Θεσσαλονίκης" },
+//   ]);
+//   const [locations] = useState([
+//     { name: "On Campus" },
+//     { name: "Online" },
+//     { name: "Hybrid" },
+//   ]);
+
+//   useEffect(() => {
+//     EcoursesData.getAllEcourses().then((data) => {
+//       setEcourses(getEcourses(data));
+//       setLoading(false);
+//     });
+//   }, []);
+
+//   // function takes an array of data, ensures it's a valid array
+//   // (defaulting to an empty array if necessary), creates a shallow copy of the array to
+//   //  avoid mutation, and then converts the date property of each element into a JavaScript
+//   //  Date object. The modified array with updated date properties is then returned.
+//   const getEcourses = (data) => {
+//     return [...(data || [])].map((d) => {
+//       d.date = new Date(d.date);
+
+//       return d;
+//     });
+//   };
+
+//   const onGlobalFilterChange = (e) => {
+//     const value = e.target.value;
+//     let _filters = { ...filters };
+
+//     _filters["global"].value = value;
+
+//     setFilters(_filters);
+//     setGlobalFilterValue(value);
+//   };
+
+//   //Globar Search Bar
+//   const renderHeader = () => {
+//     return (
+//       <div className="flex justify-content-end">
+//         <span className="p-input-icon-left">
+//           <i className="pi pi-search" />
+//           {/* Global Search Bar */}
+//           <InputText
+//             value={globalFilterValue}
+//             onChange={onGlobalFilterChange}
+//             placeholder="Keyword Search"
+//           />
+//         </span>
+//       </div>
+//     );
+//   };
+
+//   const header = renderHeader();
+
+//   return header;
+// }
+// export default Filters;
 
 // const [fields] = useState(EcoursesData.getFieldName());
 
