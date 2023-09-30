@@ -96,11 +96,11 @@ function Filters(props) {
       <div className="p-col">
         <MultiSelect
           value={selectedFields}
-          options={fieldOptions}
+          options={fieldOptions} //pinakas me fields
           onChange={handleFieldsChange}
           placeholder="Select Fields"
-          optionLabel="label"
-          optionValue="value"
+          // optionLabel="label"
+          // optionValue="value"
         />
       </div>
 
