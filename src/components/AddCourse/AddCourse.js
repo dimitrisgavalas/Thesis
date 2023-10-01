@@ -56,6 +56,8 @@ function AddCourse() {
   });
   const [value, setValue] = useState("");
   // fix University, Proffesors, Location, description
+  // sto [] fainetia name, price. mesa --> name,duration,ects,price
+
   const handleUniChange = (e) => {
     const { value } = e.target;
     setCourse((prevCourse) => ({
@@ -149,41 +151,47 @@ function AddCourse() {
   };
 
   const [categories] = useState([
-    { name: "Programming" },
-    { name: "Mathematics" },
-    { name: "Physics" },
-    { name: "Biology" },
-    { name: "English" },
-    { name: "Greek" },
-    { name: "Linguistics" },
-    { name: "Psychology" },
-    { name: "History" },
+    { name: "Programming", value: "Programming" },
+    { name: "Mathematics", value: "Mathematics" },
+    { name: "Physics", value: "Physics" },
+    { name: "Biology", value: "Biology" },
+    { name: "English", value: "English" },
+    { name: "Greek", value: "Greek" },
+    { name: "Linguistics", value: "Linguistics" },
+    { name: "Psychology", value: "Psychology" },
+    { name: "History", value: "History" },
   ]);
   const [locations] = useState([
-    { name: "Hybrid" },
-    { name: "Online" },
-    { name: "On Campus" },
+    { name: "Hybrid", value: "Hybrid" },
+    { name: "Online", value: "Online" },
+    { name: "On Campus", value: "On Campus" },
   ]);
 
   const [universities] = useState([
-    { name: "University of Piraeus" },
+    { name: "University of Piraeus", value: "University of Piraeus" },
     {
       name: "National and Kapodistrian University of Athens",
+      value: "National and Kapodistrian University of Athens",
     },
     {
       name: "EMP",
+      value: "EMP",
     },
     {
       name: "Univesity of West Attica",
+      value: "Univesity of West Attica",
     },
     {
       name: "OPA",
+      value: "OPA",
     },
     {
       name: "Panteion University",
+      value: "Panteion University",
     },
     {
       name: "Aristotle University of Thessaloniki",
+      value: "Aristotle University of Thessaloniki",
     },
   ]);
 
