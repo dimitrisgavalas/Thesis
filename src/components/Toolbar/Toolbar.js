@@ -33,6 +33,9 @@ export default function ToolbarMenu() {
     setLogingState(false);
   };
 
+  function refreshPage() {
+    window.location.reload(false);
+  }
   const navigate = useNavigate();
 
   const { isLoggedIn, setLogingState } = useLoginService();
@@ -46,97 +49,86 @@ export default function ToolbarMenu() {
       label: "Home",
     },
     {
+      command: () => {
+        navigate("/ecourses/ecoursemainpage");
+      },
       label: "E-Courses",
-      icon: "pi pi-fw pi-file",
-      items: [
-        // Unis
-        {
-          label: "Universities",
-          icon: "pi pi-building",
-          items: [
-            // {
-            //   command: () => {
-            //     navigate("/singleEcourse");
-            //   },
-            //   label: "Single Ecourse",
-            //   icon: "pi pi-building ",
-            // },
-            // {
-            //   url: "/settings",
-            //   label: "Settings",
-            //   icon: "pi pi-building ",
-            // },
-            // ,
-            {
-              command: () => {
-                navigate("/profile");
-              },
-              label: "User Profile",
-              icon: "pi pi-building ",
-            },
-            {
-              command: () => {
-                navigate("/uniprofile");
-              },
-              label: "Uni Profile",
-              icon: "pi pi-building ",
-            },
-            {
-              command: () => {
-                navigate("/addecourse");
-              },
-              label: "Add Course",
-              icon: "pi pi-building ",
-            },
-            {
-              command: () => {
-                navigate("/ecourses");
-              },
-              label: "PADA",
-              icon: "pi pi-building ",
-            },
-          ],
-        },
-        {
-          separator: true,
-        },
-        // Fields
-        {
-          command: () => {
-            navigate("/ecourses/ecoursemainpage");
-          },
-          label: "Ecourses Main page Field",
-          icon: "pi pi-book ",
-          // items: [
-          //   {
-          //     label: "Mathematics",
-          //     icon: "pi pi-book ",
-          //   },
-          //   {
-          //     label: "Physics",
-          //     icon: "pi pi-book ",
-          //   },
-          //   ,
-          //   {
-          //     label: "Programming",
-          //     icon: "pi pi-book ",
-          //   },
-          //   ,
-          //   {
-          //     label: "Linguistics",
-          //     icon: "pi pi-book ",
-          //   },
-          //   ,
-          //   {
-          //     label: "Physics",
-          //     icon: "pi pi-book ",
-          //   },
-          // ],
-        },
-        {
-          separator: true,
-        },
-      ],
+      // icon: "pi pi-fw pi-file",
+      // items: [
+      //   // Unis
+      //   {
+      //     label: "Universities",
+      //     icon: "pi pi-building",
+      //     items: [
+      //       // {
+      //       //   command: () => {
+      //       //     navigate("/singleEcourse");
+      //       //   },
+      //       //   label: "Single Ecourse",
+      //       //   icon: "pi pi-building ",
+      //       // },
+      //       // {
+      //       //   url: "/settings",
+      //       //   label: "Settings",
+      //       //   icon: "pi pi-building ",
+      //       // },
+      //       // ,
+      //       {
+      //         command: () => {
+      //           navigate("/profile");
+      //         },
+      //         label: "User Profile",
+      //         icon: "pi pi-building ",
+      //       },
+      //       {
+      //         command: () => {
+      //           navigate("/uniprofile");
+      //         },
+      //         label: "Uni Profile",
+      //         icon: "pi pi-building ",
+      //       },
+      //     ],
+      //   },
+      //   {
+      //     separator: true,
+      //   },
+      //   // Fields
+      //   {
+      //     command: () => {
+      //       navigate("/ecourses/ecoursemainpage");
+      //     },
+      //     label: "Ecourses Main page Field",
+      //     icon: "pi pi-book ",
+      //     // items: [
+      //     //   {
+      //     //     label: "Mathematics",
+      //     //     icon: "pi pi-book ",
+      //     //   },
+      //     //   {
+      //     //     label: "Physics",
+      //     //     icon: "pi pi-book ",
+      //     //   },
+      //     //   ,
+      //     //   {
+      //     //     label: "Programming",
+      //     //     icon: "pi pi-book ",
+      //     //   },
+      //     //   ,
+      //     //   {
+      //     //     label: "Linguistics",
+      //     //     icon: "pi pi-book ",
+      //     //   },
+      //     //   ,
+      //     //   {
+      //     //     label: "Physics",
+      //     //     icon: "pi pi-book ",
+      //     //   },
+      //     // ],
+      //   },
+      //   {
+      //     separator: true,
+      //   },
+      // ],
     },
     {
       command: () => {
@@ -166,12 +158,27 @@ export default function ToolbarMenu() {
       {/* <nav> */}
       {isLoggedIn && (
         <>
-          <a href="/favorites">
-            <Button icon="pi pi-heart" className="mr-2" text />
-          </a>
-          <a href={isUniversityUser ? "/uniprofile" : "/profile"}>
-            <Button icon="pi pi-user" className="mr-2" text />
-          </a>
+          <Button
+            icon="pi pi-heart"
+            className="mr-2"
+            text
+            onClick={() => navigate("/favorites")} // Use navigate to change the route
+          />
+          <Button
+            icon="pi pi-user"
+            className="mr-2"
+            text
+            onClick={() =>
+              navigate(isUniversityUser ? "/uniprofile" : "/profile")
+            } // Use navigate to change the route
+          />
+          <Button
+            icon="pi pi-sign-out red"
+            className="mr-2 "
+            severity="danger"
+            text
+            onClick={refreshPage}
+          />
         </>
       )}
 

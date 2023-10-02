@@ -16,19 +16,20 @@ function SearchBar() {
 
   return (
     <div className="container flex flex-column justify-content-center align-items-center">
-      <div className="card flex justify-content-center pt-3 ">
+      <div className="card flex justify-content-center pt-3 text-base">
         <AutoComplete
           value={value}
           suggestions={items}
           completeMethod={search}
           onChange={(e) => setValue(e.value)}
+          placeholder="Search"
         />
       </div>
-      <div className="chip-container text-500 text-xl pt-5 flex gap-2">
+      {/* <div className="chip-container text-500 text-xl pt-5 flex gap-2">
         {categories.map((item) => (
           <Chip key={item} label={item} />
         ))}
-      </div>
+      </div> */}
     </div>
   );
 }
