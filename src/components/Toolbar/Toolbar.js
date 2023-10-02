@@ -89,14 +89,10 @@ export default function ToolbarMenu() {
               icon: "pi pi-building ",
             },
             {
-              url: "/ecourses",
+              command: () => {
+                navigate("/ecourses");
+              },
               label: "PADA",
-              icon: "pi pi-building ",
-            },
-            ,
-            {
-              url: "/ratings",
-              label: "OPA",
               icon: "pi pi-building ",
             },
           ],
@@ -106,7 +102,9 @@ export default function ToolbarMenu() {
         },
         // Fields
         {
-          url: "/ecourses/ecoursemainpage",
+          command: () => {
+            navigate("/ecourses/ecoursemainpage");
+          },
           label: "Ecourses Main page Field",
           icon: "pi pi-book ",
           // items: [
@@ -141,12 +139,16 @@ export default function ToolbarMenu() {
       ],
     },
     {
-      url: "/about",
+      command: () => {
+        navigate("/about");
+      },
       label: "About",
     },
     ,
     {
-      url: "/contact",
+      command: () => {
+        navigate("/contact");
+      },
       label: "Contact",
     },
   ];
