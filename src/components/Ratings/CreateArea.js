@@ -7,7 +7,11 @@ function CreateArea(props) {
     rating: "",
     content: "",
   });
-  const [commentCount, setCommentCount] = useState(0); // Initialize comment count to 0
+  const [commentCount, setCommentCount] = useState(0);
+  const [totalRating, setTotalRating] = useState(0);
+
+  // Declare averageRating here
+  const averageRating = commentCount === 0 ? 0 : totalRating / commentCount;
 
   function handleChange(event) {
     const { name, value } = event.target;
@@ -22,17 +26,25 @@ function CreateArea(props) {
 
   function submitComment(event) {
     props.onAdd(note);
+
+    const rating = parseInt(note.rating) || 0;
+    setTotalRating((prevTotal) => prevTotal + rating);
+
     setNote({
       userName: "",
       rating: "",
       content: "",
     });
 
-    // Update comment count
     setCommentCount((prevCount) => prevCount + 1);
 
-    // Print comment count in console.log
+    // Calculate averageRating here
+    const averageRating = commentCount === 0 ? 0 : totalRating / commentCount;
+
+    // Print comment count, total rating, and average rating in console.log
     console.log("Total Comments Published:", commentCount + 1);
+    console.log("Total Star Rating:", totalRating + rating);
+    console.log("Average Rating:", averageRating);
 
     event.preventDefault();
   }
@@ -44,7 +56,7 @@ function CreateArea(props) {
       </div>
 
       <div className="card flex justify-content-center">
-        <Rating value={4} cancel={false} />
+        <Rating value={averageRating} cancel={false} />
       </div>
       <form className="forms">
         <Rating

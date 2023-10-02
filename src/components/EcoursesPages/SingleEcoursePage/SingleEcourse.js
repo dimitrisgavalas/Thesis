@@ -64,9 +64,9 @@ function SingleEcourse() {
             <p>
               <strong>ECTS:</strong> {course.ECTS}
             </p>
-            <p>
+            {/* <p>
               <strong>Rating:</strong> {course.rating}
-            </p>
+            </p> */}
             <p>
               <strong>Price:</strong> {course.price}
             </p>
