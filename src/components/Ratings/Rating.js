@@ -1,40 +1,49 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import Note from "./Note";
 import CreateArea from "./CreateArea";
 
-function Rating() {
+function Rating({ courseId }) {
   const [notes, setNotes] = useState([]);
+
+  useEffect(() => {
+    // Load ratings for the specific course based on courseId
+    const storedNotes =
+      JSON.parse(localStorage.getItem(`courseNotes-${courseId}`)) || [];
+    setNotes(storedNotes);
+  }, [courseId]);
 
   function addNote(newNote) {
     setNotes((prevNotes) => {
-      return [...prevNotes, newNote];
+      const updatedNotes = [...prevNotes, newNote];
+      // Store the updated notes in localStorage for the specific course
+      localStorage.setItem(
+        `courseNotes-${courseId}`,
+        JSON.stringify(updatedNotes)
+      );
+      return updatedNotes;
     });
   }
 
   function deleteNote(id) {
     setNotes((prevNotes) => {
-      return prevNotes.filter((noteItem, index) => {
-        return index !== id;
-      });
+      const updatedNotes = prevNotes.filter((noteItem, index) => index !== id);
+      // Store the updated notes in localStorage for the specific course
+      localStorage.setItem(
+        `courseNotes-${courseId}`,
+        JSON.stringify(updatedNotes)
+      );
+      return updatedNotes;
     });
   }
+
   const usernamesArray = [
-    { username: "user1" },
-    { username: "user2" },
-    { username: "user3" },
-    { username: "user4" },
-    { username: "user5" },
-    { username: "user6" },
-    { username: "user7" },
-    { username: "user8" },
-    { username: "user9" },
-    { username: "user10" },
+    // ... (your usernamesArray)
   ];
 
   function getRandomUsername() {
-    const randomIndex = Math.floor(Math.random() * usernamesArray.length);
-    return usernamesArray[randomIndex].username;
+    // ... (your getRandomUsername function)
   }
+
   return (
     <div>
       <CreateArea onAdd={addNote} />

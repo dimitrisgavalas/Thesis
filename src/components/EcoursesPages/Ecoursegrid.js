@@ -97,6 +97,7 @@ function EcoursesGrid() {
                 alt={ecourse.title}
               />
               <div className="text-2xl font-bold">{ecourse.title}</div>
+              {/* rating pou fainetai sta courses */}
               <Rating value={ecourse.rating} readOnly cancel={false}></Rating>
             </div>
           </Link>

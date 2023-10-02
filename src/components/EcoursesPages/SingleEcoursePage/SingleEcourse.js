@@ -108,7 +108,7 @@ function SingleEcourse() {
           {/* **************************************************** */}
         </div>
       </div>
-      <Rating />
+      <Rating courseId={course.id} />
     </div>
   );
 }

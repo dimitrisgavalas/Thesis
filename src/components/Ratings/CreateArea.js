@@ -95,5 +95,6 @@ function CreateArea(props) {
     </div>
   );
 }
+// localStorage.clear(); //
 
 export default CreateArea;
