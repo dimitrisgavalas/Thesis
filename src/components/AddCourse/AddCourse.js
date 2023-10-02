@@ -10,12 +10,11 @@ import { EcoursesData } from "../../mock-d/EcoursesData";
 import "./AddCourse.css";
 
 function AddCourse() {
+  const [selectedProfessors, setProfessors] = useState("");
+  const [selectedDescription, setDescription] = useState(""); // Initialize with an empty string
+  const [selectedCity, setSelectedCity] = useState(null);
   const [selectedFields, setSelectedFields] = useState(null);
-  const [university, setUniversity] = useState("");
-  const [professors, setProfessors] = useState("");
-  const [location, setLocation] = useState("");
-  const [field, setField] = useState("");
-  const [description, setDescrription] = useState("");
+  const [selectedUniversity, setselectedUniversity] = useState(null);
 
   const generateUniqueId = () => {
     // Generate a unique ID for the new course
@@ -46,25 +45,18 @@ function AddCourse() {
     category: "",
     ecourseLocation: "",
     university: "",
-    professors: [{ professor1: "", professor2: "", professor3: "" }],
+    professors: [],
     duration: "",
     ECTS: "",
     language: [{ language1: "", language2: "" }],
     description: " ",
     rating: "",
     contact: [{ phone: "", email: "", socialMedia: "" }],
+    website: "",
   });
   const [value, setValue] = useState("");
   // fix University, Proffesors, Location, description
-  // sto [] fainetia name, price. mesa --> name,duration,ects,price
-
-  const handleUniChange = (e) => {
-    const { value } = e.target;
-    setCourse((prevCourse) => ({
-      ...prevCourse,
-      university: value,
-    }));
-  };
+  // sto [] fainetia name, price, location category. mesa --> name,duration,ects,price
 
   const handleNameChange = (e) => {
     const { value } = e.target;
@@ -74,11 +66,11 @@ function AddCourse() {
     }));
   };
 
-  const handleProfChange = (e) => {
-    const { value } = e.target;
+  const handlePriceChange = (e) => {
+    const { name, value } = e.target;
     setCourse((prevCourse) => ({
       ...prevCourse,
-      professors: value,
+      [name]: value,
     }));
   };
 
@@ -98,19 +90,27 @@ function AddCourse() {
     }));
   };
 
-  const handlePriceChange = (e) => {
-    const { name, value } = e.target;
-    setCourse((prevCourse) => ({
-      ...prevCourse,
-      [name]: value,
-    }));
-  };
-
-  const handleFieldChange = (e) => {
+  const handleWebsiteChange = (e) => {
     const { value } = e.target;
     setCourse((prevCourse) => ({
       ...prevCourse,
-      category: value,
+      website: value,
+    }));
+  };
+
+  const handleDescriptionChange = (e) => {
+    const { value } = e.target;
+    setDescription(value); // Update the selectedDescription state with the input value
+  };
+
+  const handleProfessorsChange = (e) => {
+    const { value } = e.target;
+    const professorsArray = value
+      .split(",")
+      .map((professor) => professor.trim()); // Split by comma and trim spaces
+    setCourse((prevCourse) => ({
+      ...prevCourse,
+      professors: professorsArray,
     }));
   };
 
@@ -139,7 +139,14 @@ function AddCourse() {
     e.preventDefault(); // Prevent the default form submission
     const courseId = generateUniqueId();
     const allCourses = JSON.parse(localStorage.getItem("allCourses")) || [];
-    const newCourse = { ...course, id: courseId };
+    const newCourse = {
+      ...course,
+      id: courseId,
+      ecourseLocation: selectedCity, // Use the selectedCity state
+      category: selectedFields,
+      university: selectedUniversity,
+      description: selectedDescription,
+    };
     allCourses.push(newCourse);
     localStorage.setItem("allCourses", JSON.stringify(allCourses));
     console.log("Published course:", newCourse);
@@ -203,7 +210,6 @@ function AddCourse() {
           {/* Course Details */}
           <div className="course-details">
             {/* Add Course Name */}
-
             <InputText
               placeholder="Course Name"
               // value={course.name}
@@ -212,17 +218,20 @@ function AddCourse() {
 
             {/* Add University */}
 
-            <DropdownList
-              list={universities}
-              placeholder={"Select University"}
-              onChange={handleUniChange}
+            <Dropdown
+              value={selectedUniversity}
+              options={universities}
+              onChange={(e) => setselectedUniversity(e.value)}
+              optionLabel="name"
+              placeholder="Select University"
+              className="w-full mb-3 text-left"
             />
 
             {/* Add Professors Name */}
             <InputText
               placeholder="Professors Name"
               // value={course.professors[1]}
-              // onChange={handleProfChange}
+              onChange={handleProfessorsChange}
             />
 
             {/* Duration */}
@@ -253,16 +262,23 @@ function AddCourse() {
               onChange={handlePriceChange}
             />
 
-            <DropdownList
-              list={locations}
-              placeholder={"Select Location"}
-              onChange={handlePriceChange}
+            <Dropdown
+              value={selectedCity}
+              options={locations}
+              onChange={(e) => setSelectedCity(e.value)}
+              optionLabel="name"
+              // onSelect={handleLocationChange}
+              placeholder="Select Location"
+              className="w-full mb-3 text-left"
             />
 
-            <DropdownList
-              list={categories}
-              placeholder={"Select Field"}
-              onChange={handleFieldChange}
+            <Dropdown
+              value={selectedFields}
+              options={categories}
+              onChange={(e) => setSelectedFields(e.value)}
+              optionLabel="name"
+              placeholder="Select Fields"
+              className="w-full mb-3 text-left"
             />
 
             {/* Course Desciption */}
@@ -270,12 +286,16 @@ function AddCourse() {
             <InputTextarea
               name="description"
               placeholder="Course Description"
-              // value={value}
-              // onChange={(e) => setValue(e.target.value)}
-              // value={course.description}
-              // onChange={handleChange}
+              value={selectedDescription} // Bind the value to selectedDescription
+              onChange={handleDescriptionChange} // Use handleDescriptionChange to update selectedDescription
               rows={5}
               cols={300}
+            />
+
+            <InputTextarea
+              placeholder="Website"
+              // value={course.name}
+              onChange={handleWebsiteChange}
             />
           </div>
 

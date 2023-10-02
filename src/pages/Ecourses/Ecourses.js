@@ -6,7 +6,6 @@ import EcourseCard from "../../components/EcoursesPages/EcoursesCard";
 function Ecourses() {
   return (
     <div className="container-fluid">
-      <Filters />
       <EcourseCard />
     </div>
   );

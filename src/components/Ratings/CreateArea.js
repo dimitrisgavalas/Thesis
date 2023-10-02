@@ -7,7 +7,7 @@ function CreateArea(props) {
     rating: "",
     content: "",
   });
-  const [value, setValue] = useState(null);
+  const [commentCount, setCommentCount] = useState(0); // Initialize comment count to 0
 
   function handleChange(event) {
     const { name, value } = event.target;
@@ -27,6 +27,13 @@ function CreateArea(props) {
       rating: "",
       content: "",
     });
+
+    // Update comment count
+    setCommentCount((prevCount) => prevCount + 1);
+
+    // Print comment count in console.log
+    console.log("Total Comments Published:", commentCount + 1);
+
     event.preventDefault();
   }
 
@@ -37,25 +44,15 @@ function CreateArea(props) {
       </div>
 
       <div className="card flex justify-content-center">
-        {/* <br></br> */}
         <Rating value={4} cancel={false} />
       </div>
       <form className="forms">
-        {/* <input
-          name="userName"
-          onChange={handleChange}
-          value={note.userName}
-          placeholder="Username"
-        /> */}
-        {/* <div className="card flex justify-content"> */}
         <Rating
           name="rating"
           value={note.rating}
           onChange={handleChange}
-          //   onClick={handleChange}
           cancel={false}
         />
-        {/* </div> */}
         <textarea
           name="content"
           onChange={handleChange}
