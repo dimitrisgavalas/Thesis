@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { Rating } from "primereact/rating";
 
 function CreateArea(props) {
@@ -12,6 +12,16 @@ function CreateArea(props) {
 
   // Declare averageRating here
   const averageRating = commentCount === 0 ? 0 : totalRating / commentCount;
+
+  // Load comments and total rating from local storage on component mount
+  useEffect(() => {
+    const savedComments = JSON.parse(localStorage.getItem("comments")) || [];
+    const savedTotalRating =
+      parseFloat(localStorage.getItem("totalRating")) || 0;
+
+    setCommentCount(savedComments.length);
+    setTotalRating(savedTotalRating);
+  }, []);
 
   function handleChange(event) {
     const { name, value } = event.target;
@@ -29,6 +39,14 @@ function CreateArea(props) {
 
     const rating = parseInt(note.rating) || 0;
     setTotalRating((prevTotal) => prevTotal + rating);
+
+    // Save comment to local storage
+    const savedComments = JSON.parse(localStorage.getItem("comments")) || [];
+    savedComments.push(note);
+    localStorage.setItem("comments", JSON.stringify(savedComments));
+
+    // Save total rating to local storage
+    localStorage.setItem("totalRating", totalRating + rating);
 
     setNote({
       userName: "",
