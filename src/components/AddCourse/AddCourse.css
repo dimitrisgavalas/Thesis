@@ -11,8 +11,8 @@
   }
   
   .buttons {
-  
-    justify-content: space-between;
+    float:right;
+    /* justify-content: space-between; */
    
   }
   

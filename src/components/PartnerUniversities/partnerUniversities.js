@@ -3,7 +3,7 @@ import React from "react";
 function PartnerUniversitiesRec() {
   return (
     <div
-      className="m-2 pt-5 pb-5 flex justify-content-center border-2 surface-border border-round p-2"
+      className="mt-4 pt-5 pb-5 flex justify-content-center border-2 surface-border border-round p-2"
       style={{ backgroundColor: "#6366F1" }}
     >
       <div className="">

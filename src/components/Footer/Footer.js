@@ -4,7 +4,7 @@ import "./Footer.css";
 
 function Footer() {
   return (
-    <footer className="footerEnd m-2 pt-7 pb-7 flex justify-content-center border-2 surface-border border-round p-2">
+    <footer className="footerEnd mt-3 pt-7 pb-7 flex justify-content-center border-2 surface-border border-round p-2">
       <a href="/contact">
         {" "}
         <Button icon="pi pi-twitter" className="mr-2" />

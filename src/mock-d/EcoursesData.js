@@ -224,7 +224,7 @@ export const EcoursesData = {
 
   // method that returns an array of All Ecourse objects
   getAllEcoursesData() {
-    // localStorage.clear();
+    localStorage.clear();
 
     const localStorageData =
       JSON.parse(localStorage.getItem("allCourses")) || [];

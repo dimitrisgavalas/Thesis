@@ -1,9 +1,9 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import { Button } from "primereact/button";
 import { InputText } from "primereact/inputtext";
 import { InputTextarea } from "primereact/inputtextarea";
 import { FileUpload } from "primereact/fileupload";
-import DropdownList from "./DropdownList";
+import { Toast } from "primereact/toast";
 import { MultiSelect } from "primereact/multiselect";
 import { Dropdown } from "primereact/dropdown";
 import { EcoursesData } from "../../mock-d/EcoursesData";
@@ -15,6 +15,7 @@ function AddCourse() {
   const [selectedCity, setSelectedCity] = useState(null);
   const [selectedFields, setSelectedFields] = useState(null);
   const [selectedUniversity, setselectedUniversity] = useState(null);
+  const [selectedImage, setSelectedImage] = useState(null);
 
   const generateUniqueId = () => {
     // Generate a unique ID for the new course
@@ -135,6 +136,16 @@ function AddCourse() {
     // Reset the form or perform any other necessary actions
   };
 
+  const show = (message) => {
+    toast.current.show({
+      severity: "info",
+      summary: "Info",
+      detail: message,
+    });
+  };
+
+  const toast = useRef(null);
+
   const handlePublish = (e) => {
     e.preventDefault(); // Prevent the default form submission
     const courseId = generateUniqueId();
@@ -146,14 +157,15 @@ function AddCourse() {
       category: selectedFields,
       university: selectedUniversity,
       description: selectedDescription,
+      image: selectedImage,
     };
     allCourses.push(newCourse);
     localStorage.setItem("allCourses", JSON.stringify(allCourses));
     console.log("Published course:", newCourse);
 
     // Display a success message
-    window.alert("Course published successfully!"); // Show an alert message
-
+    // window.alert("Course published successfully!"); // Show an alert message
+    show("Ecourse Published Succesfully!");
     // Reset the form or perform any other necessary actions
   };
 
@@ -298,7 +310,6 @@ function AddCourse() {
               onChange={handleWebsiteChange}
             />
           </div>
-
           {/* Upload Files */}
           <h3>Upload thumbnail</h3>
           <FileUpload
@@ -312,32 +323,10 @@ function AddCourse() {
             }
           />
 
-          {/* Contact Info */}
-          <div className="contact-info">
-            <h3>Add Contact Info</h3>
-            <InputText
-              keyfilter="email"
-              placeholder="Email"
-              // value={}
-              onChange={handleContactInfoChange}
-            />
-            <InputText
-              keyfilter="pint"
-              placeholder="Phone"
-              // value={\}
-              onChange={handleContactInfoChange}
-            />
-
-            <InputText
-              // keyfilter="hex"
-              placeholder="Social Media"
-              // value={course.contactInfo.socialMedia}
-              onChange={handleContactInfoChange}
-            />
-          </div>
           {/* Buttons */}
-          <div className="card flex buttons">
-            <Button label="Save Course" type="submit" onClick={handleSave} />
+          <div className="card flex buttons mt-5 ">
+            {/* <Button label="Save Course" type="submit" onClick={handleSave} /> */}
+            <Toast ref={toast} />
             <Button
               label="Publish Course"
               type="submit"
@@ -431,3 +420,27 @@ export default AddCourse;
             }
           /> */
 }
+
+// {Contact Info
+//   <div className="contact-info">
+//     <h3>Add Contact Info</h3>
+//     <InputText
+//       keyfilter="email"
+//       placeholder="Email"
+//       // value={}
+//       onChange={handleContactInfoChange}
+//     />
+//     <InputText
+//       keyfilter="pint"
+//       placeholder="Phone"
+//       // value={\}
+//       onChange={handleContactInfoChange}
+//     />
+
+//     <InputText
+//       // keyfilter="hex"
+//       placeholder="Social Media"
+//       // value={course.contactInfo.socialMedia}
+//       onChange={handleContactInfoChange}
+//     />
+//   </div>}

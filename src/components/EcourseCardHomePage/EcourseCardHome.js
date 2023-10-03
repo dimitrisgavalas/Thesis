@@ -79,7 +79,7 @@ function EcourseCardHome() {
   // when items are in Grid formation
   const gridItem = (ecourse) => {
     return (
-      <div className="pb-5 col-12 sm:col-6 lg:col-12 xl:col-4 p-2">
+      <div className="pb-5 col-12 sm:col-6 lg:col-12 xl:col-4 p-2 ">
         <div className="p-4 border-1 surface-border surface-card border-round">
           <div className="flex flex-wrap align-items-center justify-content-between gap-2">
             <div className="flex align-items-center gap-2">
