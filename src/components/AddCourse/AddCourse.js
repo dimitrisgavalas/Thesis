@@ -157,7 +157,7 @@ function AddCourse() {
       category: selectedFields,
       university: selectedUniversity,
       description: selectedDescription,
-      image: selectedImage,
+      // image: selectedImage,
     };
     allCourses.push(newCourse);
     localStorage.setItem("allCourses", JSON.stringify(allCourses));

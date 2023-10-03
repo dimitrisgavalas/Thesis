@@ -9,7 +9,7 @@ import Filters from "../Filters/Filters";
 import { Column } from "primereact/column";
 import { Link } from "react-router-dom";
 
-function EcoursesGrid() {
+function EcoursesGrid({ ecoursesData, handleToggleFavorite }) {
   const [ecourses, setEcourses] = useState([]);
   const [sortKey, setSortKey] = useState("");
   const [sortOrder, setSortOrder] = useState(0);
@@ -30,7 +30,8 @@ function EcoursesGrid() {
   };
 
   // Filter the ecourses based on the selected filters
-  const filteredEcourses = ecourses.filter((ecourse) => {
+  // ecoursesData prop is the data we use
+  const filteredEcourses = ecoursesData.filter((ecourse) => {
     if (filters.university && ecourse.university !== filters.university) {
       return false;
     }
@@ -45,11 +46,6 @@ function EcoursesGrid() {
     }
     return true;
   });
-
-  // slice=ecourses from object array we want to view in home page. .slice(0, 9)
-  useEffect(() => {
-    EcoursesData.getAllEcourses().then((data) => setEcourses(data));
-  }, []);
 
   // Chips me "Online", "On Campus", "Hybrid"
   const getLocation = (ecourse) => {
@@ -138,102 +134,103 @@ function EcoursesGrid() {
 
 export default EcoursesGrid;
 
-// / const sortOptions = [
-//   { label: "Price High to Low", value: "!price" },
-//   { label: "Price Low to High", value: "price" },
-// ];
-
-// const onSortChange = (event) => {
-//   const value = event.value;
-
-//   if (value.indexOf("!") === 0) {
-//     setSortOrder(-1);
-//     setSortField(value.substring(1, value.length));
-//     setSortKey(value);
-//   } else {
-//     setSortOrder(1);
-//     setSortField(value);
-//     setSortKey(value);
-//   }
-// };
-
-// // Sample e-courses data
-// const ecourses = [
-//   {
-//     id: 1,
-//     title: "Introduction to Artificial Intelligence",
-//     image: img,
-//     university: "University of Piraeus",
-//     professors: ["Dimitris Dimitris", "Gavalas Gavalas"],
-//     duration: "12 weeks",
-//     ECTS: 6,
-//     rating: 4.5,
-//     price: "$999",
-//     mode: "Online",
-//     description:
-//       "This is a comprehensive introduction to the field of artificial intelligence, covering topics such as machine learning, robotics, and natural language processing.",
-//   },
-//   {
-//     id: 2,
-//     title: "Introduction to Artificial Intelligence",
-//     image: img,
-//     university: "University of Piraeus",
-//     professors: ["Dimitris Dimitris", "Gavalas Gavalas"],
-//     duration: "12 weeks",
-//     ECTS: 6,
-//     rating: 4.5,
-//     price: "$999",
-//     mode: "Online",
-//     description:
-//       "This is a comprehensive introduction to the field of artificial intelligence, covering topics such as machine learning, robotics, and natural language processing.",
-//   },
-//   {
-//     id: 3,
-//     title: "Introduction to Artificial Intelligence",
-//     image: img,
-//     university: "University of Piraeus",
-//     professors: ["Dimitris Dimitris", "Gavalas Gavalas"],
-//     duration: "12 weeks",
-//     ECTS: 6,
-//     rating: 4.5,
-//     price: "$999",
-//     mode: "Online",
-//     description:
-//       "This is a comprehensive introduction to the field of artificial intelligence, covering topics such as machine learning, robotics, and natural language processing.",
-//   },
-//   {
-//     id: 4,
-//     title: "Introduction to Artificial Intelligence",
-//     image: img,
-//     university: "University of Piraeus",
-//     professors: ["Dimitris Dimitris", "Gavalas Gavalas"],
-//     duration: "12 weeks",
-//     ECTS: 6,
-//     rating: 4.5,
-//     price: "$999",
-//     mode: "Online",
-//     description:
-//       "This is a comprehensive introduction to the field of artificial intelligence, covering topics such as machine learning, robotics, and natural language processing.",
-//   },
-// ];
-// useEffect(() => {
-//   EcoursesData.getProducts().then((data) => setProducts(data.slice(0, 12)));
-// }, []);
-
-// // State for favorites
-// const [favorites, setFavorites] = useState([]);
-
-// // Toggle favorite e-course
-// const toggleFavorite = (id) => {
-//   const isFavorited = favorites.includes(id);
-//   if (isFavorited) {
-//     setFavorites(favorites.filter((favoriteId) => favoriteId !== id));
-//   } else {
-//     setFavorites([...favorites, id]);
-//   }
-// };
 {
-  /* <div className="ecourse-cards">
+  // / const sortOptions = [
+  //   { label: "Price High to Low", value: "!price" },
+  //   { label: "Price Low to High", value: "price" },
+  // ];
+
+  // const onSortChange = (event) => {
+  //   const value = event.value;
+
+  //   if (value.indexOf("!") === 0) {
+  //     setSortOrder(-1);
+  //     setSortField(value.substring(1, value.length));
+  //     setSortKey(value);
+  //   } else {
+  //     setSortOrder(1);
+  //     setSortField(value);
+  //     setSortKey(value);
+  //   }
+  // };
+
+  // // Sample e-courses data
+  // const ecourses = [
+  //   {
+  //     id: 1,
+  //     title: "Introduction to Artificial Intelligence",
+  //     image: img,
+  //     university: "University of Piraeus",
+  //     professors: ["Dimitris Dimitris", "Gavalas Gavalas"],
+  //     duration: "12 weeks",
+  //     ECTS: 6,
+  //     rating: 4.5,
+  //     price: "$999",
+  //     mode: "Online",
+  //     description:
+  //       "This is a comprehensive introduction to the field of artificial intelligence, covering topics such as machine learning, robotics, and natural language processing.",
+  //   },
+  //   {
+  //     id: 2,
+  //     title: "Introduction to Artificial Intelligence",
+  //     image: img,
+  //     university: "University of Piraeus",
+  //     professors: ["Dimitris Dimitris", "Gavalas Gavalas"],
+  //     duration: "12 weeks",
+  //     ECTS: 6,
+  //     rating: 4.5,
+  //     price: "$999",
+  //     mode: "Online",
+  //     description:
+  //       "This is a comprehensive introduction to the field of artificial intelligence, covering topics such as machine learning, robotics, and natural language processing.",
+  //   },
+  //   {
+  //     id: 3,
+  //     title: "Introduction to Artificial Intelligence",
+  //     image: img,
+  //     university: "University of Piraeus",
+  //     professors: ["Dimitris Dimitris", "Gavalas Gavalas"],
+  //     duration: "12 weeks",
+  //     ECTS: 6,
+  //     rating: 4.5,
+  //     price: "$999",
+  //     mode: "Online",
+  //     description:
+  //       "This is a comprehensive introduction to the field of artificial intelligence, covering topics such as machine learning, robotics, and natural language processing.",
+  //   },
+  //   {
+  //     id: 4,
+  //     title: "Introduction to Artificial Intelligence",
+  //     image: img,
+  //     university: "University of Piraeus",
+  //     professors: ["Dimitris Dimitris", "Gavalas Gavalas"],
+  //     duration: "12 weeks",
+  //     ECTS: 6,
+  //     rating: 4.5,
+  //     price: "$999",
+  //     mode: "Online",
+  //     description:
+  //       "This is a comprehensive introduction to the field of artificial intelligence, covering topics such as machine learning, robotics, and natural language processing.",
+  //   },
+  // ];
+  // useEffect(() => {
+  //   EcoursesData.getProducts().then((data) => setProducts(data.slice(0, 12)));
+  // }, []);
+
+  // // State for favorites
+  // const [favorites, setFavorites] = useState([]);
+
+  // // Toggle favorite e-course
+  // const toggleFavorite = (id) => {
+  //   const isFavorited = favorites.includes(id);
+  //   if (isFavorited) {
+  //     setFavorites(favorites.filter((favoriteId) => favoriteId !== id));
+  //   } else {
+  //     setFavorites([...favorites, id]);
+  //   }
+  // };
+  {
+    /* <div className="ecourse-cards">
         {ecourses.map((ecourse) => (
           <EcourseCard
             key={ecourse.id}
@@ -243,63 +240,64 @@ export default EcoursesGrid;
           />
         ))}
       </div> */
+  }
+
+  // // component gia to EcourseMainPage
+
+  // import React from "react";
+
+  // const Card = ({ item }) => {
+  //   // destructuring props
+  //   return (
+  //     <>
+  //       <div className="container-fluid">
+  //         <div className="row justify-content-center">
+  //           {item.map((Val) => {
+  //             return (
+  //               <div
+  //                 className="col-md-4 col-sm-6 card my-3 py-3 border-0"
+  //                 key={Val.id}
+  //               >
+  //                 <div className="card-img-top text-center">
+  //                   <img src={Val.img} alt={Val.title} className="photo w-75" />
+  //                 </div>
+  //                 <div className="card-body">
+  //                   <div className="card-title fw-bold fs-4">
+  //                     {Val.title} &nbsp;&nbsp;&nbsp;&nbsp;--&nbsp;&nbsp;
+  //                     {Val.price}
+  //                   </div>
+  //                   <div className="card-text">{Val.desc}</div>
+  //                 </div>
+  //               </div>
+  //             );
+  //           })}
+  //         </div>
+  //       </div>
+  //     </>
+  //   );
+  // };
+
+  // export default Card;
+
+  //Test. H selida pou emfanizetai otan patame sto Ecourses-->Field.
+
+  // import React, { useState, useEffect } from "react";
+  // import "./EcourseMainPage.css";
+  // import { EcoursesData } from "../../mock-d/EcoursesData";
+
+  // function EcourseCard() {
+  //   const [ecourse, setEcourse] = useState(EcoursesData);
+  //   return (
+  //     <>
+  //       <div className="container-fluid">
+  //         <div className="row">
+  //           <h1 className="col-12 text-center my-3 fw-bold">E-Courses</h1>
+  //           <Card item={setEcourse} />
+  //         </div>
+  //       </div>
+  //     </>
+  //   );
+  // }
+
+  // export default EcourseCard;}
 }
-
-// // component gia to EcourseMainPage
-
-// import React from "react";
-
-// const Card = ({ item }) => {
-//   // destructuring props
-//   return (
-//     <>
-//       <div className="container-fluid">
-//         <div className="row justify-content-center">
-//           {item.map((Val) => {
-//             return (
-//               <div
-//                 className="col-md-4 col-sm-6 card my-3 py-3 border-0"
-//                 key={Val.id}
-//               >
-//                 <div className="card-img-top text-center">
-//                   <img src={Val.img} alt={Val.title} className="photo w-75" />
-//                 </div>
-//                 <div className="card-body">
-//                   <div className="card-title fw-bold fs-4">
-//                     {Val.title} &nbsp;&nbsp;&nbsp;&nbsp;--&nbsp;&nbsp;
-//                     {Val.price}
-//                   </div>
-//                   <div className="card-text">{Val.desc}</div>
-//                 </div>
-//               </div>
-//             );
-//           })}
-//         </div>
-//       </div>
-//     </>
-//   );
-// };
-
-// export default Card;
-
-//Test. H selida pou emfanizetai otan patame sto Ecourses-->Field.
-
-// import React, { useState, useEffect } from "react";
-// import "./EcourseMainPage.css";
-// import { EcoursesData } from "../../mock-d/EcoursesData";
-
-// function EcourseCard() {
-//   const [ecourse, setEcourse] = useState(EcoursesData);
-//   return (
-//     <>
-//       <div className="container-fluid">
-//         <div className="row">
-//           <h1 className="col-12 text-center my-3 fw-bold">E-Courses</h1>
-//           <Card item={setEcourse} />
-//         </div>
-//       </div>
-//     </>
-//   );
-// }
-
-// export default EcourseCard;

@@ -22,7 +22,7 @@ export const EcoursesData = {
     return [
       {
         id: "1000",
-        title: "Web Develoaaapment Bootcamp",
+        title: "Web Dev Bootcamp",
         image: img,
         price: 350,
         category: "Programming",
@@ -133,7 +133,7 @@ export const EcoursesData = {
       },
       {
         id: "1005",
-        title: "Web Development Bootcamp",
+        title: "Greek Language",
         image: img,
         price: 90,
         category: "Greek",
@@ -155,7 +155,7 @@ export const EcoursesData = {
       },
       {
         id: "1006",
-        title: "Web Development Bootcamp",
+        title: "Linguistics 3",
         image: img,
         price: 6580,
         category: "Linguistics",
@@ -177,7 +177,7 @@ export const EcoursesData = {
       },
       {
         id: "1007",
-        title: "Web Development Bootcamp",
+        title: "Psychology 3",
         image: img,
         price: 320,
         category: "Psychology",
@@ -199,7 +199,7 @@ export const EcoursesData = {
       },
       {
         id: "1008",
-        title: "Web Development Bootcamp",
+        title: "WW2 DDAY",
         image: img,
         price: 430,
         category: "History",
@@ -224,10 +224,11 @@ export const EcoursesData = {
 
   // method that returns an array of All Ecourse objects
   getAllEcoursesData() {
-    localStorage.clear();
+    // localStorage.clear();
 
     const localStorageData =
       JSON.parse(localStorage.getItem("allCourses")) || [];
+
     const staticData = [
       {
         id: "1000",
@@ -852,6 +853,13 @@ export const EcoursesData = {
 
     return allData;
   },
+  getLocalStorageData() {
+    return new Promise((resolve) => {
+      const localStorageData =
+        JSON.parse(localStorage.getItem("allCourses")) || [];
+      resolve(localStorageData);
+    });
+  },
 
   // method that returns an array of different universities.
   getUniversityName() {
@@ -961,6 +969,7 @@ export const EcoursesData = {
   getAllEcourses() {
     return Promise.resolve(this.getAllEcoursesData());
   },
+
   getFavoriteEcourses() {
     return new Promise((resolve) => {
       setTimeout(() => {
@@ -977,6 +986,9 @@ export const EcoursesData = {
     localStorage.setItem("favoriteEcourses", JSON.stringify(newFavorites));
   },
 };
+
+// export const localStorageData =
+//   JSON.parse(localStorage.getItem("allCourses")) || [];
 
 // Categories{
 //   Computer Science

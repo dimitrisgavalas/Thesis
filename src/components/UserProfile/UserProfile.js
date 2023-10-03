@@ -1,19 +1,30 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import Settings from "../Settings/Settings";
 import "./UserProfile.css";
 import { Menubar } from "primereact/menubar";
 import Favorites from "../Favorites/Favorites";
 import AddCourse from "../AddCourse/AddCourse";
+import EcoursesGrid from "../EcoursesPages/Ecoursegrid";
+import { EcoursesData } from "../../mock-d/EcoursesData";
+
 // added isUniversityUser = false for testing will change when we fetch data for users
 function UserProfile({ isUniversityUser = false }) {
   // start @setting when accesing profile. Just for testing will change
   const [activeTab, setActiveTab] = useState("settings");
-
+  const [ecoursesData, setEcoursesData] = useState([]);
+  console.log(ecoursesData);
   const tabs = ["settings", "favorites"];
+  useEffect(() => {
+    // Fetch your data asynchronously and set it when the Promise resolves
+    EcoursesData.getLocalStorageData().then((data) => {
+      console.log(data); // Log the resolved data
+      setEcoursesData(data);
+    });
+  }, []);
 
   // if user has university access the categories below will appear as tabs
   if (isUniversityUser) {
-    tabs.push("add-course", "uploaded-courses", "unpublished-courses");
+    tabs.push("add-course", "uploaded-courses"); //, "unpublished-courses"
   }
 
   return (
@@ -27,7 +38,6 @@ function UserProfile({ isUniversityUser = false }) {
           height="100"
         />
       </div>
-
       {/* add u/n variable */}
       <h2>Welcome!</h2>
       <div className="tabs">
@@ -41,7 +51,6 @@ function UserProfile({ isUniversityUser = false }) {
           </button>
         ))}
       </div>
-
       <div className="tab-content">
         {activeTab === "settings" && (
           <Settings isUniversityUser={isUniversityUser} />
@@ -52,11 +61,14 @@ function UserProfile({ isUniversityUser = false }) {
         )}
         {activeTab === "add-course" && isUniversityUser && <AddCourse />}
         {activeTab === "uploaded-courses" && (
-          <Favorites isUniversityUser={isUniversityUser} />
+          <EcoursesGrid
+            ecoursesData={ecoursesData}
+            // onToggleFavorite={handleToggleFavorite}
+          />
         )}
-        {activeTab === "unpublished-courses" && (
+        {/* {activeTab === "unpublished-courses" && (
           <Favorites isUniversityUser={isUniversityUser} />
-        )}
+        )} */}
       </div>
     </div>
   );
