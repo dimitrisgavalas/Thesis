@@ -22,6 +22,12 @@ function Favorites() {
 
       // Update the favorites data in EcoursesData
       EcoursesData.updateFavoriteEcourses(updatedFavorites);
+
+      // Update the local storage with the updated favorites
+      localStorage.setItem(
+        "favoriteEcourses",
+        JSON.stringify(updatedFavorites)
+      );
     }
   };
 

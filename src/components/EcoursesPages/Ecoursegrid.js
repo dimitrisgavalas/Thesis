@@ -10,10 +10,28 @@ import { Column } from "primereact/column";
 import { Link } from "react-router-dom";
 
 function EcoursesGrid({ ecoursesData, handleToggleFavorite }) {
-  const [ecourses, setEcourses] = useState([]);
+  const [color, setColor] = useState("");
   const [sortKey, setSortKey] = useState("");
   const [sortOrder, setSortOrder] = useState(0);
   const [sortField, setSortField] = useState("");
+  const [active, setActive] = useState(false);
+  const [activeCourses, setActiveCourses] = useState({});
+
+  // const handleClick = (ecourseId) => {
+  //   // Now you have access to the 'ecourseId' when the button is clicked
+  //   console.log(`Button clicked for ecourse with ID: ${ecourseId}`);
+  //   // Implement your logic for this specific ecourse using 'ecourseId'
+  //   setActive(!active);
+  // };
+  // Handle the click for a specific course
+  const handleClick = (ecourseId) => {
+    // 'ecourseId' when the button is clicked
+    console.log(`Button clicked for ecourse with ID: ${ecourseId}`);
+    setActiveCourses((prevActiveCourses) => ({
+      ...prevActiveCourses,
+      [ecourseId]: !prevActiveCourses[ecourseId], // Toggle the active state for this course
+    }));
+  };
 
   const [filters, setFilters] = useState({
     university: null,
@@ -69,6 +87,8 @@ function EcoursesGrid({ ecoursesData, handleToggleFavorite }) {
 
   // when items are in Grid formation
   const gridItem = (ecourse) => {
+    const isCourseActive = activeCourses[ecourse.id];
+
     return (
       <div className="pb-5 col-12 sm:col-6 lg:col-12 xl:col-4 p-2">
         <div className="p-4 border-1 surface-border surface-card border-round">
@@ -103,6 +123,10 @@ function EcoursesGrid({ ecoursesData, handleToggleFavorite }) {
               icon="pi pi-heart"
               className="p-button-rounded"
               disabled={ecourse.ecourseLocation === "OUTOFSTOCK"}
+              style={{
+                backgroundColor: isCourseActive ? "red" : "",
+              }}
+              onClick={() => handleClick(ecourse.id)}
             ></Button>
           </div>
         </div>

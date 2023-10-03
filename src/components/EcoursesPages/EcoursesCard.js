@@ -30,7 +30,7 @@ function EcourseCard() {
         <h1 className="col-12 text-center my-3 fw-bold">E-Courses</h1>
         <EcoursesGrid
           ecoursesData={ecoursesData}
-          onToggleFavorite={handleToggleFavorite}
+          // onToggleFavorite={handleToggleFavorite}
         />
       </div>
     </>
