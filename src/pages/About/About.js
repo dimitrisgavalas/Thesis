@@ -43,8 +43,8 @@ function About() {
         </p>
       </div>
 
-      <div className="surface-0 text-center">
-        <div className="grid">
+      <div className="surface-0 text-center border-round">
+        <div className="grid ">
           <div className="col-12 md:col-4 mb-4 px-5 ">
             <span
               className="p-3 shadow-2 mb-3 inline-block"

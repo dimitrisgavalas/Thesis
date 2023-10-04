@@ -15,6 +15,7 @@ function EcoursesGrid({ ecoursesData, handleToggleFavorite }) {
   const [sortOrder, setSortOrder] = useState(0);
   const [sortField, setSortField] = useState("");
   const [active, setActive] = useState(false);
+  // localStorage.clear();
 
   // Create a state to track the active state for each course
   const [activeCourses, setActiveCourses] = useState({});
