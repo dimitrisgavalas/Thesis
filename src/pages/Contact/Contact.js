@@ -14,8 +14,8 @@ function Contact() {
   };
 
   return (
-    <div className="contact pb-8">
-      <div className="contact-form-container">
+    <div className="contact pb-8 ">
+      <div className="contact-form-container ">
         <h2>Contact Us</h2>
         <form onSubmit={handleSubmit} className="contact-form">
           <div>

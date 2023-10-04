@@ -40,7 +40,7 @@ function SearchBar() {
   };
 
   return (
-    <div className="container flex flex-column justify-content-center align-items-center">
+    <div className="border-round container flex flex-column justify-content-center align-items-center">
       <div className="card flex justify-content-center pt-3 text-base">
         <AutoComplete
           field="title"
