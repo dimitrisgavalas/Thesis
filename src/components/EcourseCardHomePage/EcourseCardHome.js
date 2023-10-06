@@ -27,9 +27,7 @@ function EcourseCardHome() {
   return (
     <>
       <div className="border-1 surface-border border-round  ">
-        <h1 className="col-12 text-center my-3 fw-bold">
-          Most Popular Courses
-        </h1>
+        <h2 className="col-12 text-center my-3 fw-bold">Trending Courses</h2>
         <EcoursesGrid
           ecoursesData={ecoursesData}
           // onToggleFavorite={handleToggleFavorite}

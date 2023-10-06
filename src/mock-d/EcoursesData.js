@@ -987,6 +987,13 @@ export const EcoursesData = {
   },
 };
 
+// export const getFavoriteEcoursesData = (favoriteCourseIds, ecoursesData) => {
+//   // Filter the ecoursesData based on the favoriteCourseIds and return the favorite courses
+//   return ecoursesData.filter((ecourse) =>
+//     favoriteCourseIds.includes(ecourse.id)
+//   );
+// };
+
 // export const localStorageData =
 //   JSON.parse(localStorage.getItem("allCourses")) || [];
 

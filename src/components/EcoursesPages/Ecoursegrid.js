@@ -4,9 +4,7 @@ import { Rating } from "primereact/rating";
 import { Tag } from "primereact/tag";
 import { Button } from "primereact/button";
 import { DataView } from "primereact/dataview";
-import { Dropdown } from "primereact/dropdown";
 import Filters from "../Filters/Filters";
-import { Column } from "primereact/column";
 import { Link } from "react-router-dom";
 
 function EcoursesGrid({ ecoursesData, handleToggleFavorite }) {
@@ -16,38 +14,54 @@ function EcoursesGrid({ ecoursesData, handleToggleFavorite }) {
   const [sortField, setSortField] = useState("");
   const [active, setActive] = useState(false);
   // localStorage.clear();
-
   // Create a state to track the active state for each course
   const [activeCourses, setActiveCourses] = useState({});
-
   // Initialize the favorites list from localStorage
   const [favoriteCourses, setFavoriteCourses] = useState(
     JSON.parse(localStorage.getItem("favoriteCourses")) || []
   );
 
+  // me to pou jekinaei to programma na emfanizontai ta favorites
   useEffect(() => {
     // Save the favorites list to localStorage whenever it changes
     localStorage.setItem("favoriteCourses", JSON.stringify(favoriteCourses));
+
+    // Log the favorite courses whenever the list changes
+    console.log("Favorite courses:", favoriteCourses);
   }, [favoriteCourses]);
 
-  // Handle the click for a specific course
   const handleClick = (ecourseId) => {
-    // 'ecourseId' when the button is clicked
+    // 'ecourseId' when the button is clicked. Display all courses in the favorites
     console.log(`Button clicked for ecourse with ID: ${ecourseId}`);
-    setActiveCourses((prevActiveCourses) => ({
-      ...prevActiveCourses,
-      [ecourseId]: !prevActiveCourses[ecourseId], // Toggle the active state for this course
-    }));
+
+    // Check if the course is already a favorite
+    const isFavorite = favoriteCourses.includes(ecourseId);
+
     // Add or remove the course from the favorites list
-    if (!activeCourses[ecourseId]) {
+    if (!isFavorite) {
       // Add to favorites
       setFavoriteCourses((prevFavorites) => [...prevFavorites, ecourseId]);
+      console.log(`Course with ID ${ecourseId} added to favorites.`);
     } else {
       // Remove from favorites
       setFavoriteCourses((prevFavorites) =>
         prevFavorites.filter((id) => id !== ecourseId)
       );
+      console.log(`Course with ID ${ecourseId} removed from favorites.`);
     }
+
+    // Toggle the active state for this course
+    setActiveCourses((prevActiveCourses) => ({
+      ...prevActiveCourses,
+      [ecourseId]: !prevActiveCourses[ecourseId],
+    }));
+
+    // Call getFavoriteEcoursesData with the updated favoriteCourses array and ecoursesData
+    const favoriteEcoursesData = EcoursesData.getFavoriteEcoursesData(
+      favoriteCourses,
+      ecoursesData
+    );
+    // You can use favoriteEcoursesData for further processing, like displaying favorite courses on a favorites page.
   };
 
   const [filters, setFilters] = useState({

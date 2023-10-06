@@ -34,7 +34,7 @@ function Favorites() {
   return (
     <>
       <div className="border-1 surface-border border-round p-4 m-2">
-        <h1 className="col-12 text-center my-3 fw-bold">E-Courses</h1>
+        <h1 className="col-12 text-center my-3 fw-bold">Favorites</h1>
         <EcoursesGrid
           ecoursesData={ecoursesData}
           onToggleFavorite={handleToggleFavorite}
