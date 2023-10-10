@@ -1,3 +1,5 @@
+//Displays a grid of eCourses.
+
 import React, { useState, useEffect } from "react";
 import { EcoursesData } from "../../mock-d/EcoursesData";
 import { Rating } from "primereact/rating";
@@ -6,20 +8,27 @@ import { Button } from "primereact/button";
 import { DataView } from "primereact/dataview";
 import Filters from "../Filters/Filters";
 import { Link } from "react-router-dom";
-import Favorites from "../Favorites/Favorites";
 
 function EcoursesGrid({ ecoursesData, handleToggleFavorite }) {
   const [sortOrder, setSortOrder] = useState(0);
   const [sortField, setSortField] = useState("");
-  // localStorage.clear();
   // Create a state to track the active state for each course
   const [activeCourses, setActiveCourses] = useState({});
-  // Initialize the favorites list from localStorage
+  // Store filters criteria on header
+  const [filters, setFilters] = useState({
+    university: null,
+    location: null,
+    fields: [],
+  });
+
+  // Initialize the favorites list(courses that have red heart) from localStorage
   const [favoriteCourses, setFavoriteCourses] = useState(
     JSON.parse(localStorage.getItem("favoriteCourses")) || []
   );
+  // localStorage.clear();
 
-  // me to pou jekinaei to programma na emfanizontai ta favorites
+  // As soon as the app starts favorites appear(button=red). Also, watches for
+  // changes in the favoriteCourses state and stores it in localStorage
   useEffect(() => {
     // Save the favorites list to localStorage whenever it changes
     localStorage.setItem("favoriteCourses", JSON.stringify(favoriteCourses));
@@ -28,6 +37,13 @@ function EcoursesGrid({ ecoursesData, handleToggleFavorite }) {
     console.log("Favorite courses:", favoriteCourses);
   }, [favoriteCourses]);
 
+  // 1. function used to handle clicks on the favorite button for each eCourse.
+  // 2. checks whether the clicked eCourse is already a favorite and adds/removes
+  //  it from the list of favorites accordingly.
+  // 3. toggles the active state for the clicked course.
+  // 4. It calls EcoursesData.getFavoriteEcoursesData to potentially use the
+  // updated favoriteCourses array for further processing, such as
+  // displaying favorite courses on a favorites page.
   const handleClick = (ecourseId) => {
     // 'ecourseId' when the button is clicked. Display all courses in the favorites
     console.log(`Button clicked for ecourse with ID: ${ecourseId}`);
@@ -63,21 +79,17 @@ function EcoursesGrid({ ecoursesData, handleToggleFavorite }) {
     // You can use favoriteEcoursesData for further processing, like displaying favorite courses on a favorites page.
   };
 
-  const [filters, setFilters] = useState({
-    university: null,
-    location: null,
-    fields: [],
-  });
-
+  // Filter component on header based on university, location, and fields.
   const header = () => {
     return <Filters onFilter={handleFilters} />;
   };
 
+  // Used to update the filters state based on user-selected filter values.
   const handleFilters = (filterValues) => {
     setFilters(filterValues);
   };
 
-  // Filter the ecourses based on the selected filters
+  // Contains the eCourses that match the selected filters.
   // ecoursesData prop is the data we use
   const filteredEcourses = ecoursesData.filter((ecourse) => {
     if (filters.university && ecourse.university !== filters.university) {
@@ -115,7 +127,7 @@ function EcoursesGrid({ ecoursesData, handleToggleFavorite }) {
     }
   };
 
-  // when items are in Grid formation
+  // Renders an individual eCourse as a grid item.
   const gridItem = (ecourse) => {
     const isCourseActive = activeCourses[ecourse.id];
     const isFavorite = favoriteCourses.includes(ecourse.id);
@@ -164,6 +176,8 @@ function EcoursesGrid({ ecoursesData, handleToggleFavorite }) {
     );
   };
 
+  // Function is used as the template for each eCourse item, which can be
+  // displayed as a grid item.
   const itemTemplate = (ecourse) => {
     // If we the grid icon is pressed print ecourses as a grid.If not as a list
     return gridItem(ecourse);
@@ -188,170 +202,4 @@ function EcoursesGrid({ ecoursesData, handleToggleFavorite }) {
 
 export default EcoursesGrid;
 
-{
-  // / const sortOptions = [
-  //   { label: "Price High to Low", value: "!price" },
-  //   { label: "Price Low to High", value: "price" },
-  // ];
-
-  // const onSortChange = (event) => {
-  //   const value = event.value;
-
-  //   if (value.indexOf("!") === 0) {
-  //     setSortOrder(-1);
-  //     setSortField(value.substring(1, value.length));
-  //     setSortKey(value);
-  //   } else {
-  //     setSortOrder(1);
-  //     setSortField(value);
-  //     setSortKey(value);
-  //   }
-  // };
-
-  // // Sample e-courses data
-  // const ecourses = [
-  //   {
-  //     id: 1,
-  //     title: "Introduction to Artificial Intelligence",
-  //     image: img,
-  //     university: "University of Piraeus",
-  //     professors: ["Dimitris Dimitris", "Gavalas Gavalas"],
-  //     duration: "12 weeks",
-  //     ECTS: 6,
-  //     rating: 4.5,
-  //     price: "$999",
-  //     mode: "Online",
-  //     description:
-  //       "This is a comprehensive introduction to the field of artificial intelligence, covering topics such as machine learning, robotics, and natural language processing.",
-  //   },
-  //   {
-  //     id: 2,
-  //     title: "Introduction to Artificial Intelligence",
-  //     image: img,
-  //     university: "University of Piraeus",
-  //     professors: ["Dimitris Dimitris", "Gavalas Gavalas"],
-  //     duration: "12 weeks",
-  //     ECTS: 6,
-  //     rating: 4.5,
-  //     price: "$999",
-  //     mode: "Online",
-  //     description:
-  //       "This is a comprehensive introduction to the field of artificial intelligence, covering topics such as machine learning, robotics, and natural language processing.",
-  //   },
-  //   {
-  //     id: 3,
-  //     title: "Introduction to Artificial Intelligence",
-  //     image: img,
-  //     university: "University of Piraeus",
-  //     professors: ["Dimitris Dimitris", "Gavalas Gavalas"],
-  //     duration: "12 weeks",
-  //     ECTS: 6,
-  //     rating: 4.5,
-  //     price: "$999",
-  //     mode: "Online",
-  //     description:
-  //       "This is a comprehensive introduction to the field of artificial intelligence, covering topics such as machine learning, robotics, and natural language processing.",
-  //   },
-  //   {
-  //     id: 4,
-  //     title: "Introduction to Artificial Intelligence",
-  //     image: img,
-  //     university: "University of Piraeus",
-  //     professors: ["Dimitris Dimitris", "Gavalas Gavalas"],
-  //     duration: "12 weeks",
-  //     ECTS: 6,
-  //     rating: 4.5,
-  //     price: "$999",
-  //     mode: "Online",
-  //     description:
-  //       "This is a comprehensive introduction to the field of artificial intelligence, covering topics such as machine learning, robotics, and natural language processing.",
-  //   },
-  // ];
-  // useEffect(() => {
-  //   EcoursesData.getProducts().then((data) => setProducts(data.slice(0, 12)));
-  // }, []);
-
-  // // State for favorites
-  // const [favorites, setFavorites] = useState([]);
-
-  // // Toggle favorite e-course
-  // const toggleFavorite = (id) => {
-  //   const isFavorited = favorites.includes(id);
-  //   if (isFavorited) {
-  //     setFavorites(favorites.filter((favoriteId) => favoriteId !== id));
-  //   } else {
-  //     setFavorites([...favorites, id]);
-  //   }
-  // };
-  {
-    /* <div className="ecourse-cards">
-        {ecourses.map((ecourse) => (
-          <EcourseCard
-            key={ecourse.id}
-            ecourse={ecourse}
-            toggleFavorite={toggleFavorite}
-            isFavorited={favorites.includes(ecourse.id)}
-          />
-        ))}
-      </div> */
-  }
-
-  // // component gia to EcourseMainPage
-
-  // import React from "react";
-
-  // const Card = ({ item }) => {
-  //   // destructuring props
-  //   return (
-  //     <>
-  //       <div className="container-fluid">
-  //         <div className="row justify-content-center">
-  //           {item.map((Val) => {
-  //             return (
-  //               <div
-  //                 className="col-md-4 col-sm-6 card my-3 py-3 border-0"
-  //                 key={Val.id}
-  //               >
-  //                 <div className="card-img-top text-center">
-  //                   <img src={Val.img} alt={Val.title} className="photo w-75" />
-  //                 </div>
-  //                 <div className="card-body">
-  //                   <div className="card-title fw-bold fs-4">
-  //                     {Val.title} &nbsp;&nbsp;&nbsp;&nbsp;--&nbsp;&nbsp;
-  //                     {Val.price}
-  //                   </div>
-  //                   <div className="card-text">{Val.desc}</div>
-  //                 </div>
-  //               </div>
-  //             );
-  //           })}
-  //         </div>
-  //       </div>
-  //     </>
-  //   );
-  // };
-
-  // export default Card;
-
-  //Test. H selida pou emfanizetai otan patame sto Ecourses-->Field.
-
-  // import React, { useState, useEffect } from "react";
-  // import "./EcourseMainPage.css";
-  // import { EcoursesData } from "../../mock-d/EcoursesData";
-
-  // function EcourseCard() {
-  //   const [ecourse, setEcourse] = useState(EcoursesData);
-  //   return (
-  //     <>
-  //       <div className="container-fluid">
-  //         <div className="row">
-  //           <h1 className="col-12 text-center my-3 fw-bold">E-Courses</h1>
-  //           <Card item={setEcourse} />
-  //         </div>
-  //       </div>
-  //     </>
-  //   );
-  // }
-
-  // export default EcourseCard;}
-}
+// To do Update notes: 1. change grid code to acomponent with a prop of ecourse

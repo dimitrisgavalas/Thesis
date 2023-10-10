@@ -18,11 +18,6 @@ function EcourseCard() {
     });
   }, []);
 
-  // Define a function to handle toggling favorites
-  const handleToggleFavorite = (ecourse) => {
-    // Implement your favorite toggle logic here
-  };
-
   // const [ecourse, setEcourse] = useState(EcoursesData);
   return (
     <>

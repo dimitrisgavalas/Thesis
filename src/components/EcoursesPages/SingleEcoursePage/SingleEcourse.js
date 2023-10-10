@@ -1,36 +1,41 @@
-//Test. H selida pou emfanizetai otan patame sto Ecourses-->University.
+// Display details of a single eCourse.
+// H selida pou emfanizetai otan patame sto Ecourses-->University.
 
-import React, { useState, useEffect } from "react";
+import React, { useEffect } from "react";
 import "./SingleEcourse.css";
 import { Image } from "primereact/image";
 import { EcoursesData } from "../../../mock-d/EcoursesData";
-import notes from "../../../mock-d/notes";
-import Note from "./Note";
 import Rating from "../../Ratings/Rating";
 import { Link, useParams } from "react-router-dom";
 import { Button } from "primereact/button";
 
 function SingleEcourse() {
   useEffect(() => {
-    // Scroll to the top of the page when the component mounts
+    // Scroll to the top of the page when the component mounts.
     window.scrollTo(0, 0);
   }, []);
-  const [similarEcourses, setEcourses] = useState([]);
+
+  // Function called when clicking on Ecourses website button.
   const openInNewTab = (url) => {
     window.open(url, "_blank");
   };
 
   const img = ["/images/thumbnail.png"];
+
+  // component retrieves the id parameter from the URL using the useParams hook.
+  // This id is used to identify the specific eCourse to display.
   const { id } = useParams();
 
   const courses = EcoursesData.getAllEcoursesData();
 
+  // find method locates the eCourse with a matching id.
+  // The found eCourse is stored in the course variable.
   const course = courses.find((course) => course.id === id);
 
   console.log(courses);
   console.log(id);
 
-  // Sample similar courses data
+  // Similar courses data
   const similarCourses = [
     {
       id: 1026,
@@ -64,9 +69,7 @@ function SingleEcourse() {
             <p>
               <strong>ECTS:</strong> {course.ECTS}
             </p>
-            {/* <p>
-              <strong>Rating:</strong> {course.rating}
-            </p> */}
+
             <p>
               <strong>Price:</strong> {course.price}
             </p>
@@ -114,47 +117,3 @@ function SingleEcourse() {
 }
 
 export default SingleEcourse;
-
-// id: ,
-// title: "",
-// image: ,
-// university: "",
-// professors: ["", ""],
-// duration: "",
-// ECTS: ,
-// rating: ,
-// price: "",
-// mode: "",
-// description:""
-
-{
-  /* <>
-  <div className="m-2 pt-5 pb-5 justify-content-center border-2 surface-border border-round p-2 ">
-    <h2>Comments</h2>
-    {notes.map((noteItem) => {
-      {
-        /* <Note
-                key={noteItem.key}
-                title={noteItem.title}
-                content={noteItem.content}
-              />; */
-}
-// })}
-// </div>
-// </>; */}
-
-// Sample course data,  Will replace with mock data from mock-d in the future
-// const course = {
-//   id: 1,
-//   title: "Introduction to Artificial Intelligence",
-//   image: img,
-//   university: "University of Piraeus",
-//   professors: ["Dimitris Dimitris", "Gavalas Gavalas"],
-//   duration: "12 weeks",
-//   ECTS: 6,
-//   rating: 4.5,
-//   price: "$999",
-//   mode: "Online",
-//   description:
-// "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
-// };

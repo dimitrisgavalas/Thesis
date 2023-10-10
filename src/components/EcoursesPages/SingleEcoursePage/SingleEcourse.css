@@ -19,30 +19,12 @@
     margin: 1rem 0;
   }
   
-  /* .course-info
-  {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 2rem;
-    margin-bottom: 2rem;
-  } */
-  
-  /* .quick-info {
-    flex: 1;
-    min-width: 300px;
-  } */
-  
-  .description {
-    /* flex: 2; */
-    /* min-width: 300px; */
+  .description {   
     word-wrap: break-word;
     max-width: 100%;
 
   }
   
-  /* .contact-university {
-    margin-bottom: 2rem;
-  } */
   
   .similar-courses {
     margin-bottom: 2rem;
@@ -67,35 +49,3 @@
     height: auto;
     margin-bottom: 1rem;
   }
-  
-  
-
-
-
-   /* For grid */
-
-   /* .ecourses {
-    margin: 0 auto;
-    max-width: 1200px;
-  }
-  
-  .filters {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 1rem;
-  }
-  
-  .ecourse-cards {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 1rem;
-    padding: 1rem;
-  }
-  
-  @media screen and (max-width: 767px) {
-    .ecourse-cards {
-      grid-template-columns: 1fr;
-    }
-  } */
-  
