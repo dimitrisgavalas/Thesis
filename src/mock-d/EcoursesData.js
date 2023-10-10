@@ -853,6 +853,7 @@ export const EcoursesData = {
 
     return allData;
   },
+
   getLocalStorageData() {
     return new Promise((resolve) => {
       const localStorageData =
@@ -896,14 +897,10 @@ export const EcoursesData = {
   },
   favoriteEcourses: [],
 
-  getFavoriteEcoursesData() {
-    // Retrieve and parse the data from localStorage
-    const favoritesJSON = localStorage.getItem("favoriteEcourses");
-    if (favoritesJSON) {
-      return JSON.parse(favoritesJSON);
-    } else {
-      return [];
-    }
+  getFavoriteEcoursesData(selectedECourses) {
+    // You can now use the selected courses passed as an argument
+    console.log("getFavoriteEcoursesData", selectedECourses);
+    return selectedECourses;
   },
 
   // method that returns an array of different universities.
@@ -971,11 +968,7 @@ export const EcoursesData = {
   },
 
   getFavoriteEcourses() {
-    return new Promise((resolve) => {
-      setTimeout(() => {
-        resolve(this.getFavoriteEcoursesData());
-      }, 100); // Simulate an asynchronous request (e.g., API call)
-    });
+    return Promise.resolve(this.getFavoriteEcoursesData());
   },
   // Method to update favorite ecourses
   // Method to update favorite ecourses and store in localStorage

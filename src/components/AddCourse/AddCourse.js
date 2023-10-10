@@ -1,24 +1,23 @@
+// AddCourse component is for creating and publishing a course.
 import React, { useState, useEffect, useRef } from "react";
 import { Button } from "primereact/button";
 import { InputText } from "primereact/inputtext";
 import { InputTextarea } from "primereact/inputtextarea";
 import { FileUpload } from "primereact/fileupload";
 import { Toast } from "primereact/toast";
-import { MultiSelect } from "primereact/multiselect";
 import { Dropdown } from "primereact/dropdown";
 import { EcoursesData } from "../../mock-d/EcoursesData";
 import "./AddCourse.css";
 
 function AddCourse() {
-  const [selectedProfessors, setProfessors] = useState("");
   const [selectedDescription, setDescription] = useState(""); // Initialize with an empty string
   const [selectedCity, setSelectedCity] = useState(null);
   const [selectedFields, setSelectedFields] = useState(null);
   const [selectedUniversity, setselectedUniversity] = useState(null);
-  const [selectedImage, setSelectedImage] = useState(null);
 
+  // Generate a unique ID for the new course
   const generateUniqueId = () => {
-    // Generate a unique ID for the new course
+    // returns the current timestamp as a string.
     return Date.now().toString();
   };
 
@@ -34,7 +33,6 @@ function AddCourse() {
     // Now, you can use the allCourses array in your component's state or for rendering.
     // For example, you can set it in the component's state:
     // setCourses(allCourses);
-
     // ... (any other logic you want to perform with the combined data)
   }, []);
 
@@ -55,10 +53,9 @@ function AddCourse() {
     contact: [{ phone: "", email: "", socialMedia: "" }],
     website: "",
   });
-  const [value, setValue] = useState("");
-  // fix University, Proffesors, Location, description
-  // sto [] fainetia name, price, location category. mesa --> name,duration,ects,price
 
+  // event handler functions defined that update the course state object
+  // when the user enters data into corresponding input fields.
   const handleNameChange = (e) => {
     const { value } = e.target;
     setCourse((prevCourse) => ({
@@ -115,27 +112,18 @@ function AddCourse() {
     }));
   };
 
-  const handleContactInfoChange = (e) => {
-    const { name, value } = e.target;
-    setCourse((prevCourse) => ({
-      ...prevCourse,
-      contactInfo: {
-        ...prevCourse.contactInfo,
-        [name]: value,
-      },
-    }));
-  };
+  // Will add Save button in the future. function when we click save Button.
+  // const handleSave = () => {
+  //   const courseId = generateUniqueId();
+  //   const savedCourses = JSON.parse(localStorage.getItem("savedCourses")) || [];
+  //   const newCourse = { ...course, id: courseId };
+  //   savedCourses.push(newCourse);
+  //   localStorage.setItem("savedCourses", JSON.stringify(savedCourses));
+  //   console.log("Saved course:", newCourse);
+  //   // Reset the form or perform any other necessary actions
+  // };
 
-  const handleSave = () => {
-    const courseId = generateUniqueId();
-    const savedCourses = JSON.parse(localStorage.getItem("savedCourses")) || [];
-    const newCourse = { ...course, id: courseId };
-    savedCourses.push(newCourse);
-    localStorage.setItem("savedCourses", JSON.stringify(savedCourses));
-    console.log("Saved course:", newCourse);
-    // Reset the form or perform any other necessary actions
-  };
-
+  // function used for displaying messages using a Toast component
   const show = (message) => {
     toast.current.show({
       severity: "info",
@@ -144,8 +132,9 @@ function AddCourse() {
     });
   };
 
-  const toast = useRef(null);
+  const toast = useRef(null); //Toast component from PrimeReact is used for displaying messages.
 
+  // function called when we click on Publish Button.
   const handlePublish = (e) => {
     e.preventDefault(); // Prevent the default form submission
     const courseId = generateUniqueId();
@@ -169,6 +158,7 @@ function AddCourse() {
     // Reset the form or perform any other necessary actions
   };
 
+  // Categories to choose from on Dropdown
   const [categories] = useState([
     { name: "Programming", value: "Programming" },
     { name: "Mathematics", value: "Mathematics" },
@@ -180,12 +170,15 @@ function AddCourse() {
     { name: "Psychology", value: "Psychology" },
     { name: "History", value: "History" },
   ]);
+
+  // Dropdown location options
   const [locations] = useState([
     { name: "Hybrid", value: "Hybrid" },
     { name: "Online", value: "Online" },
     { name: "On Campus", value: "On Campus" },
   ]);
 
+  // Dropdown university options
   const [universities] = useState([
     { name: "University of Piraeus", value: "University of Piraeus" },
     {
@@ -218,6 +211,7 @@ function AddCourse() {
     <div>
       <div className="add-course-container">
         <h2>Add Course</h2>
+        {/* Form with All Input Fields to create course */}
         <form>
           {/* Course Details */}
           <div className="course-details">
@@ -229,7 +223,6 @@ function AddCourse() {
             />
 
             {/* Add University */}
-
             <Dropdown
               value={selectedUniversity}
               options={universities}
@@ -246,7 +239,7 @@ function AddCourse() {
               onChange={handleProfessorsChange}
             />
 
-            {/* Duration */}
+            {/* Add Duration */}
             <InputText
               type="text"
               placeholder="Duration"
@@ -273,7 +266,7 @@ function AddCourse() {
               // value={course.price}
               onChange={handlePriceChange}
             />
-
+            {/* Location Dropdown */}
             <Dropdown
               value={selectedCity}
               options={locations}
@@ -284,6 +277,7 @@ function AddCourse() {
               className="w-full mb-3 text-left"
             />
 
+            {/* Field Dropdown */}
             <Dropdown
               value={selectedFields}
               options={categories}
@@ -294,7 +288,6 @@ function AddCourse() {
             />
 
             {/* Course Desciption */}
-
             <InputTextarea
               name="description"
               placeholder="Course Description"
@@ -304,12 +297,14 @@ function AddCourse() {
               cols={300}
             />
 
+            {/* Add Website */}
             <InputTextarea
               placeholder="Website"
               // value={course.name}
               onChange={handleWebsiteChange}
             />
           </div>
+
           {/* Upload Files */}
           <h3>Upload thumbnail</h3>
           <FileUpload
@@ -340,107 +335,3 @@ function AddCourse() {
 }
 
 export default AddCourse;
-
-{
-  /* <select
-              name="mode"
-              value={course.university}
-              onChange={handleChange}
-            >
-              <option value="">University</option>
-              <option value="University of Piraeus">
-                University of Piraeus
-              </option>
-              <option value="National and Kapodistrian University of Athens">
-                National and Kapodistrian University of Athens
-              </option>
-              <option value="EMP">EMP</option>
-              <option value="Univesity of West Attica">
-                Univesity of West Attica
-              </option>
-              <option value="OPA">OPA</option>
-              <option
-                value="Panteion
-            university"
-              >
-                Panteion university
-              </option>
-              <option value="Aristotle University of Thessaloniki">
-                Aristotle University of Thessaloniki
-              </option>
-            </select> */
-}
-
-{
-  /* Location */
-}
-{
-  /* <select name="mode" value={course.mode} onChange={handleChange}>
-              <option value="">Select Location</option>
-              <option value="online">Online</option>
-              <option value="onsite">Onsite</option>
-              <option value="hybrid">Hybrid</option>
-            </select> */
-}
-
-{
-  /* Fields */
-}
-{
-  /* <select name="mode" value={course.mode} onChange={handleChange}>
-              <option value="">Select Field</option>
-              <option value="Computer Science">Computer Science</option>
-              <option value="Programming">Programming</option>
-              <option value="Mathematics">Mathematics</option>
-              <option value="Physics">Physics</option>
-              <option value="Biology">Biology</option>
-              <option value="English">English</option>
-              <option value="Greek">Greek</option>
-              <option value="Linguistics">Linguistics</option>
-              <option value="Law">Law</option>
-              <option value="Psychology">Psychology</option>
-              <option value="History-Archaelogy">History-Archaelogy</option>
-              <option value="Philosophy">Philosophy</option>
-              <option value="Engineering">Engineering</option>
-              <option value="Art">Art</option>
-            </select> */
-}
-
-{
-  /* Upload Photo
-          <h2>Upload Photos</h2>
-          <FileUpload
-            name="demo[]"
-            url={"/api/upload"}
-            multiple
-            accept="image/*"
-            maxFileSize={1000000}
-            emptyTemplate={
-              <p className="m-0">Drag and drop files to here to upload.</p>
-            }
-          /> */
-}
-
-// {Contact Info
-//   <div className="contact-info">
-//     <h3>Add Contact Info</h3>
-//     <InputText
-//       keyfilter="email"
-//       placeholder="Email"
-//       // value={}
-//       onChange={handleContactInfoChange}
-//     />
-//     <InputText
-//       keyfilter="pint"
-//       placeholder="Phone"
-//       // value={\}
-//       onChange={handleContactInfoChange}
-//     />
-
-//     <InputText
-//       // keyfilter="hex"
-//       placeholder="Social Media"
-//       // value={course.contactInfo.socialMedia}
-//       onChange={handleContactInfoChange}
-//     />
-//   </div>}

@@ -6,13 +6,11 @@ import { Button } from "primereact/button";
 import { DataView } from "primereact/dataview";
 import Filters from "../Filters/Filters";
 import { Link } from "react-router-dom";
+import Favorites from "../Favorites/Favorites";
 
 function EcoursesGrid({ ecoursesData, handleToggleFavorite }) {
-  const [color, setColor] = useState("");
-  const [sortKey, setSortKey] = useState("");
   const [sortOrder, setSortOrder] = useState(0);
   const [sortField, setSortField] = useState("");
-  const [active, setActive] = useState(false);
   // localStorage.clear();
   // Create a state to track the active state for each course
   const [activeCourses, setActiveCourses] = useState({});
@@ -61,6 +59,7 @@ function EcoursesGrid({ ecoursesData, handleToggleFavorite }) {
       favoriteCourses,
       ecoursesData
     );
+
     // You can use favoriteEcoursesData for further processing, like displaying favorite courses on a favorites page.
   };
 

@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from "react";
 import Settings from "../Settings/Settings";
 import "./UserProfile.css";
-import { Menubar } from "primereact/menubar";
 import Favorites from "../Favorites/Favorites";
 import AddCourse from "../AddCourse/AddCourse";
 import EcoursesGrid from "../EcoursesPages/Ecoursegrid";
@@ -14,6 +13,7 @@ function UserProfile({ isUniversityUser = false }) {
   const [ecoursesData, setEcoursesData] = useState([]);
   console.log(ecoursesData);
   const tabs = ["settings", "favorites"];
+
   useEffect(() => {
     // Fetch your data asynchronously and set it when the Promise resolves
     EcoursesData.getLocalStorageData().then((data) => {
