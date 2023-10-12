@@ -1,3 +1,4 @@
+// Page that provides information about the platform
 import React from "react";
 import "./About.css";
 import { Image } from "primereact/image";

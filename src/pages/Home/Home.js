@@ -1,3 +1,4 @@
+// Home Page with SearchBar, Trending Courses, Partner Universities
 import React from "react";
 import PartnerUniversitiesRec from "../../components/PartnerUniversities/partnerUniversities";
 import SearchBar from "../../components/SearchBar/SearchBar";

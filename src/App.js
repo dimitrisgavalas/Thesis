@@ -1,11 +1,5 @@
 import React from "react";
-import {
-  BrowserRouter,
-  Routes, // instead of "Switch"
-  Route,
-} from "react-router-dom";
 import "./App.css";
-
 import Home from "./pages/Home/Home";
 import Footer from "./components/Footer/Footer";
 import ToolbarMenu from "./components/Toolbar/Toolbar";
@@ -15,10 +9,12 @@ import About from "./pages/About/About";
 import Ecourses from "./pages/Ecourses/Ecourses";
 import UserProfile from "./components/UserProfile/UserProfile";
 import Favorites from "./components/Favorites/Favorites";
-import AddCourse from "./components/AddCourse/AddCourse";
-import { Rating } from "primereact/rating";
 import CommentAndRating from "./components/Ratings/Rating";
-// import uniProfile from "./components/uniProfile/uniProfile";
+import {
+  BrowserRouter,
+  Routes, // instead of "Switch"
+  Route,
+} from "react-router-dom";
 
 function App() {
   return (
@@ -43,11 +39,8 @@ function App() {
       </BrowserRouter>
 
       <Footer />
-      {/* <Contact /> */}
-      {/* me routing */}
     </div>
   );
 }
 
 export default App;
-// sta shared loading etc

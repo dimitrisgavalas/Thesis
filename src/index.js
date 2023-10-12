@@ -10,19 +10,3 @@ root.render(
     <App />
   </React.StrictMode>
 );
-
-// import files & components
-
-// ReactDOM.render(
-//   // What to show
-//   // <div>
-//   //   <h1>Thesis First Step</h1>
-//   //   <h2>Thesis Second Step</h2>
-//   // </div>
-//   <React.StrictMode>
-//     <App />
-//   </React.StrictMode>,
-
-//   // Where to show it
-//   document.getElementById("root")
-// );

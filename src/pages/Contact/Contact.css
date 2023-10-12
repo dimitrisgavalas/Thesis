@@ -3,7 +3,6 @@
     max-width: 1200px;
     display: flex;
     flex-direction: column;
-    /* min-height: 100vh; */
   }
   
   .contact-form-container {
@@ -40,7 +39,6 @@
   }
   
   .contact-form button {
-    /* background-color: #333; */
     color: #fff;
     border: none;
     border-radius: 4px;
