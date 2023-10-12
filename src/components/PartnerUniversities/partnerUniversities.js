@@ -1,3 +1,4 @@
+// Showcases Partner Universities logos
 import React from "react";
 
 function PartnerUniversitiesRec() {
@@ -81,4 +82,3 @@ function PartnerUniversitiesRec() {
 }
 
 export default PartnerUniversitiesRec;
-//

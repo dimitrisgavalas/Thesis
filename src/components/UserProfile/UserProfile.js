@@ -1,3 +1,4 @@
+// User profile page that allows users to access different tabs based on their roles.
 import React, { useState, useEffect } from "react";
 import Settings from "../Settings/Settings";
 import "./UserProfile.css";
@@ -14,6 +15,8 @@ function UserProfile({ isUniversityUser = false }) {
   console.log(ecoursesData);
   const tabs = ["settings", "favorites"];
 
+  // fetch course data asynchronously and set it when the Promise resolves. The course
+  // data is fetched from local storage
   useEffect(() => {
     // Fetch your data asynchronously and set it when the Promise resolves
     EcoursesData.getLocalStorageData().then((data) => {

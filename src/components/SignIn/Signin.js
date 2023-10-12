@@ -1,3 +1,4 @@
+// login form for users to sign in to their accounts.
 import React, { useState } from "react";
 import { InputText } from "primereact/inputtext";
 import { Checkbox } from "primereact/checkbox";

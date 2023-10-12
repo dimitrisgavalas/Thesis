@@ -1,8 +1,8 @@
+// User Settings
 import React from "react";
-import { InputText } from "primereact/inputtext";
-
 import "./Settings.css";
 
+// Depending on the user, it renders different sections for regular users and university users.
 function Settings({ isUniversityUser }) {
   const handleSubmit = () => {
     // Αν είναι Uni user mporei να κανει submit form για εγκριση χρηστη.Handle form submission and sending email with files
@@ -19,12 +19,7 @@ function Settings({ isUniversityUser }) {
             Email: (yourEmail@email.com)
           </label>
           <button className="ml-4">Change Email</button>
-          {/* <InputText
-            id="email"
-            type="text"
-            placeholder="Email address"
-            className="w-full mb-3"
-          /> */}
+
           <br />
           <br />
           <label
@@ -34,15 +29,8 @@ function Settings({ isUniversityUser }) {
             Password: ●●●●●●●●
           </label>
           <button className="ml-4">Change Password</button>
-          {/* <InputText
-            id="password"
-            type="password"
-            placeholder="Password"
-            className="w-full mb-3"
-          /> */}
         </div>
-        {/* ml-6(margin left 6. xwros ejw apo adikeimeno)m-2(megalwnei margin by 2) pt-5(padding) pb-5(xwros apo katw) flex(ta xalaei pane ola se seira) justify-content-center border-2 surface-border border-round p-2(padding apo panw ligo maybe) */}
-        {/* class="border-2 surface-border border-round p-2 m-2 down pt-7 pb-7 flex justify-content-center " */}
+
         <div className="border-2 border-round surface-border p-2 pb-5 m-2">
           <h3>Notifications</h3>
           <label>

@@ -1,5 +1,5 @@
+// 2nd iteration of partner universities showcase
 import React from "react";
-// import { Image } from "primereact/image";
 
 function PartnerUniversitiesRec2() {
   return (

@@ -1,37 +1,34 @@
+// Navigation toolbar
 import React, { useState } from "react";
 import { Button } from "primereact/button";
-import { Toolbar } from "primereact/toolbar";
-
 import SignInFun from "../SignIn/Signin";
 import { Dialog } from "primereact/dialog";
-
 import { Menubar } from "primereact/menubar";
-// import "./Toolbar.css";
-import { Routes, Route, useNavigate } from "react-router-dom";
-import Favorites from "../Favorites/Favorites";
+import { useNavigate } from "react-router-dom";
 import { useVisibilityService, useLoginService } from "./toolbar.service";
 
-// function ToolbarMenu() {
 export default function ToolbarMenu() {
-  // const [visible, setVisible] = useState(false);
-  const { visible, setVisibility, toggleVisibility } = useVisibilityService();
+  const { visible, setVisibility } = useVisibilityService();
   const [isUniversityUser, setIsUniversityUser] = useState(false);
 
+  // control the visibility of the login dialog.
   const show = () => {
     setVisibility(true);
   };
 
+  // control the visibility of the login dialog.
   const hide = () => {
     setVisibility(false);
   };
 
+  // used to manage the user's login state.
   const login = () => {
     setLogingState(true);
   };
 
-  const logout = () => {
-    setLogingState(false);
-  };
+  // const logout = () => {
+  //   setLogingState(false);
+  // };
 
   function refreshPage() {
     window.location.reload(false);
@@ -40,7 +37,6 @@ export default function ToolbarMenu() {
 
   const { isLoggedIn, setLogingState } = useLoginService();
   // track login status
-  // const [isLoggedIn, setIsLoggedIn] = useState(true);
   const items = [
     {
       command: () => {
@@ -53,82 +49,6 @@ export default function ToolbarMenu() {
         navigate("/ecourses/ecoursemainpage");
       },
       label: "E-Courses",
-      // icon: "pi pi-fw pi-file",
-      // items: [
-      //   // Unis
-      //   {
-      //     label: "Universities",
-      //     icon: "pi pi-building",
-      //     items: [
-      //       // {
-      //       //   command: () => {
-      //       //     navigate("/singleEcourse");
-      //       //   },
-      //       //   label: "Single Ecourse",
-      //       //   icon: "pi pi-building ",
-      //       // },
-      //       // {
-      //       //   url: "/settings",
-      //       //   label: "Settings",
-      //       //   icon: "pi pi-building ",
-      //       // },
-      //       // ,
-      //       {
-      //         command: () => {
-      //           navigate("/profile");
-      //         },
-      //         label: "User Profile",
-      //         icon: "pi pi-building ",
-      //       },
-      //       {
-      //         command: () => {
-      //           navigate("/uniprofile");
-      //         },
-      //         label: "Uni Profile",
-      //         icon: "pi pi-building ",
-      //       },
-      //     ],
-      //   },
-      //   {
-      //     separator: true,
-      //   },
-      //   // Fields
-      //   {
-      //     command: () => {
-      //       navigate("/ecourses/ecoursemainpage");
-      //     },
-      //     label: "Ecourses Main page Field",
-      //     icon: "pi pi-book ",
-      //     // items: [
-      //     //   {
-      //     //     label: "Mathematics",
-      //     //     icon: "pi pi-book ",
-      //     //   },
-      //     //   {
-      //     //     label: "Physics",
-      //     //     icon: "pi pi-book ",
-      //     //   },
-      //     //   ,
-      //     //   {
-      //     //     label: "Programming",
-      //     //     icon: "pi pi-book ",
-      //     //   },
-      //     //   ,
-      //     //   {
-      //     //     label: "Linguistics",
-      //     //     icon: "pi pi-book ",
-      //     //   },
-      //     //   ,
-      //     //   {
-      //     //     label: "Physics",
-      //     //     icon: "pi pi-book ",
-      //     //   },
-      //     // ],
-      //   },
-      //   {
-      //     separator: true,
-      //   },
-      // ],
     },
     {
       command: () => {
@@ -152,6 +72,7 @@ export default function ToolbarMenu() {
   const start = (
     <img alt="logo" src="/images/UNIPI.jpg" height="40" className="mr-2"></img>
   );
+
   const end = (
     // Fragment = lets you group elements without a wrapper node.
     <React.Fragment>
@@ -217,27 +138,4 @@ export default function ToolbarMenu() {
       <Menubar model={items} start={start} end={end} item={test()} />
     </div>
   );
-}
-
-// const end2 = [
-// {
-//   // label: "Favorites",
-//   icon: "pi pi-heart",
-// },
-//   {
-//     // label: "notification",
-//     icon: "pi pi-bell",
-//   },
-//   {
-//     label: "Sign In",
-//     icon: "pi pi-sign-in",
-//   },
-// ];
-
-{
-  /* <Button
-            label="Show"
-            icon="pi pi-external-link"
-            onClick={() => setVisible(true)}
-          /> */
 }

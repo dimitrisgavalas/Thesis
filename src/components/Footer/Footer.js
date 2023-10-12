@@ -1,3 +1,4 @@
+// Buttons at Footer connecting users to platforms Social Media
 import React from "react";
 import { Button } from "primereact/button";
 import "./Footer.css";
@@ -24,12 +25,3 @@ function Footer() {
 }
 
 export default Footer;
-
-// align-items-center
-// justify-content-center //ta vazei kedro an exw kai to flex
-// p-2//padding 2
-//border-2 //border me paxos 2
-//surface-border //border ginetai psilo diafano
-// surface-card
-//border-round //round border lol
-// flex
