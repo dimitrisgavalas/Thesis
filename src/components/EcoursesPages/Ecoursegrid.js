@@ -1,7 +1,6 @@
 //Displays a grid of eCourses.
 
 import React, { useState, useEffect } from "react";
-import { EcoursesData } from "../../mock-d/EcoursesData";
 import { Rating } from "primereact/rating";
 import { Tag } from "primereact/tag";
 import { Button } from "primereact/button";
@@ -9,7 +8,7 @@ import { DataView } from "primereact/dataview";
 import Filters from "../Filters/Filters";
 import { Link } from "react-router-dom";
 
-function EcoursesGrid({ ecoursesData, handleToggleFavorite }) {
+function EcoursesGrid({ ecoursesData }) {
   const [sortOrder, setSortOrder] = useState(0);
   const [sortField, setSortField] = useState("");
   // Create a state to track the active state for each course
@@ -20,7 +19,6 @@ function EcoursesGrid({ ecoursesData, handleToggleFavorite }) {
     location: null,
     fields: [],
   });
-
   // Initialize the favorites list(courses that have red heart) from localStorage
   const [favoriteCourses, setFavoriteCourses] = useState(
     JSON.parse(localStorage.getItem("favoriteCourses")) || []
@@ -69,14 +67,6 @@ function EcoursesGrid({ ecoursesData, handleToggleFavorite }) {
       ...prevActiveCourses,
       [ecourseId]: !prevActiveCourses[ecourseId],
     }));
-
-    // Call getFavoriteEcoursesData with the updated favoriteCourses array and ecoursesData
-    const favoriteEcoursesData = EcoursesData.getFavoriteEcoursesData(
-      favoriteCourses,
-      ecoursesData
-    );
-
-    // You can use favoriteEcoursesData for further processing, like displaying favorite courses on a favorites page.
   };
 
   // Filter component on header based on university, location, and fields.

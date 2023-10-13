@@ -3,25 +3,11 @@
 const img = ["/images/thumbnail.png"];
 
 export const EcoursesData = {
-  addNewCourse(newCourse) {
-    // You can generate a unique ID for the new course here
-    const courseId = Date.now().toString();
-
-    // Add the new course to the array
-    this.getAllEcoursesData().push({
-      id: courseId,
-      ...newCourse,
-    });
-
-    // You may want to save this updated data to a server or localStorage here
-
-    return Promise.resolve(courseId);
-  },
   // method that returns an array of Ecourse objects that appear in Home page
   getHomePageEcourseData() {
     return [
       {
-        id: "1000",
+        id: "2000",
         title: "Web Dev Bootcamp",
         image: img,
         price: 350,
@@ -43,7 +29,7 @@ export const EcoursesData = {
         website: "https://www.ds.unipi.gr/",
       },
       {
-        id: "1001",
+        id: "2001",
         title: "Algebra 2",
         image: img,
         price: 950,
@@ -66,7 +52,7 @@ export const EcoursesData = {
         website: "https://www.ds.unipi.gr/",
       },
       {
-        id: "1002",
+        id: "2002",
         title: "AI Bootcamp",
         image: img,
         price: 60,
@@ -88,7 +74,7 @@ export const EcoursesData = {
         website: "https://www.ds.unipi.gr/",
       },
       {
-        id: "1003",
+        id: "2003",
         title: "Algebra 1",
         image: img,
         price: 650,
@@ -110,7 +96,7 @@ export const EcoursesData = {
         website: "https://www.ds.unipi.gr/",
       },
       {
-        id: "1004",
+        id: "2004",
         title: "Python Bootcamp",
         image: img,
         price: 660,
@@ -132,7 +118,7 @@ export const EcoursesData = {
         website: "https://www.ds.unipi.gr/",
       },
       {
-        id: "1005",
+        id: "2005",
         title: "Greek Language",
         image: img,
         price: 90,
@@ -154,7 +140,7 @@ export const EcoursesData = {
         website: "https://www.ds.unipi.gr/",
       },
       {
-        id: "1006",
+        id: "2006",
         title: "Linguistics 3",
         image: img,
         price: 6580,
@@ -176,7 +162,7 @@ export const EcoursesData = {
         website: "https://www.ds.unipi.gr/",
       },
       {
-        id: "1007",
+        id: "2007",
         title: "Psychology 3",
         image: img,
         price: 320,
@@ -198,7 +184,7 @@ export const EcoursesData = {
         website: "https://www.ds.unipi.gr/",
       },
       {
-        id: "1008",
+        id: "2008",
         title: "WW2 DDAY",
         image: img,
         price: 430,
@@ -221,13 +207,12 @@ export const EcoursesData = {
       },
     ];
   },
-
   // method that returns an array of All Ecourse objects
   getAllEcoursesData() {
     // localStorage.clear();
 
     const localStorageData =
-      JSON.parse(localStorage.getItem("allCourses")) || [];
+      JSON.parse(localStorage.getItem("publishedCourses")) || [];
 
     const staticData = [
       {
@@ -853,158 +838,31 @@ export const EcoursesData = {
 
     return allData;
   },
-
-  getLocalStorageData() {
-    return new Promise((resolve) => {
-      const localStorageData =
-        JSON.parse(localStorage.getItem("allCourses")) || [];
-      resolve(localStorageData);
-    });
-  },
-
-  // method that returns an array of different universities.
-  getUniversityName() {
-    return [
-      {
-        id: "2000",
-        name: "University of Piraeus",
-      },
-      {
-        id: "2001",
-        name: "National and Kapodistrian University of Athens",
-      },
-      {
-        id: "2002",
-        name: "EMP",
-      },
-      {
-        id: "2003",
-        name: "Univesity of West Attica",
-      },
-      {
-        id: "2004",
-        name: "OPA",
-      },
-      {
-        id: "2005",
-        name: "Panteion University",
-      },
-      {
-        id: "2006",
-        name: "Aristotle University of Thessaloniki",
-      },
-    ];
-  },
-  favoriteEcourses: [],
-
-  getFavoriteEcoursesData(selectedECourses) {
-    // You can now use the selected courses passed as an argument
-    console.log("getFavoriteEcoursesData", selectedECourses);
-    return selectedECourses;
-  },
-
-  // method that returns an array of different universities.
-  getFieldName() {
-    return [
-      {
-        id: "3000",
-        name: "Programming",
-      },
-      {
-        id: "3001",
-        name: "Mathematics",
-      },
-      {
-        id: "3002",
-        name: "Physics",
-      },
-      {
-        id: "3003",
-        name: "Biology",
-      },
-      {
-        id: "3004",
-        name: "English",
-      },
-      {
-        id: "3005",
-        name: "Greek",
-      },
-      {
-        id: "3006",
-        name: "Linguistics",
-      },
-      {
-        id: "3007",
-        name: "Psychology",
-      },
-      {
-        id: "3008",
-        name: "History",
-      },
-      {
-        id: "3009",
-        name: "Philosophy",
-      },
-      {
-        id: "3010",
-        name: "Engineering",
-      },
-      {
-        id: "3011",
-        name: "Art",
-      },
-    ];
-  },
-
   //  method that returns a Promise that resolves with all ecourses from getHomePageEcourseData.
   getEcoursesHomePage() {
     return Promise.resolve(this.getHomePageEcourseData());
   },
-
   //  method that returns a Promise that resolves with all Ecourses from getAllEcourses.
   getAllEcourses() {
     return Promise.resolve(this.getAllEcoursesData());
   },
 
-  getFavoriteEcourses() {
-    return Promise.resolve(this.getFavoriteEcoursesData());
+  getLocalStorageData() {
+    return new Promise((resolve) => {
+      const localStorageData =
+        JSON.parse(localStorage.getItem("publishedCourses")) || [];
+      resolve(localStorageData);
+    });
   },
-  // Method to update favorite ecourses
-  // Method to update favorite ecourses and store in localStorage
-  updateFavoriteEcourses(newFavorites) {
-    this.favoriteEcourses = newFavorites;
 
-    // Store the updated favorites in localStorage
-    localStorage.setItem("favoriteEcourses", JSON.stringify(newFavorites));
+  getLocalStorageFavoritesData() {
+    return new Promise((resolve) => {
+      const localStorageData =
+        JSON.parse(localStorage.getItem("favoriteCourses")) || [];
+      resolve(localStorageData);
+    });
   },
 };
-
-// export const getFavoriteEcoursesData = (favoriteCourseIds, ecoursesData) => {
-//   // Filter the ecoursesData based on the favoriteCourseIds and return the favorite courses
-//   return ecoursesData.filter((ecourse) =>
-//     favoriteCourseIds.includes(ecourse.id)
-//   );
-// };
-
-// export const localStorageData =
-//   JSON.parse(localStorage.getItem("allCourses")) || [];
-
-// Categories{
-//   Computer Science
-//   Programming
-//   Mathematics
-//   Physics
-//   Biology
-//   English
-//   Greek
-//   Linguistics
-//   Law
-//   Psychology
-//   History-Archaeology
-//   Philosophy
-//   Engineering
-//   Art
 
 // Categories{
 // Computer Science
@@ -1054,19 +912,6 @@ export const EcoursesData = {
 // •	Επιστήμες Φυσικής Αγωγής – Αθλητισμού
 // •	Θετικές Επιστήμες
 // •	Πληροφορική
-
-// Programming
-// Mathematics
-// Physics
-// Biology
-// English
-// Greek
-// Linguistics
-// Psychology
-// History-Archaeology
-// Philosophy
-// Engineering
-// Art
 
 // University of Piraeus
 // National and Kapodistrian University of Athens

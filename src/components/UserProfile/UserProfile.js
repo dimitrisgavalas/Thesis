@@ -12,7 +12,7 @@ function UserProfile({ isUniversityUser = false }) {
   // start @setting when accesing profile. Just for testing will change
   const [activeTab, setActiveTab] = useState("settings");
   const [ecoursesData, setEcoursesData] = useState([]);
-  console.log(ecoursesData);
+  console.log("Checking ecoursesData in UserProfile", ecoursesData);
   const tabs = ["settings", "favorites"];
 
   // fetch course data asynchronously and set it when the Promise resolves. The course

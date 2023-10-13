@@ -24,15 +24,15 @@ function AddCourse() {
   useEffect(() => {
     // Retrieve data from localStorage and merge it with data from getAllEcoursesData
     const localStorageCourses =
-      JSON.parse(localStorage.getItem("allCourses")) || [];
-    const allEcourses = EcoursesData.getAllEcoursesData(); // Assuming this function exists in your code
+      JSON.parse(localStorage.getItem("publishedCourses")) || [];
+    const allEcourses = EcoursesData.getAllEcoursesData();
 
     // Combine the two arrays
     const allCourses = [...localStorageCourses, ...allEcourses];
 
-    // Now, you can use the allCourses array in your component's state or for rendering.
+    // Now, you can use the publishedCourses array in your component's state or for rendering.
     // For example, you can set it in the component's state:
-    // setCourses(allCourses);
+    // setCourses(publishedCourses);
     // ... (any other logic you want to perform with the combined data)
   }, []);
 
@@ -138,7 +138,8 @@ function AddCourse() {
   const handlePublish = (e) => {
     e.preventDefault(); // Prevent the default form submission
     const courseId = generateUniqueId();
-    const allCourses = JSON.parse(localStorage.getItem("allCourses")) || [];
+    const publishedCourses =
+      JSON.parse(localStorage.getItem("publishedCourses")) || [];
     const newCourse = {
       ...course,
       id: courseId,
@@ -146,10 +147,9 @@ function AddCourse() {
       category: selectedFields,
       university: selectedUniversity,
       description: selectedDescription,
-      // image: selectedImage,
     };
-    allCourses.push(newCourse);
-    localStorage.setItem("allCourses", JSON.stringify(allCourses));
+    publishedCourses.push(newCourse);
+    localStorage.setItem("publishedCourses", JSON.stringify(publishedCourses));
     console.log("Published course:", newCourse);
 
     // Display a success message

@@ -31,6 +31,8 @@ export default function ToolbarMenu() {
   // };
 
   function refreshPage() {
+    localStorage.clear();
+    navigate("/");
     window.location.reload(false);
   }
   const navigate = useNavigate();
@@ -66,7 +68,7 @@ export default function ToolbarMenu() {
   ];
 
   const test = () => {
-    console.log("dfdf");
+    console.log("Test");
   };
 
   const start = (

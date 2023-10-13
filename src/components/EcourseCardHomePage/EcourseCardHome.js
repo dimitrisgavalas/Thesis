@@ -8,9 +8,6 @@ function EcourseCardHome() {
   // will hold the data of eCourses that will be displayed on the Home Page.
   const [ecoursesData, setEcoursesData] = useState([]);
 
-  // const ecoursesData = EcoursesData.getAllEcourses();
-  console.log(ecoursesData);
-
   useEffect(() => {
     // Fetch your data asynchronously and set it when the Promise resolves
     EcoursesData.getEcoursesHomePage().then((data) => {
@@ -18,8 +15,7 @@ function EcourseCardHome() {
       setEcoursesData(data);
     });
   }, []);
-
-  // const [ecourse, setEcourse] = useState(EcoursesData);
+  console.log("Home Trending Courses Array ", ecoursesData);
   return (
     <>
       <div className="border-1 surface-border border-round  ">
