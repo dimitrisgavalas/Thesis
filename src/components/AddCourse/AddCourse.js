@@ -1,12 +1,12 @@
 // AddCourse component is for creating and publishing a course.
-import React, { useState, useEffect, useRef } from "react";
+import React, { useState, useRef } from "react";
 import { Button } from "primereact/button";
 import { InputText } from "primereact/inputtext";
 import { InputTextarea } from "primereact/inputtextarea";
 import { FileUpload } from "primereact/fileupload";
 import { Toast } from "primereact/toast";
 import { Dropdown } from "primereact/dropdown";
-import { EcoursesData } from "../../mock-d/EcoursesData";
+// import { EcoursesData } from "../../mock-d/EcoursesData";
 import "./AddCourse.css";
 
 function AddCourse() {
@@ -21,20 +21,20 @@ function AddCourse() {
     return Date.now().toString();
   };
 
-  useEffect(() => {
-    // Retrieve data from localStorage and merge it with data from getAllEcoursesData
-    const localStorageCourses =
-      JSON.parse(localStorage.getItem("publishedCourses")) || [];
-    const allEcourses = EcoursesData.getAllEcoursesData();
+  // useEffect(() => {
+  //   // Retrieve data from localStorage and merge it with data from getAllEcoursesData
+  //   const localStorageCourses =
+  //     JSON.parse(localStorage.getItem("publishedCourses")) || [];
+  //   const allEcourses = EcoursesData.getAllEcoursesData();
 
-    // Combine the two arrays
-    const allCourses = [...localStorageCourses, ...allEcourses];
+  //   // Combine the two arrays
+  //   const allCourses = [...localStorageCourses, ...allEcourses];
 
-    // Now, you can use the publishedCourses array in your component's state or for rendering.
-    // For example, you can set it in the component's state:
-    // setCourses(publishedCourses);
-    // ... (any other logic you want to perform with the combined data)
-  }, []);
+  //   // Now, you can use the publishedCourses array in your component's state or for rendering.
+  //   // For example, you can set it in the component's state:
+  //   // setCourses(publishedCourses);
+  //   // ... (any other logic you want to perform with the combined data)
+  // }, []);
 
   const [course, setCourse] = useState({
     id: "",
