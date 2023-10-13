@@ -7,7 +7,7 @@ import { Button } from "primereact/button";
 import { DataView } from "primereact/dataview";
 import Filters from "../Filters/Filters";
 import { Link } from "react-router-dom";
-import { EcoursesData } from "../../mock-d/EcoursesData";
+// import { EcoursesData } from "../../mock-d/EcoursesData";
 
 function EcoursesGrid({ ecoursesData }) {
   const [sortOrder, setSortOrder] = useState(0);

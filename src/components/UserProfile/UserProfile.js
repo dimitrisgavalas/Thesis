@@ -2,7 +2,7 @@
 import React, { useState, useEffect } from "react";
 import Settings from "../Settings/Settings";
 import "./UserProfile.css";
-import Favorites from "../Favorites/Favorites";
+// import Favorites from "../Favorites/Favorites";
 import AddCourse from "../AddCourse/AddCourse";
 import EcoursesGrid from "../EcoursesPages/Ecoursegrid";
 import { EcoursesData } from "../../mock-d/EcoursesData";

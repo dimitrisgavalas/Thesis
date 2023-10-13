@@ -1,5 +1,6 @@
 // AddCourse component is for creating and publishing a course.
-import React, { useState, useRef } from "react";
+import React from "react";
+import { useState, useRef } from "react";
 import { Button } from "primereact/button";
 import { InputText } from "primereact/inputtext";
 import { InputTextarea } from "primereact/inputtextarea";
