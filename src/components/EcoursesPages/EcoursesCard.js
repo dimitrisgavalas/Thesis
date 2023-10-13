@@ -7,13 +7,10 @@ function EcourseCard() {
   // Fetch or create your object array
   const [ecoursesData, setEcoursesData] = useState([]);
 
-  // const ecoursesData = EcoursesData.getAllEcourses();
-  console.log(ecoursesData);
-
   useEffect(() => {
     // Fetch your data asynchronously and set it when the Promise resolves
     EcoursesData.getAllEcourses().then((data) => {
-      console.log(data); // Log the resolved data
+      console.log("All Ecourses:", data); // Log the resolved data
       setEcoursesData(data);
     });
   }, []);

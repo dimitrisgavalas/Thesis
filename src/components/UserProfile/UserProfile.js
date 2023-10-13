@@ -13,7 +13,7 @@ function UserProfile({ isUniversityUser = false }) {
   const [activeTab, setActiveTab] = useState("settings");
   const [ecoursesData, setEcoursesData] = useState([]);
   console.log("Checking ecoursesData in UserProfile", ecoursesData);
-  const tabs = ["settings", "favorites"];
+  const tabs = ["settings"];
 
   // fetch course data asynchronously and set it when the Promise resolves. The course
   // data is fetched from local storage
@@ -59,9 +59,9 @@ function UserProfile({ isUniversityUser = false }) {
           <Settings isUniversityUser={isUniversityUser} />
         )}
 
-        {activeTab === "favorites" && (
+        {/* {activeTab === "favorites" && (
           <Favorites isUniversityUser={isUniversityUser} />
-        )}
+        )} */}
         {activeTab === "add-course" && isUniversityUser && <AddCourse />}
         {activeTab === "uploaded-courses" && (
           <EcoursesGrid

@@ -7,6 +7,7 @@ import { Button } from "primereact/button";
 import { DataView } from "primereact/dataview";
 import Filters from "../Filters/Filters";
 import { Link } from "react-router-dom";
+import { EcoursesData } from "../../mock-d/EcoursesData";
 
 function EcoursesGrid({ ecoursesData }) {
   const [sortOrder, setSortOrder] = useState(0);
@@ -59,6 +60,7 @@ function EcoursesGrid({ ecoursesData }) {
       setFavoriteCourses((prevFavorites) =>
         prevFavorites.filter((id) => id !== ecourseId)
       );
+
       console.log(`Course with ID ${ecourseId} removed from favorites.`);
     }
 
