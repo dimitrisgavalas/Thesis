@@ -75,7 +75,7 @@ export const EcoursesData = {
       {
         id: "2002",
         title: "AI Bootcamp",
-        image: img6,
+        image: img,
         price: 60,
         category: "Physics",
         ecourseLocation: "Hybrid",
