@@ -1,6 +1,27 @@
 // constant array that contains path to image file. Used it as example.
 // Will change in future
-const img = ["/images/thumbnail.png"];
+const images = [
+  "/images/thumbnail.png",
+  "/images/thumbnail1.png",
+  "/images/thumbnail2.png",
+  "/images/thumbnail3.png",
+  "/images/thumbnail4.png",
+  "/images/thumbnail5.png",
+  "/images/thumbnail6.png",
+  "/images/thumbnail7.png",
+];
+
+function getRandomImage() {
+  const newIndex = Math.floor(Math.random() * images.length);
+  return images[newIndex];
+}
+const img = ["/images/thumbnail.png"]; //teaching
+const img2 = ["/images/thumbnail2.png"]; //art
+const img3 = ["/images/thumbnail3.png"]; //teaching & psychology
+const img4 = ["/images/thumbnail4.png"]; //physics
+const img5 = ["/images/thumbnail5.png"]; //history
+const img6 = ["/images/thumbnail6.png"]; //Java
+const img7 = ["/images/thumbnail7.png"]; //Math
 
 export const EcoursesData = {
   // method that returns an array of Ecourse objects that appear in Home page
@@ -9,7 +30,7 @@ export const EcoursesData = {
       {
         id: "2000",
         title: "Web Dev Bootcamp",
-        image: img,
+        image: img6,
         price: 350,
         category: "Programming",
         ecourseLocation: "Hybrid",
@@ -31,7 +52,7 @@ export const EcoursesData = {
       {
         id: "2001",
         title: "Algebra 2",
-        image: img,
+        image: img7,
         price: 950,
         category: "Mathematics",
         ecourseLocation: "Online",
@@ -54,7 +75,7 @@ export const EcoursesData = {
       {
         id: "2002",
         title: "AI Bootcamp",
-        image: img,
+        image: img6,
         price: 60,
         category: "Physics",
         ecourseLocation: "Hybrid",
@@ -76,7 +97,7 @@ export const EcoursesData = {
       {
         id: "2003",
         title: "Algebra 1",
-        image: img,
+        image: img7,
         price: 650,
         category: "Biology",
         ecourseLocation: "On Campus",
@@ -98,7 +119,7 @@ export const EcoursesData = {
       {
         id: "2004",
         title: "Python Bootcamp",
-        image: img,
+        image: img6,
         price: 660,
         category: "English",
         ecourseLocation: "On Campus",
@@ -142,7 +163,7 @@ export const EcoursesData = {
       {
         id: "2006",
         title: "Linguistics 3",
-        image: img,
+        image: img3,
         price: 6580,
         category: "Linguistics",
         ecourseLocation: "Online",
@@ -164,7 +185,7 @@ export const EcoursesData = {
       {
         id: "2007",
         title: "Psychology 3",
-        image: img,
+        image: img3,
         price: 320,
         category: "Psychology",
         ecourseLocation: "Hybrid",
@@ -186,7 +207,7 @@ export const EcoursesData = {
       {
         id: "2008",
         title: "WW2 DDAY",
-        image: img,
+        image: img5,
         price: 430,
         category: "History",
         ecourseLocation: "On Campus",
@@ -218,7 +239,7 @@ export const EcoursesData = {
       {
         id: "1000",
         title: "Web Development Bootcamp",
-        image: img,
+        image: img6,
         price: 350,
         category: "Programming",
         ecourseLocation: "Hybrid",
@@ -240,7 +261,7 @@ export const EcoursesData = {
       {
         id: "1001",
         title: "Algebra 2",
-        image: img,
+        image: img7,
         price: 950,
         category: "Mathematics",
         ecourseLocation: "Online",
@@ -263,7 +284,7 @@ export const EcoursesData = {
       {
         id: "1002",
         title: "AI Bootcamp",
-        image: img,
+        image: img6,
         price: 60,
         category: "Physics",
         ecourseLocation: "On Campus",
@@ -285,7 +306,7 @@ export const EcoursesData = {
       {
         id: "1003",
         title: "Algebra 1",
-        image: img,
+        image: img7,
         price: 650,
         category: "Biology",
         ecourseLocation: "On Campus",
@@ -307,7 +328,7 @@ export const EcoursesData = {
       {
         id: "1004",
         title: "Python Bootcamp",
-        image: img,
+        image: img6,
         price: 660,
         category: "English",
         ecourseLocation: "On Campus",
@@ -329,7 +350,7 @@ export const EcoursesData = {
       {
         id: "1005",
         title: "CONTEMPORARY ART",
-        image: img,
+        image: img2,
         price: 90,
         category: "Greek",
         ecourseLocation: "Hybrid",
@@ -373,7 +394,7 @@ export const EcoursesData = {
       {
         id: "1007",
         title: "Psychology Introduction",
-        image: img,
+        image: img3,
         price: 320,
         category: "Psychology",
         ecourseLocation: "Hybrid",
@@ -395,7 +416,7 @@ export const EcoursesData = {
       {
         id: "1008",
         title: "WW2 DDAY",
-        image: img,
+        image: img5,
         price: 430,
         category: "History",
         ecourseLocation: "On Campus",
@@ -439,7 +460,7 @@ export const EcoursesData = {
       {
         id: "1010",
         title: "Build a rocket",
-        image: img,
+        image: img4,
         price: 2210,
         category: "Engineering",
         ecourseLocation: "Online",
@@ -461,7 +482,7 @@ export const EcoursesData = {
       {
         id: "1011",
         title: "Clay Sculptures",
-        image: img,
+        image: img2,
         price: 850,
         category: "Art",
         ecourseLocation: "On Campus",
@@ -483,7 +504,7 @@ export const EcoursesData = {
       {
         id: "1012",
         title: "C# Bootcamp",
-        image: img,
+        image: img6,
         price: 490,
         category: "Programming",
         ecourseLocation: "Online",
@@ -505,7 +526,7 @@ export const EcoursesData = {
       {
         id: "1013",
         title: "Geometry",
-        image: img,
+        image: img7,
         price: 50,
         category: "Mathematics",
         ecourseLocation: "Hybrid",
@@ -527,7 +548,7 @@ export const EcoursesData = {
       {
         id: "1014",
         title: "Quantum Physics Intro",
-        image: img,
+        image: img4,
         price: 90,
         category: "Physics",
         ecourseLocation: "Hybrid",
@@ -571,7 +592,7 @@ export const EcoursesData = {
       {
         id: "1016",
         title: "English 3",
-        image: img,
+        image: img3,
         price: 9990,
         category: "English",
         ecourseLocation: "Hybrid",
@@ -615,7 +636,7 @@ export const EcoursesData = {
       {
         id: "1018",
         title: "Linguistics 1",
-        image: img,
+        image: img3,
         price: 650,
         category: "Linguistics",
         ecourseLocation: "Online",
@@ -637,7 +658,7 @@ export const EcoursesData = {
       {
         id: "1019",
         title: "Moon Landing",
-        image: img,
+        image: img5,
         price: 650,
         category: "History",
         ecourseLocation: "Hybrid",
@@ -659,7 +680,7 @@ export const EcoursesData = {
       {
         id: "1020",
         title: "Psychology 3",
-        image: img,
+        image: img3,
         price: 650,
         category: "Psychology",
         ecourseLocation: "Hybrid",
@@ -725,7 +746,7 @@ export const EcoursesData = {
       {
         id: "1023",
         title: "Thermodynamics 1",
-        image: img,
+        image: img4,
         price: 650,
         category: "Engineering",
         ecourseLocation: "Hybrid",
@@ -747,7 +768,7 @@ export const EcoursesData = {
       {
         id: "1024",
         title: "Renaissance",
-        image: img,
+        image: img5,
         price: 650,
         category: "Art",
         ecourseLocation: "On Campus",
@@ -769,7 +790,7 @@ export const EcoursesData = {
       {
         id: "1025",
         title: "SQL",
-        image: img,
+        image: img6,
         price: 650,
         category: "Programming",
         ecourseLocation: "Online",
@@ -791,7 +812,7 @@ export const EcoursesData = {
       {
         id: "1026",
         title: "ReactJs Basics",
-        image: img,
+        image: img6,
         price: 650,
         category: "Programming",
         ecourseLocation: "On Campus",
@@ -813,7 +834,7 @@ export const EcoursesData = {
       {
         id: "1027",
         title: "Build a Game in 30 days",
-        image: img,
+        image: img6,
         price: 650,
         category: "Programming",
         ecourseLocation: "Online",
