@@ -50,7 +50,7 @@ function SingleEcourse() {
   ];
 
   return (
-    <div className="m-2 pt-5 pb-5 justify-content-center border-2 surface-border border-round p-2 ">
+    <div className="mt-2 pt-5 pb-5 justify-content-center border-2 surface-border border-round p-2 bg-white">
       <div className="course-container ">
         <h2>{course.title}</h2>
         <Image src={course.image} alt="thumbnail" width="2500" />
@@ -110,8 +110,8 @@ function SingleEcourse() {
           </div>
           {/* **************************************************** */}
         </div>
+        <Rating courseId={course.id} />
       </div>
-      <Rating courseId={course.id} />
     </div>
   );
 }
