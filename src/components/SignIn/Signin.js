@@ -3,10 +3,17 @@ import React, { useState } from "react";
 import { InputText } from "primereact/inputtext";
 import { Checkbox } from "primereact/checkbox";
 import { Button } from "primereact/button";
-
+import { Link } from "react-router-dom";
+import { Dialog } from "primereact/dialog";
+import SignUpForm from "../SignUp/Signup";
 // onSig.. eidos account
 // onHide state login kruvei to parathuro an signed in
 function SignInFun({ onSignIn, onHide, isUniversityUser }) {
+  const [visible, setVisibility] = useState(false);
+  // control the visibility of the login dialog.
+  const hide = () => {
+    setVisibility(false);
+  };
   //check gia remember me
   const [checked, setChecked] = useState([]);
   //  Stores the user's email input.
@@ -61,12 +68,27 @@ function SignInFun({ onSignIn, onHide, isUniversityUser }) {
             Don't have an account?
           </span>
           <a
-            href="https://www.google.com/"
+            onClick={() => {
+              setVisibility(true);
+              // onHide();
+            }}
             className="font-medium no-underline ml-2 text-blue-500 cursor-pointer"
           >
             Create today!
           </a>
         </div>
+
+        <Dialog
+          visible={visible}
+          style={{ width: "50vw" }}
+          onHide={() => {
+            hide();
+            onHide();
+          }} // Pass onHide function to close the dialog
+        >
+          {/* Pass the onSignIn and onHide callbacks to SignInFun */}
+          <SignUpForm onHide={() => hide()} />
+        </Dialog>
 
         <div>
           <label htmlFor="email" className="block text-900 font-medium mb-2">

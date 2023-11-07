@@ -84,12 +84,12 @@ function SingleEcourse() {
         <div className="similar-courses m-2 flex justify-content-center border-2 surface-border border-round p-2">
           <div className=" ">
             <h3>Contact University </h3>
-            <p>course links</p>
+            {/* <p>course links</p> */}
             <br></br>
             <a onClick={() => openInNewTab(course.website)}>
               <Button
                 icon="pi pi-external-link"
-                className=" justify-content-center"
+                className=" justify-content-center mb-2"
               />
             </a>
           </div>

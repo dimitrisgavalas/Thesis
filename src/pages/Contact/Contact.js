@@ -15,8 +15,11 @@ function Contact() {
   };
 
   return (
-    <div className="contact pb-8 ">
-      <div className="contact-form-container ">
+    <div
+      className="contact pb-8"
+      style={{ backgroundImage: "url(./contact.jpg)" }}
+    >
+      <div className="contact-form-container surface-400 border-bluegray-400 border-1 border-solid border-round	mt-7 ml-7 mr-7">
         <h2>Contact Us</h2>
         <form onSubmit={handleSubmit} className="contact-form">
           <div>
