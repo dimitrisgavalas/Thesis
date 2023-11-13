@@ -32,8 +32,9 @@ function SingleEcourse() {
   // The found eCourse is stored in the course variable.
   const course = courses.find((course) => course.id === id);
 
-  console.log(courses);
-  console.log(id);
+  console.log("All exourses: ", courses);
+
+  console.log("id clicked: ", id);
 
   // Similar courses data
   const similarCourses = [
@@ -53,8 +54,8 @@ function SingleEcourse() {
     <div className="mt-2 pt-5 pb-5 justify-content-center border-2 surface-border border-round p-2 bg-white">
       <div className="course-container ">
         <h2>{course.title}</h2>
-        <Image src={course.image} alt="thumbnail" width="2500" />
-        {/* <img src={course.image} alt={course.title} /> */}
+        {/* <Image src={course.image} alt="thumbnail" width="2500" /> */}
+        <img src={course.image} alt={course.title} />
         <div className="course-info ">
           <div className="quick-info m-2 pt-5 pb-5 justify-content-center border-2 surface-border border-round p-2 ">
             <p>

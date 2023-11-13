@@ -10,6 +10,8 @@ import { Link } from "react-router-dom";
 // import { EcoursesData } from "../../mock-d/EcoursesData";
 
 function EcoursesGrid({ ecoursesData }) {
+  console.log("bbbbbbbbbbbbbbbb", ecoursesData);
+
   const [sortOrder, setSortOrder] = useState(0);
   const [sortField, setSortField] = useState("");
   // Create a state to track the active state for each course

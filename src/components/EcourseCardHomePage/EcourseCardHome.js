@@ -11,7 +11,7 @@ function EcourseCardHome() {
   useEffect(() => {
     // Fetch your data asynchronously and set it when the Promise resolves
     EcoursesData.getEcoursesHomePage().then((data) => {
-      console.log(data); // Log the resolved data
+      // console.log("Home Ecourses", data); // Log the resolved data
       setEcoursesData(data);
     });
   }, []);
@@ -20,6 +20,7 @@ function EcourseCardHome() {
     <>
       <div className="border-1 surface-border border-round  ">
         <h2 className="col-12 text-center my-3 fw-bold">Trending Courses</h2>
+        {/* {console.log("aaaaaaaaaaaaaaaaaaaaa ", ecoursesData)} */}
         <EcoursesGrid ecoursesData={ecoursesData} />
       </div>
     </>

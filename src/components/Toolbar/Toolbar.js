@@ -68,7 +68,7 @@ export default function ToolbarMenu() {
   ];
 
   const test = () => {
-    console.log("Test");
+    // console.log("Test");
   };
 
   const start = (
